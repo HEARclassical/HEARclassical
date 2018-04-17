@@ -1,0 +1,319 @@
+<!DOCTYPE HTML>
+<html>
+<meta charset="UTF8">
+<style>
+
+body {
+  background: #fcfcfa;
+}
+
+.stroke {
+  fill: none;
+  stroke: #000;
+  stroke-width: 20px;
+}
+
+/*
+.fill {
+  fill: clear;
+}
+
+
+.land {
+  fill: lightgoldenrodyellow;
+}
+*/
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+.boundary {
+  fill: none;
+  stroke: #fff;
+  stroke-width: .5px;
+}
+
+svg {
+  cursor: crosshair; 
+}
+
+.map {
+  width: 800px;
+  height: 800px;
+}
+
+.map-container {
+    left: 30px;
+    top: 30px;
+    height: 800px;
+    width: 800px;
+}
+
+.map-overlay {
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  position: fixed;
+  z-index: -10;
+}
+
+.map-country-description-container {
+  display: flex;
+}
+</style>
+
+<head>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/logoAnimation.css" />
+    <link rel="stylesheet" href="../css/siteHeader.css" />
+  </head>
+
+
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="https://d3js.org/d3-array.v1.min.js"></script>
+<script src="https://d3js.org/d3-geo.v1.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
+<body>
+
+
+  <header class="site-header">
+      <div class="logo">
+      <div class="logo-history">
+        <div class="unfold-wrap">
+          <div class="logo-head">h</div>
+          <ul class="unfold">
+            <li>i</li>
+            <li>s</li>
+            <li>t</li>
+            <li>o</li>
+            <li>r</li>
+            <li>y</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="logo-equality">
+        <div class="unfold-wrap">
+          <div class="logo-head">e</div>
+          <ul class="unfold">
+            <li>q</li>
+            <li>u</li>
+            <li>a</li>
+            <li>l</li>
+            <li>i</li>
+            <li>t</li>
+            <li>y</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="logo-artistic">
+        <div class="unfold-wrap">
+          <div class="logo-head">a</div>  
+          <ul class="unfold">
+            <li>r</li>
+            <li>t</li>
+            <li>i</li>
+            <li>s</li>
+            <li>t</li>
+            <li>i</li>
+            <li>c</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="logo-representation">
+        <div class="unfold-wrap">
+          <div class="logo-head">r</div>
+          <ul class="unfold">
+            <li>e</li>
+            <li>p</li>
+            <li>r</li>
+            <li>e</li>
+            <li>s</li>
+            <li>e</li>
+            <li>n</li>
+            <li>t</li>
+            <li>a</li>
+            <li>t</li>
+            <li>i</li>
+            <li>o</li>
+            <li>n</li>
+          </ul>
+        </div>
+      </div>
+      </div>
+      <div class="header-buttons">
+      <div>
+        <a href=""> 
+          <p class="header-button">About Us</p>
+        </a>
+      </div>
+      <div>
+        <a href="#educational-videos">  
+          <p class="header-button">Educational Videos</p>
+        </a>
+      </div>
+      <div>
+        <a href="#concerts">  
+          <p class="header-button">Concert Schedule</p>
+        </a>
+      </div>
+      <div>
+        <a href=""> 
+          <p class="header-button">Community Engagement</p>
+        </a>
+      </div>
+      <div>
+        <a href=""> 
+          <p class="header-button">Curriculum Change</p>
+        </a>
+      </div>
+      </div>
+
+      <div class="search" role="search">
+      <form id ="search-form" class="search-form" action="/">
+      </form>
+      </div>
+  </header>
+  <div class="map-country-description-container">
+    <div class="map-container">
+    </div>
+    <div class="country-description-container">
+      <h class="country-name">
+      </h>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+
+
+
+var width = 800;
+var height = 800;
+var projection = d3.geoRobinson()
+    .scale(120)
+   // .translate([width / 2, height / 2])
+   .translate([width/2, height / 4])
+    .precision(.5);
+
+var path = d3.geoPath()
+    .projection(projection);
+
+
+var svg = d3.select(".map-container").append("svg")
+    .attr("class", "map")
+  .append("g");
+
+svg.append("rect")
+    .attr("class", "map-overlay")
+    //.attr("width", width)
+    //.attr("height", height);
+
+var g = svg.append("g");
+
+g.append("defs").append("path")
+    .datum({type: "Sphere"})
+    .attr("id", "sphere")
+    .attr("d", path)
+    .style("fill", "white")
+
+g.append("use")
+    .attr("class", "stroke")
+    .attr("xlink:href", "#sphere");
+
+g.append("use")
+    .attr("class", "fill")
+    .attr("xlink:href", "#sphere");
+
+g.append("path")
+    //.datum(graticule)
+    .attr("class", "graticule")
+    .attr("d", path);
+
+
+queue()
+    .defer(d3.json, "../js/worldMap.json")
+    .defer(d3.json, "../js/countryCodesToNames.json")
+    .await(ready);
+
+function ready(error, world, cctn) {
+  if (error) throw error;
+
+  var countries = topojson.feature(world, world.objects.countries).features,
+      neighbors = topojson.neighbors(world.objects.countries.geometries);
+  
+  console.log(world);
+  g.selectAll(".country")
+      .data(countries)
+    .enter().insert("path")
+      .attr("class", "country")
+      .attr("d", path)
+      .attr("stroke-width", ".1px")
+      .style("stroke", "black")
+      .style("fill", "lightgrey")
+      .on('mouseover',function(d){
+        var country = d3.select(this)
+        var countryName = cctn[d.id];
+        var countryId = d.id;
+        if (countryName === undefined) {
+          console.log(countryId)
+        }
+        document.querySelector('.country-name').innerHTML = countryName     
+        country.style("fill", "black")
+      })
+      .on('mouseout', function(){d3.select(this).style("fill", "lightgrey")})
+        document.querySelector('.country-name').innerHTML = ""
+      ;
+}
+
+
+
+d3.select(self.frameElement).style("height", height + "px");
+
+var lastT = [0,0]
+var curDelta = [0,0];
+var curScale = 1;
+
+//taken from https://gist.github.com/shawnbot/6518285
+var zoom = d3.behavior.zoom()
+        // only scale up, e.g. between 1x and 50x
+        .scaleExtent([1, 15])
+        .on("zoom", function() {
+          // the "zoom" event populates d3.event with an object that has
+          // a "translate" property (a 2-element Array in the form [x, y])
+          // and a numeric "scale" property
+          var e = d3.event,
+              // now, constrain the x and y components of the translation by the
+              // dimensions of the viewport
+              tx = Math.min(0, Math.max(e.translate[0], width - width * e.scale)),
+              ty = Math.min(0, Math.max(e.translate[1], height - height * e.scale));
+          console.log(e)
+          //curDelta = [Math.abs(tx-lastT[0]), Math.abs(ty-lastY[0])];
+          // then, update the zoom behavior's internal translation, so that
+          // it knows how to properly manipulate it on the next movement
+          zoom.translate([tx, ty]);
+          // and finally, update the <g> element's transform attribute with the
+          // correct translation and scale (in reverse order)
+          g.attr("transform", [
+            "translate(" + [tx, ty] + ")",
+            "scale(" + e.scale + ")"
+          ].join(" "));
+        });
+
+svg
+    .call(zoom)
+    .call(zoom.event);
+
+
+</script>
+</html>

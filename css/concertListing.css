@@ -1,14 +1,16 @@
 
 .concerts-container {
-	margin-top: 60px;
-	margin-left: 140px;
-	margin-right: 140px;
+	position: relative;
+	width: 65vw;
+	margin-left: 2vw;
+	padding-left: 30px;
+
 }
 
 .concert-container {
 	position: relative;
 	display: flex;
-	margin-top: 30px;
+	margin-top: 0x;
 	margin-bottom: 30px;
 }
 
@@ -16,42 +18,51 @@
 	width: 70px;
 }
 
+.concert-main {
+	height: 100vh;
+	width: 100vw;
+}
 
 .concert-date {
-	background-color: #99aabb;
+	background-color: #dfdfdf;
 	top: 40%;
-	width: 60px;
-	height: 60px;
+	width: 70px;
+	height: 70px;
 	text-align: center;
+	cursor: default;
+	user-select: none;
 }
 
 p.month {
 	font-family: Garamond;
-	font-size: 22px;
+	font-size: 23px;
 	font-variant: all-small-caps;
 	line-height: 0px;
 	padding-top: 25%;
+	
 }
 
 p.day {
 	font-family: Garamond;
-	font-size: 27px;
+	font-size: 28px;
 	line-height: 0px;
 }
 
 .concert-description-container {
 	flex-grow:1;
-	margin-left: 30px;
+	padding: 10px;
+	margin-left: 5vw;
 }
 
 .concert-description-container p {
-	line-height:120%;
+	line-height:110%;
+	font-size: 18px;
 }
 
 .concert-title {
 	border-bottom: 2px solid #a3a3a3;
 	font-variant: all-small-caps;
 	font-family: "Museo Sans 700", Verdana, sans;
-	font-size: 30px;
+	font-size: 40px;
 	letter-spacing: 3px;
 }

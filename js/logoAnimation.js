@@ -3,31 +3,40 @@
 
 /*****this script adds a hover event to each letter of the hear logo, causing a folding animation to trigger.  ****/
 
+$('.logo .logo-head').click(function(){ //clicking on the logo will scroll back up to the intro
+	$.fn.fullpage.moveSectionUp()
+})
 
-$('.unfold-wrap').hover(
+$('.logo .logo-head').hover( 
 	function(){ //mouseenter
+		var ufw = $(this).parent()
+		console.log($(this), ufw)
 
-
-		if ($(this).hasClass('folding')) { //interrupting the fold
-			$(this).removeClass('folding');
-			$(this).addClass('unfolding');
+		if (ufw.hasClass('folding')) { //interrupting the fold
+			ufw.removeClass('folding');
+			ufw.addClass('unfolding');
 		} else {
 			//start from the bottom
-			$(this).addClass('unfolding');
-			nextFold(this, 0);
+			ufw.addClass('unfolding');
+			nextFold(ufw[0], 0);
 		}
+	
+		$(this).animate({"color": "gray"})
 	},
 
 	function(){ //mouseleave
 
-		if ($(this).hasClass('unfolding')) { //interrupting the unfolding, so timeouts in effect and will reverse direction
-			$(this).removeClass('unfolding');
-			$(this).addClass('folding');
+		var ufw = $(this).parent()
+
+		if (ufw.hasClass('unfolding')) { //interrupting the unfolding, so timeouts in effect and will reverse direction
+			ufw.removeClass('unfolding');
+			ufw.addClass('folding');
 
 		} else {
-			$(this).addClass('folding');
-			nextFold(this, undefined);
+			ufw.addClass('folding');
+			nextFold(ufw[0], undefined);
 		}
+		$(this).animate({"color": "black"})
 
 	}
 );

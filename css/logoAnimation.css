@@ -1,6 +1,12 @@
+
+.intro-logo .logo-head {
+    width: 1em;
+}
+
 .unfold-wrap {
 	position: relative;
 }
+
 .unfold {
     overflow: hidden;
     width: 100%;
@@ -10,23 +16,23 @@
 	padding: 0;
 	list-style-type: none;
 	position: absolute;
+    padding-bottom: 10px;
 }
 
 
 .unfold li {
-    padding: 15px 10px;
     margin: 0;
 	padding: 0;
 	list-style-type: none;
-	/*background: black;*/
-	/*border-radius: 5 5 5px 5px;*/
-	/*color: white;*/
+	background: #fefefe;
+	color: gray;
 }
 
-.unfold li:last-child {  
-    border-radius: 0 0 0px 0px;
-}
 
+.unfold li:last-child {
+    border-radius: 0% 0% 100% 100%;
+    padding-bottom: 10px;
+}
 
 .unfold li {
     -webkit-transform-origin: 50% 0%;
@@ -35,6 +41,144 @@
     -webkit-transform: perspective(250px) rotateX(-90deg);
     -o-transform: perspective(250px) rotateX(-90deg);
     transform: perspective(250px) rotateX(-90deg);
-    -moz-box-shadow: 0px 2px 10px rgba(0,0,0,0.05);
+    transition: 0s linear 0s;
 }
+
+/********************************************************
+INTRO SCREEN
+********************************************************/
+
+.intro-logo {
+    opacity: 0.0;
+    display: flex;
+    align-items: center;
+    font-size: 15vmin;
+    font-family: Verdana, sans;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    left: 25%;
+    top: 5%;
+    width: 50%;
+    height: 50%;
+    user-select: none;
+    cursor: default;
+}
+
+.intro-logo .unfold li{
+    font-size: 3vmin;
+}
+
+/********************
+SCROLL DOWN INDICATOR
+********************/
  
+
+.scroll-indicator {
+  padding-top: 9vmin;
+  bottom: 0%;
+  position: absolute;
+  width: 8vmin;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  opacity: 0.0;
+  transition: all 0.5s linear;
+  transition-property: transform;
+}
+
+.scroll-indicator:hover {
+    transform: scale(1.1);
+}
+
+.scroll-indicator p {
+    font-family: "Museo Sans 700";
+    font-variant: all-small-caps;
+    text-align: center;
+    font-size: 2.5vmin;
+    line-height: 100%;
+}
+
+.scroll-indicator span {
+  position: absolute;
+  top: 0;
+  width: 4vmin;
+  height: 4vmin;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-left: .25vmin solid #000;
+  border-bottom: .25vmin solid #000;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: scroll-indicate 3s infinite;
+  animation: scroll-indicate 3s infinite;
+  opacity: 0;
+  box-sizing: border-box;
+}
+
+.scroll-indicator span:nth-of-type(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s ;
+}
+
+.scroll-indicator span:nth-of-type(2) {
+  top: 2.5vmin;
+  -webkit-animation-delay: .15s;
+  animation-delay: .15s;
+}
+.scroll-indicator span:nth-of-type(3) {
+  top: 5vmin;
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+
+@-webkit-keyframes scroll-indicate {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes scroll-indicate {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/*******
+iPhone???
+*******/
+
+@media only screen and (max-height: 240px) {
+    .intro-logo .unfold {opacity: 0.0}
+    .intro-logo {font-size: 25vmin}
+    .scroll-indicator span {
+        width: 7vmin;
+        height: 7vmin;
+        border-left: .4vmin solid #000;
+        border-bottom: .4vmin solid #000;
+    }
+    .scroll-indicator p {font-size: 7vmin}
+    .scroll-indicator span:nth-of-type(2) {top: 5vmin}
+    .scroll-indicator span:nth-of-type(3) {top: 10vmin}
+    .scroll-indicator {padding-top: 16vmin; width: 20vmin;}
+}
