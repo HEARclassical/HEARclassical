@@ -4,12 +4,10 @@ html,body {
     overflow:hidden;
     /*visibility: hidden;*/
 }
-.section{
+.vertical-section{
 	padding-top: 0;
 }
-.section,
-.slide,
-.fp-tableCell{
+.vertical-section {
     height: 100vh;
     padding-top: 0;
     padding-bottom: 0;
@@ -17,4 +15,24 @@ html,body {
 
 .fp-tableCell{
 	display: block!important;
+	padding-top: 0;
+	padding-bottom: 0;
+	/*height: 100%!important;*/
+}
+
+.horizontal-section {
+	height: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 100vw;
+}
+
+.fp-slides {
+	overflow-x: hidden;
+	/*overflow-y: scroll;*/
+	height: 100%;
+}
+
+.fp-slide {
+	height: 100%;
 }

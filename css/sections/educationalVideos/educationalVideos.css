@@ -1,0 +1,8 @@
+.educational-videos-container {
+	position: relative;
+	width: 100vw;
+	height: calc(100vh - 100px);
+	/*margin-left: 2vw;
+	padding-left: 30px;*/
+
+}

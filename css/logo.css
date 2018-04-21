@@ -1,6 +1,23 @@
+.logo {
+    font-family: Verdana, sans;
+    font-size: 50px;
+    font-weight: normal;
+    color: black;
+    text-align: center;
+    cursor: default;
+    user-select: none;
+    background-color: #fefefe;
+}
 
-.intro-logo .logo-head {
+
+.intro-logo .logo-head { /*monospace the intro logo */
     width: 1em;
+    transition: color 0.5s linear 0s;
+    color: black;
+}
+
+.logo ul {
+  display: none;
 }
 
 .unfold-wrap {
@@ -13,9 +30,9 @@
     box-sizing: border-box;
     font-size: 13px;
     margin: 0;
-	padding: 0;
-	list-style-type: none;
-	position: absolute;
+	  padding: 0;
+  	list-style-type: none;
+	  position: absolute;
     padding-bottom: 10px;
 }
 
@@ -24,7 +41,7 @@
     margin: 0;
 	padding: 0;
 	list-style-type: none;
-	background: #fefefe;
+	background-color: #fefefe;
 	color: gray;
 }
 
@@ -88,6 +105,7 @@ SCROLL DOWN INDICATOR
   opacity: 0.0;
   transition: all 0.5s linear;
   transition-property: transform;
+  user-select: none;
 }
 
 .scroll-indicator:hover {

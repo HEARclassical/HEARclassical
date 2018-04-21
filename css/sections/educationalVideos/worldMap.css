@@ -1,0 +1,69 @@
+
+.stroke {
+  fill: none;
+  stroke: #000;
+  stroke-width: 0px;
+}
+
+/*
+.fill {
+  fill: clear;
+}
+
+
+.land {
+  fill: lightgoldenrodyellow;
+}
+*/
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+.border {
+  fill: none;
+  stroke: #000;
+}
+
+svg {
+  cursor: crosshair; 
+}
+
+.hidden {
+  display: none;
+}
+
+.map-container {
+    left: 30px;
+    top: 30px;
+    height: 100%;
+    width: 100vw;
+}
+
+.map-overlay {
+  width: 100vw;
+  height: 100%;
+  position: relative;
+  z-index: -10;
+}
+
+.map {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+
+}
+
+.country-tooltip {
+  position: absolute;
+  text-align: center;
+  max-width: 15vmin;
+  font-size: 3vmin;
+  padding: 0.2em;
+  border-radius: 1vmin;
+  background: #fff;
+  border: 1px solid #000;
+  z-index: 1000;
+  opacity: 0.8;
+  pointer-events: none;
+}

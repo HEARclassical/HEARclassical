@@ -8,130 +8,145 @@
 
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/home.css" />
-		<link rel="stylesheet" href="css/logoAnimation.css" />
+		<link rel="stylesheet" href="css/logo.css" />
 		<link rel="stylesheet" href="css/siteHeader.css" />
-		<link rel="stylesheet" href="css/concertListing.css" />
 
 		<!-- Fullpage css styling -->
 		<link rel="stylesheet" href="css/fullPage/fullPage.css"/>
 	    <link rel="stylesheet" href="css/fullPage/customFullPage.css"/>
 
+		<!-- Stylesheets for each section (as conveyed by header) -->
+		<link rel="stylesheet" href="css/sections/concertListing.css" />
+		<link rel="stylesheet" href="css/sections/educationalVideos/worldMap.css" />
+		<link rel="stylesheet" href="css/sections/educationalVideos/educationalVideos.css" />
+		<link rel="stylesheet" href="css/sections/aboutUs.css" />
+
+
+
     	
 </head>
+<!-- jquery + extensions (fullPage) -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-<script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js" integrity="sha256-H28SdxWrZ387Ldn0qogCzFiUDDxfPiNIyJX7BECQkDE=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
 <script type="text/javascript" src="js/fullPage.js"></script>
 
+<!-- d3 sourcecode -->
+<script src="js/d3/d3.v3.min.js"></script>
+<script src="https://d3js.org/d3-array.v1.min.js"></script>
+<script src="https://d3js.org/d3-geo.v1.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
 
 
 <body class="home">
 	
 	<div class="header-wrapper">
 		<header class="site-header" role="navigation">
-		<div class="logo">
-			<div class="logo-history">
-				<div class="unfold-wrap">
-					<div class="logo-head">h</div>
-					<ul class="unfold">
-						<li>i</li>
-						<li>s</li>
-						<li>t</li>
-						<li>o</li>
-						<li>r</li>
-						<li>y</li>
-					</ul>
+			<div class="logo">
+				<div class="logo-history">
+					<div class="unfold-wrap">
+						<div class="logo-head">h</div>
+						<ul class="unfold">
+							<li>i</li>
+							<li>s</li>
+							<li>t</li>
+							<li>o</li>
+							<li>r</li>
+							<li>y</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="logo-equality">
+					<div class="unfold-wrap">
+						<div class="logo-head">e</div>
+						<ul class="unfold">
+							<li>q</li>
+							<li>u</li>
+							<li>a</li>
+							<li>l</li>
+							<li>i</li>
+							<li>t</li>
+							<li>y</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="logo-artistic">
+					<div class="unfold-wrap">
+						<div class="logo-head">a</div>	
+						<ul class="unfold">
+							<li>r</li>
+							<li>t</li>
+							<li>i</li>
+							<li>s</li>
+							<li>t</li>
+							<li>i</li>
+							<li>c</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="logo-representation">
+					<div class="unfold-wrap">
+						<div class="logo-head">r</div>
+						<ul class="unfold">
+							<li>e</li>
+							<li>p</li>
+							<li>r</li>
+							<li>e</li>
+							<li>s</li>
+							<li>e</li>
+							<li>n</li>
+							<li>t</li>
+							<li>a</li>
+							<li>t</li>
+							<li>i</li>
+							<li>o</li>
+							<li>n</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header-buttons">
+				<div>
+					<a href="#main/about-us">	
+						<p class="header-button">About Us</p>
+					</a>
+				</div>
+				<div>
+					<a href="#main/educational-videos">	
+						<p class="header-button">Educational Videos</p>
+					</a>
+				</div>
+				<div>
+					<a href="#main/concert-listings">	
+						<p class="header-button">Concert Schedule</p>
+					</a>
+				</div>
+				<div>
+					<a href="">	
+						<p class="header-button">Community Engagement</p>
+					</a>
+				</div>
+				<div>
+					<a href="">	
+						<p class="header-button">Curriculum Change</p>
+					</a>
 				</div>
 			</div>
 
-			<div class="logo-equality">
-				<div class="unfold-wrap">
-					<div class="logo-head">e</div>
-					<ul class="unfold">
-						<li>q</li>
-						<li>u</li>
-						<li>a</li>
-						<li>l</li>
-						<li>i</li>
-						<li>t</li>
-						<li>y</li>
-					</ul>
-				</div>
+			<div class="search" role="search">
+				<form id ="search-form" class="search-form" action="/">
+				</form>
 			</div>
-
-			<div class="logo-artistic">
-				<div class="unfold-wrap">
-					<div class="logo-head">a</div>	
-					<ul class="unfold">
-						<li>r</li>
-						<li>t</li>
-						<li>i</li>
-						<li>s</li>
-						<li>t</li>
-						<li>i</li>
-						<li>c</li>
-					</ul>
-				</div>
-			</div>
-
-			<div class="logo-representation">
-				<div class="unfold-wrap">
-					<div class="logo-head">r</div>
-					<ul class="unfold">
-						<li>e</li>
-						<li>p</li>
-						<li>r</li>
-						<li>e</li>
-						<li>s</li>
-						<li>e</li>
-						<li>n</li>
-						<li>t</li>
-						<li>a</li>
-						<li>t</li>
-						<li>i</li>
-						<li>o</li>
-						<li>n</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="header-buttons">
-			<div>
-				<a href="">	
-					<p class="header-button">About Us</p>
-				</a>
-			</div>
-			<div>
-				<a href="#educational-videos">	
-					<p class="header-button">Educational Videos</p>
-				</a>
-			</div>
-			<div>
-				<a href="#concerts">	
-					<p class="header-button">Concert Schedule</p>
-				</a>
-			</div>
-			<div>
-				<a href="">	
-					<p class="header-button">Community Engagement</p>
-				</a>
-			</div>
-			<div>
-				<a href="">	
-					<p class="header-button">Curriculum Change</p>
-				</a>
-			</div>
-		</div>
-
-		<div class="search" role="search">
-			<form id ="search-form" class="search-form" action="/">
-			</form>
-		</div>
 		</header>
 	</div>
 
 	<div id="fullpage">
 
-		<div class="section" id="concert-intro">
+		<div class="vertical-section" id="intro" data-anchor="HEAR">
 				<div class="intro-logo">
 					<div class="logo-history">
 						<div class="unfold-wrap">
@@ -201,72 +216,89 @@
 				<div class="scroll-indicator">
 					<p> Scroll Down </p> <span></span><span></span><span></span>
 				</div>
-
 		</div>
 
-		<div class="section" id="concert-main">
+		<div class="vertical-section" id="main-content" data-anchor="main">
 			<main role="main">
-				<div class="concerts-container">
-					<div id="hear-through-time" class="concert-container">
-
-					<div class="concert-date-container">
-						<div class="concert-date">
-							<p class="month">
-								Apr
-							</p>
-							<p class="day">
-								28
-							</p>
+				<div class="horizontal-section" data-anchor="about-us">
+					<div class="about-us-container">
+						<div class="temp-text">
+							<h1> HEAR is a brand new organization. </h1>
+							<h2> Felice has the information! </h2>
+							<h3> Coming soon... </h3>
 						</div>
-					</div>	
-					<div class="concert-description-container">
+					</div>		
+				</div>
+				<div class="horizontal-section" data-anchor="educational-videos">
+					<div class="educational-videos-container">
+						<div class="map-container">
 
-						<h class="concert-title">
-							Hear Through Time 
-						</h>
-						<p class="concert-full-date">
-							Saturday, April 28, 2018
-						</p>
-						<p class="concert-time">
-							3:00 PM - 5:00 PM
-						</p>
-
-						<p class="concert-description">
-							The Yale Launch of HEAR will take place on Saturday, April 28th, at 3:00 pm.  The concert will present repertoire by composers throughout the ages who are female composers and/or people of color.
-						</p>
+						</div>
 					</div>
-					</div>	
+				</div>
+				<div class="horizontal-section" data-anchor="concert-listings">
+					<div class="concerts-container" >
+						<div id="hear-through-time" class="concert-container">
 
-					<div id="hear-at-the-un" class="concert-container">
-
-						<div class="concert-date-container">
-							<div class="concert-date">
-								<p class = "month">
-									May
-								</p>
-								<p class="day">
-									25
-								</p>
-							</div>
-						</div>	
-						<div class="concert-description-container">
+							<div class="concert-date-container">
+								<div class="concert-date">
+									<p class="month">
+										Apr
+									</p>
+									<p class="day">
+										28
+									</p>
+								</div>
+							</div>	
+							<div class="concert-description-container">
 
 							<h class="concert-title">
-								Hear at the U.N.
+								Hear Through Time 
 							</h>
 							<p class="concert-full-date">
-								Friday, May 25, 2018
+								Saturday, April 28, 2018
 							</p>
 							<p class="concert-time">
-								7:00 PM - 9:30 PM
+								3:00 PM - 5:00 PM
 							</p>
 
 							<p class="concert-description">
-								The Yale Launch of HEAR will take place on Friday, May 25th, at 7:00 pm.  The concert will present repertoire by composers throughout the ages who are female composers and/or people of color.
+								The Yale Launch of HEAR will take place on Saturday, April 28th, at 3:00 pm.  The concert will present repertoire by composers throughout the ages who are female composers and/or people of color.
 							</p>
-						</div>
-					</div>	
-				</div>		
+							</div>
+						</div>	
+
+						<div id="hear-at-the-un" class="concert-container">
+
+							<div class="concert-date-container">
+								<div class="concert-date">
+									<p class = "month">
+										May
+									</p>
+									<p class="day">
+										25
+									</p>
+								</div>
+							</div>	
+							<div class="concert-description-container">
+
+								<h class="concert-title">
+									Hear at the U.N.
+								</h>
+								<p class="concert-full-date">
+									Friday, May 25, 2018
+								</p>
+								<p class="concert-time">
+									7:00 PM - 9:30 PM
+								</p>
+
+								<p class="concert-description">
+									The Yale Launch of HEAR will take place on Friday, May 25th, at 7:00 pm.  The concert will present repertoire by composers throughout the ages who are female composers and/or people of color.
+								</p>
+							</div>
+						</div>	
+					</div>
+				</div>
 			</main>
 		</div>
 	</div>
@@ -275,5 +307,6 @@
 </body>
 <script src="js/logoAnimation.js"></script>
 <script type="text/javascript" src="js/introScroll.js"></script>
+<!--<script type="text/javascript" src="js/worldMap.js"></script> -->
 
 </html>

@@ -15,24 +15,16 @@
     flex-wrap: nowrap;
     /*background: white;*/
     padding-right: 30px;
+    visibility: hidden;
 }
 /*@media (max-width: 650px){.site-header{padding:0.5rem}}*/
 
 
 
 .logo {
-	font-family: Verdana, sans;
-	font-size: 50px;
-	font-weight: normal;
-	color: black;
-	display: inherit;
-	text-align: center;
 	margin-right: 30px;
-	cursor: default;
-	user-select: none;
+	display: inherit;
 }
-
-
 
 .header-buttons{
 	-webkit-flex:3;

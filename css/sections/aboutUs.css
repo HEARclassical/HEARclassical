@@ -1,0 +1,14 @@
+.about-us-container {
+	position: relative;
+	width: 65vw;
+	margin-left: 2vw;
+	padding-left: 30px;
+	height: 100%;
+}
+
+.temp-text {
+	position: absolute;
+	left: 25%;
+	top: 25%;
+	margin: 0 auto;
+}
