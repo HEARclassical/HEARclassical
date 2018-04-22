@@ -23,6 +23,8 @@
 .border {
   fill: none;
   stroke: #000;
+  line-cap: "round";
+  line-join: "round";
 }
 
 svg {

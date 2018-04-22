@@ -12,7 +12,28 @@ var rescaleTransform = {
   scale: 1
 }
 
-console.log(actualInitialHeight, initialHeight)
+
+var scale,
+    translate,
+    area; // minimum area threshold for simplification
+
+var clip = d3.geo.clipExtent()
+    .extent([[0, 0], [width, height]]);
+
+var simplify = d3.geo.transform({
+  point: function(x, y, z) {
+    if (z >= area) this.stream.point(x * scale + translate[0], y * scale + translate[1]);
+  }
+});
+
+var zoom = d3.behavior.zoom()
+    .translate([0, 0])
+    .scale(1)
+    .scaleExtent([1, 8]);
+
+
+
+
 var scaleRatio = 159.155/1000.0; //experimentally calculated, this will fit the maps width to container width
 var coastStrokeRatio = 4 / 10000;
 var borderStrokeRatio = 1 / 10000;
@@ -58,7 +79,6 @@ g.append("use")
     .attr("d", path);
 */
 
-var zoom = d3.behavior.zoom()
 
 queue()
     .defer(d3.json, "js/worldMap.json")
@@ -68,10 +88,11 @@ queue()
 function ready(error, world, cctn) {
   if (error) throw error;
 
+  topojson.presimplify(world);
+
   var countries = topojson.feature(world, world.objects.countries).features,
       neighbors = topojson.neighbors(world.objects.countries.geometries);
- COUNTRIES = countries;
- WORLD = world;
+  
   console.log(world);
   g.selectAll(".country")
       .data(countries)

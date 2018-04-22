@@ -58,28 +58,27 @@
 	});
 
 	function hideIntro(){
-		$('.intro-wrap').stop();
-		$('.intro-wrap .intro-sub').stop();
-		$('.intro-wrap .intro-sub span').stop();
-		$('.intro-wrap').css({"opacity": "0.0"});
+		$('.intro-logo > div').stop();
+		$('.intro-logo > div').css({"opacity": "0.0"});
+		$('.intro-logo .unfold').stop()
+		$('.intro-logo li').css({"transform": "perspective(1000px) rotateX(-90deg)", "transition": "transform 0s linear 0s, color 0.5s linear 0s"});
 		$('.scroll-indicator').stop();
 		$('.scroll-indicator').css({"opacity": "0.0"});
-		$('.intro-wrap .intro-sub span').css({"opacity": 0.0});
 	}
 
 	function showIntro(){
 
 		hideIntro();
-		$('.intro-wrap').css({"opacity": 1.0});
-
+		$('.intro-logo').css({"opacity": 1.0});
 		window.requestAnimationFrame( function() {
-			$('.intro-head').animate({"opacity": 1.0});
-
-			$('.intro-sub > span').delay(1000).each(function(n){
-				var delay = Math.ceil(n/2)*600 + Math.floor(n/2)*200
-				$(this).delay(delay).animate({"opacity": 1.0})
+			$('.intro-logo > div').each(function(n){
+				$(this).delay(n*1000).animate({"opacity": 1.0})
+				$(this).find('li').each(function(i) {
+					var delay = String(i*0.1 + n);
+					$(this).css({"transform": "perspective(10px) rotateX(0deg)","transition": "transform 0.2s linear " + delay + "s, color 0.5s linear 0s"})			
+				});
 			});
-			//$('.intro-sub:not(span)').delay(5000).animate({"opacity": 1.0})
+
 			$('.scroll-indicator').delay(scrollIndicatorDelay).animate({"opacity": 1.0}, {duration: scrollIndicatorFadeInDuration})
 		});
 	}
@@ -93,26 +92,7 @@
 		$('.site-header').animate({opacity: 1.0}, {"duration": "1s"});
 		$('.site-header').css("visibility", "visible");
 	}
-	console.log("yae")
 
-	$('.intro-wrap span').each(function(n){
-		
-		console.log(n)
-		console.log($(this).attr('class'));
-		var className = $(this).attr('class');
-		if (className) {
-			$(this).hover(
-				function() {
-					console.log('.intro-wrap span.' + className)
-					$('.intro-wrap span.' + className).css("color", "gray")
-				},
-				function() {
-					$('.intro-wrap span.' + className).css("color", "black")
-				}
-			);
-		}
-		
-	});
 	
 	$('.scroll-indicator').click(function(){
 		if ($(this).css('opacity') != 0) {
