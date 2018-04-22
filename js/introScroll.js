@@ -19,7 +19,7 @@
 			scrollingSpeed: scrollingSpeed,
 			animateAnchor: false,
 			lazyLoading: false,
-			normalScrollElements: '.concerts-container, .map-container',
+			normalScrollElements: '.concerts-container, .map-container, .home-container',
 			afterLoad: function(anchorLink, index){
 				if (isRendered) {
 					if (index == 1) {showIntro()} 
@@ -64,7 +64,8 @@
 		$('.intro-wrap').css({"opacity": "0.0"});
 		$('.scroll-indicator').stop();
 		$('.scroll-indicator').css({"opacity": "0.0"});
-		$('.intro-wrap .intro-sub span').css({"opacity": 0.0});
+		$('.intro-wrap .intro-sub span').css({"opacity": 0.0, "pointer-events": "none"});
+		//$('.intro-wrap span').hide();
 	}
 
 	function showIntro(){
@@ -73,11 +74,14 @@
 		$('.intro-wrap').css({"opacity": 1.0});
 
 		window.requestAnimationFrame( function() {
+			//$('.intro-wrap .intro-head span').show(0);
 			$('.intro-head').animate({"opacity": 1.0});
 
 			$('.intro-sub > span').delay(1000).each(function(n){
 				var delay = Math.ceil(n/2)*600 + Math.floor(n/2)*200
-				$(this).delay(delay).animate({"opacity": 1.0})
+				$(this).delay(delay).animate({"opacity": 1.0}, 200, function(){
+						$(this).css({"pointer-events": "auto"})
+					});
 			});
 			//$('.intro-sub:not(span)').delay(5000).animate({"opacity": 1.0})
 			$('.scroll-indicator').delay(scrollIndicatorDelay).animate({"opacity": 1.0}, {duration: scrollIndicatorFadeInDuration})
@@ -93,17 +97,14 @@
 		$('.site-header').animate({opacity: 1.0}, {"duration": "1s"});
 		$('.site-header').css("visibility", "visible");
 	}
-	console.log("yae")
 
+	//Mousing over H in HEAR or History below transitions both H and History to gray, etc...
 	$('.intro-wrap span').each(function(n){
 		
-		console.log(n)
-		console.log($(this).attr('class'));
 		var className = $(this).attr('class');
 		if (className) {
 			$(this).hover(
 				function() {
-					console.log('.intro-wrap span.' + className)
 					$('.intro-wrap span.' + className).css("color", "gray")
 				},
 				function() {
@@ -127,24 +128,4 @@
         $.fn.fullpage.setScrollingSpeed(scrollingSpeed); //default one
     });
 	
-	$('.intro-logo .logo-head').hover(
-		function() {
-			$(this).parent().children('ul').children('li').css("color","black");
-			$(this).css("color","gray");
-		}, 
-		function() {
-			$(this).parent().children('ul').children('li').css("color","gray");
-			$(this).css("color","black");
-		}
-	)
 
-	$('.intro-logo ul').hover(
-		function() {
-			$(this).children('li').css("color","black");
-			$(this).parent().children('.logo-head').css("color","gray");
-		}, 
-		function() {
-			$(this).children('li').css("color","gray");
-			$(this).parent().children('.logo-head').css("color","black");
-		}
-	)

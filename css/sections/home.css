@@ -1,0 +1,18 @@
+.home-container {
+	position: relative;
+	width: 100vw;
+	margin-left: 2vw;
+	padding-left: 30px;
+	height: calc(100vh - 100px);
+	overflow-y: scroll;
+}
+
+
+.home-container p {
+	margin-right: 30vw;
+}
+
+.home-container img {
+	margin-right: 10vw;
+	width: 70%;
+}

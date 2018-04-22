@@ -5,11 +5,11 @@
 /*LOCAL FONTS*/
 @font-face {
 	font-family: "Museo Sans 700";
-	src: url("fonts/MuseoSans/museo_sans_700.ttf") format("truetype");
+	src: url("../assets/fonts/MuseoSans/museo_sans_700.ttf") format("truetype");
 	src: 
-		url("fonts/MuseoSans/museo_sans_700.eot"),
-		url("fonts/MuseoSans/museo_sans_700.woff") format("woff"),
-		url("fonts/MuseoSans/museo_sans_700.svg#filename") format("svg");
+		url("../assets/fonts/MuseoSans/museo_sans_700.eot"),
+		url("../assets/fonts/MuseoSans/museo_sans_700.woff") format("woff"),
+		url("../assets/fonts/MuseoSans/museo_sans_700.svg#filename") format("svg");
 }
 
 

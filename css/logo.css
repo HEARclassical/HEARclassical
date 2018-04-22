@@ -77,11 +77,13 @@ INTRO SCREEN
 .intro-wrap .intro-head {
   font-size: 12vmin;
   opacity: 0.0;
+  margin-bottom: 3vmin;
 }
 
 .intro-wrap .intro-sub {
   text-align: center;
   font-size: 6vmin;
+  margin-bottom: 2vmin;
 }
 
 .intro-wrap .intro-sub span{
