@@ -34,14 +34,34 @@ h1 {
 	font-weight: 500;
 	line-height: 26.4px;
 }
+
+h2 {
+	font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+	font-size: 19px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20.9px;
+}
+
 h3 {
 	font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
 	font-size: 14px;
 	font-style: normal;
 	font-variant: normal;
-	font-weight: 500;
+	font-weight: 300;
 	line-height: 15.4px;
 }
+
+h4 {
+	font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 250;
+	line-height: 12.4px;
+}
+
 p {
 	font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
 	font-size: 14px;

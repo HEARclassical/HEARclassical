@@ -3,5 +3,66 @@
 	width: 100vw;
 	margin-left: 2vw;
 	padding-left: 30px;
-	height: 100%;
+	height: calc(100vh - 100px);
+	display: flex;
+}
+
+
+.contact-us-container > p {
+	font-size: 16px;
+	
+}
+
+.contact-us-container > h1 {
+	color: rgb(100, 30, 200);
+	margin-right: 10vw;
+}
+
+
+.contact-us-container .email-address {
+	text-size: 15px;
+	font-family: monospace;
+}
+
+.contact-us-container .email-address::after {
+  content: attr(data-name) "@" attr(data-domain) "." attr(data-tld); 
+}
+
+.contact-us-container .staff {
+	text-size: 14px;
+	font-variant: small-caps;
+	margin-top: 5vh;
+}
+
+
+.contact-us-container .form-links {
+	margin-top: 25px;
+	margin-right: 5vw;
+	width: 40vw;
+}
+
+.contact-us-container .staff-info {
+	margin-top: 25px;
+	margin-left: 50px;
+	width: 40vw;
+	margin-right: 10vw;
+	line-height: 30%;
+}
+
+
+
+a.email-address:link{
+  color:blue;
+}
+a.email-address:visited{
+  color:blue;
+}
+a.email-address:hover{
+  color:orange;
+}
+a.email-address:focus{
+  color:orange;
+}
+a.email-address:active{
+  color:darkorange;
 }

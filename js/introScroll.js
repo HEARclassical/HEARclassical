@@ -29,7 +29,7 @@
 				}
 				console.log('load')
 				IDX = index;
-				console.log(anchorLink)
+				//console.log(anchorLink)
 			},
 			afterRender: function() {
 				isRendered = true;
@@ -40,7 +40,7 @@
 			},
 			onLeave: function(index, nextIndex, direction){
 				if (nextIndex == 1) {hideHeader(); hideIntro()}
-				console.log(index, nextIndex, direction)
+				//console.log(index, nextIndex, direction)
 			},
 			afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex) {
 				console.log(slideAnchor)
@@ -50,8 +50,21 @@
 					});
 					loadedMap = true;
 				}
+				$('.horizontal-section').css({'visibility': 'visible'})
 			},
-			onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
+			onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){
+				console.log(slideIndex, nextSlideIndex);
+
+				$('.horizontal-section').each(function(n){
+					var isBetween = ( (Math.min(nextSlideIndex, slideIndex) < n) && (n < Math.max(nextSlideIndex, slideIndex)))
+					console.log(n, isBetween)
+
+					if (isBetween) {
+						$(this).css({'visibility': 'hidden'})
+					}
+					
+				});
+			}
 
 		});
 	
