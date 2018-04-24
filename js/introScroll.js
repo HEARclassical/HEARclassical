@@ -51,9 +51,18 @@
 					loadedMap = true;
 				}
 				$('.horizontal-section').css({'visibility': 'visible'})
+
+				//indicate in the nav header that we are on the new slide.
+				var id = '#' + slideAnchor + '-anchor';
+				$(id + ' > .header-button').css({'color': 'black', 'text-decoration': 'underline black'});
 			},
 			onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){
 				console.log(slideIndex, nextSlideIndex);
+
+				
+				//reset location indication in the nav header.
+				$('.site-header .header-button').css({'color': 'gray', 'text-decoration': 'none'});
+
 
 				$('.horizontal-section').each(function(n){
 					var isBetween = ( (Math.min(nextSlideIndex, slideIndex) < n) && (n < Math.max(nextSlideIndex, slideIndex)))
