@@ -7,43 +7,68 @@
 	var scrollIndicatorDelay = 3000;
 	var scrollIndicatorFadeInDuration = 1500;
 
+	var comingFromSlide = false;
+	var comingFromIntro = false;
+
+	//scroll up to intro when logo is tapped;
+	$('.logo .logo-head').click(function(){ //clicking on the logo will scroll back up to the intro
+		//$('.header-wrapper').animate({'opacity': 0.0}, 100)
+		
+		//setTimeout(function(){
+			$.fn.fullpage.moveSectionUp()
+		//}, 100);*/
+
+		//for mobile devices make sure we are zoomed out for the intro. 
+		//$('meta[name="viewport"]').attr('content', 'width=' + zoomWidth + ', user-scalable:no');
+
+	})
 
 	$(window).bind("load",function() {
-
+		
+		//seems to be a problem with chrome setting the inherited header background in the right place; this seems to hack it right;
+		$('.header-wrapper').fadeOut(0);
 
 		$('#fullpage').fullpage({
 			sectionSelector: '.vertical-section',
 			slideSelector: '.horizontal-section',
+			scrollbar: false,
+			css3: false, //only hope of getting background-attachment: fixed to work cross browser
 			controlArrows: false,
 			anchors: ['HEAR', 'main'],
 			scrollingSpeed: scrollingSpeed,
 			animateAnchor: false,
 			lazyLoading: false,
-			normalScrollElements: '.concerts-container, .map-container, .home-container',
-			afterLoad: function(anchorLink, index){
-				if (isRendered) {
-					if (index == 1) {showIntro()} 
-					else {hideIntro(); showHeader()}	
-				} else {
-					hideIntro();
-				}
-				console.log('load')
+			normalScrollElements: '#main-content', //, .concerts-container, .map-container, .home-container, main, .horizontal-overlay, .scroll-overlay, .horizontal-section, .header-wrapper',
+			afterLoad: function(anchorLink, index) {
+				console.log(anchorLink, index);
+				
 				IDX = index;
+				if (isRendered) {
+					afterSectionLoad(IDX);
+				}
+
+
+
+				if (!comingFromSlide && !comingFromIntro) {
+					$('#home-anchor > .header-button').css({'color': 'lightgray', 'text-decoration': 'underline lightgray'});
+				}
+
 				//console.log(anchorLink)
 			},
 			afterRender: function() {
 				isRendered = true;
-				if (IDX == 1) {
-					showIntro();
-				}
-				console.log('render')
+				afterSectionLoad(IDX);
 			},
 			onLeave: function(index, nextIndex, direction){
-				if (nextIndex == 1) {hideHeader(); hideIntro()}
-				//console.log(index, nextIndex, direction)
+				if (nextIndex == 1) {introWillAppear()}
+				if (nextIndex == 2) {mainWillAppear()}
+
 			},
 			afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex) {
-				console.log(slideAnchor)
+
+				var comingFromSlide = true;
+
+				console.log(anchorLink, index, slideAnchor, slideIndex);
 				if (slideAnchor == "educational-videos" && !loadedMap) {
 					$.getScript('js/worldMap.js', function(data, textStatus, jqxhr){
 						console.log(textStatus);
@@ -54,24 +79,24 @@
 
 				//indicate in the nav header that we are on the new slide.
 				var id = '#' + slideAnchor + '-anchor';
-				$(id + ' > .header-button').css({'color': 'black', 'text-decoration': 'underline black'});
+
+				$('.site-header .header-button').css({'color': 'white', 'text-decoration': 'inherit'});
+				$(id + ' > .header-button').css({'color': 'lightgray', 'text-decoration': 'underline lightgray'});
 			},
 			onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){
 				console.log(slideIndex, nextSlideIndex);
 
 				
 				//reset location indication in the nav header.
-				$('.site-header .header-button').css({'color': 'gray', 'text-decoration': 'none'});
+				$('.site-header .header-button').css({'color': 'white', 'text-decoration': 'inherit'});
 
 
 				$('.horizontal-section').each(function(n){
 					var isBetween = ( (Math.min(nextSlideIndex, slideIndex) < n) && (n < Math.max(nextSlideIndex, slideIndex)))
-					console.log(n, isBetween)
-
 					if (isBetween) {
 						$(this).css({'visibility': 'hidden'})
 					}
-					
+						
 				});
 			}
 
@@ -79,24 +104,63 @@
 	
 	});
 
+
+	function afterSectionLoad(index) {
+		if (index == 1) {
+			comingFromIntro = true;
+			comingFromSlide = false;
+			introDidAppear()
+
+		} 
+		if (index == 2) {
+
+			comingFromSlide = true;
+			comingFromIntro = false;
+			mainDidAppear()
+
+		}
+	}
+
+	function introWillAppear() {
+		//$('.header-wrapper').fadeOut(100);
+		$('.header-wrapper').stop().fadeOut(500);;
+	}
+
+	function introDidAppear() {
+		showIntro();
+	}
+
+	function mainWillAppear() {
+		//$('.header-wrapper').fadeOut(100);
+		//hideIntro();
+		$('#fullpage').css({"z-index": 0})
+	}
+
+	function mainDidAppear() {
+		showHeader();
+		hideIntro();
+	}
+
+
 	function hideIntro(){
-		$('.intro-wrap').stop();
-		$('.intro-wrap .intro-sub').stop();
-		$('.intro-wrap .intro-sub span').stop();
-		$('.intro-wrap').css({"opacity": "0.0"});
-		$('.scroll-indicator').stop();
-		$('.scroll-indicator').css({"opacity": "0.0"});
-		$('.intro-wrap .intro-sub span').css({"opacity": 0.0, "pointer-events": "none"});
-		//$('.intro-wrap span').hide();
+		//window.requestAnimationFrame(function(){
+			$('.intro-wrap').stop();
+			$('.intro-wrap .intro-sub').stop();
+			$('.intro-wrap .intro-sub span').stop();
+			$('.intro-wrap').css({"opacity": "0.0"});
+			$('.scroll-indicator').clearQueue().stop();
+			$('.scroll-indicator').css({"opacity": "0.0"});
+			$('.intro-wrap .intro-sub span').css({"opacity": 0.0, "pointer-events": "none"});
+		//});
 	}
 
 	function showIntro(){
 
 		hideIntro();
 		$('.intro-wrap').css({"opacity": 1.0});
+		//$('#fullpage').css({"z-index": 600})
 
 		window.requestAnimationFrame( function() {
-			//$('.intro-wrap .intro-head span').show(0);
 			$('.intro-head').animate({"opacity": 1.0});
 
 			$('.intro-sub > span').delay(1000).each(function(n){
@@ -105,19 +169,18 @@
 						$(this).css({"pointer-events": "auto"})
 					});
 			});
-			//$('.intro-sub:not(span)').delay(5000).animate({"opacity": 1.0})
 			$('.scroll-indicator').delay(scrollIndicatorDelay).animate({"opacity": 1.0}, {duration: scrollIndicatorFadeInDuration})
 		});
 	}
 
 	function hideHeader() {
-		$('.site-header').animate({opacity: 0.0}, {"duration": "1s"})
-		$('.site-header').delay(1000).css("visibility", "hidden")
+		$('.site-header').animate({opacity: 0.0}, {"duration": "1s"});
+		//$('body').css({'background': 'white'})
 	}
 
-	function showHeader() {
-		$('.site-header').animate({opacity: 1.0}, {"duration": "1s"});
-		$('.site-header').css("visibility", "visible");
+	function showHeader() {		
+		//$('.header-wrapper').fadeIn(100);
+		$('.header-wrapper').delay(100).fadeIn(2000);
 	}
 
 	//Mousing over H in HEAR or History below transitions both H and History to gray, etc...
@@ -141,8 +204,8 @@
 		if ($(this).css('opacity') != 0) {
 			$.fn.fullpage.moveSectionDown()
 		}
-	})
-
+	});
+	
 	$(window).resize(function () {
     	//if touch device should rebuild immediately....
         $.fn.fullpage.setScrollingSpeed(0);

@@ -1,19 +1,12 @@
 
-.concerts-container {
-	position: relative;
-	width: 100vw;
-	margin-left: 2vw;
-	padding-left: 30px;
-	height: calc(100vh - 100px);
-	overflow-y: scroll;
-}
-
 .concert-container {
 	position: relative;
 	display: flex;
-	margin-top: 0x;
+	margin-top: 20px;
 	margin-bottom: 30px;
 	margin-right: 10vw;
+	padding-left: 30px;
+
 }
 
 .concert-date-container {

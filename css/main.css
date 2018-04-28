@@ -1,0 +1,55 @@
+body {
+	background-color: #fefefe;
+
+}
+
+
+main {
+	position: relative;
+	width: 100vw;
+	height: 100vh
+}
+
+.scroll-overlay {
+	position: relative;
+	overflow-y: scroll;
+	padding: 0vmin 20vw 0vmin 20vw;
+	width: 100vw;
+	/*height accounts for scroll overlay cutting off at bottom of header*/
+	height: calc(100vh - 100px);
+	top: 100px;
+}
+
+.horizontal-overlay {
+	/*margin-left: 20vw;*/
+	margin-top: 5vh;
+	width: 60vw;
+	background-color: aliceblue;
+	opacity: 0.9;
+	height: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	overflow-x: hidden;
+	/*padding-top: 5vmin;*/
+	border-radius: 2vw;
+}
+
+.background-overlay {
+	background-color: white;
+	opacity: 1.0;
+	z-index: 500;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+
+}
+
+#main-content {
+	background: url('/assets/images/background.jpg') no-repeat;
+	background-attachment: fixed;
+	 /* account for 1st slide height and extra 50% to center */
+	/*background-position: center calc(100vh + 50%) !important;*/
+	background-position: center 30%;
+	background-size: cover;
+	overflow: hidden;
+}

@@ -1,10 +1,12 @@
 .contact-us-container {
 	position: relative;
-	width: 100vw;
-	margin-left: 2vw;
+	height: 100%;
+	overflow: hidden;
+	margin-bottom: 100px;
+	/*margin-left: 2vw;
 	padding-left: 30px;
 	height: calc(100vh - 100px);
-	display: flex;
+	display: flex;*/
 }
 
 
@@ -15,13 +17,13 @@
 
 .contact-us-container > h1 {
 	color: rgb(100, 30, 200);
-	margin-right: 10vw;
 }
 
 
 .contact-us-container .email-address {
 	text-size: 15px;
 	font-family: monospace;
+	margin-left: 30px;
 }
 
 .contact-us-container .email-address::after {
@@ -37,16 +39,15 @@
 
 .contact-us-container .form-links {
 	margin-top: 25px;
-	margin-right: 5vw;
-	width: 40vw;
+	width: 80%;
+	margin-left: 10%;
 }
 
 .contact-us-container .staff-info {
 	margin-top: 25px;
-	margin-left: 50px;
-	width: 40vw;
-	margin-right: 10vw;
-	line-height: 30%;
+	margin-left: 10%;
+	width: 80%;
+	/*line-height: 30%;*/
 }
 
 

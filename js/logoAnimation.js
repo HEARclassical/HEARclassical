@@ -4,10 +4,16 @@
 /*****this script adds a hover event to each letter of the hear logo, causing a folding animation to trigger.  ****/
 
 
+var logoLiGradient = 0.03;
 
-$('.logo .logo-head').click(function(){ //clicking on the logo will scroll back up to the intro
-	$.fn.fullpage.moveSectionUp()
-})
+
+
+$('.logo > div').each(function(){
+	$(this).find('li').each(function(n){
+		$(this).css({'background': 'linear-gradient(to bottom, rgba(0,0,0,' + n*logoLiGradient + '), rgba(0,0,0,' + (n+1)*logoLiGradient + ')'})
+	});
+});
+
 
 $('.logo .logo-head').hover( 
 	function(){ //mouseenter
@@ -40,7 +46,7 @@ $('.logo .logo-head').hover(
 			nextFold(ufw[0], undefined);
 		}
 		
-		$(this).animate({"color": "black"})
+		$(this).animate({"color": "white"})
 
 	}
 );
