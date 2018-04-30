@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title> Tell Us About a Composer</title>
+</head>
+
+
+<body>
+	<form id="gform" method="POST" action="https://script.google.com/macros/s/AKfycbwuGjdmH9PrcDT5y1Yasf_MJiTCtLZ1C4zZlWsMvsJTJYs9iIc/exec">
+
+	<fieldset class="pure-group">
+      <label for="ComposerName">What's the composer's name?</label>
+      <input id="ComposerName" name="ComposerName" required placeholder="Anonymous IV" />
+    </fieldset>
+
+    <fieldset class="pure-group">
+      <label for="ComposerCountry">Where are/were they based? </label>
+      <input id="ComposerCountry" name="ComposerCountry"
+      placeholder="Tell us what's on your mind..." />
+    </fieldset>
+
+    <fieldset class="pure-group">
+      <label for="ComposerDates">Date of Birth / Death?</label>
+      <input id="ComposerDates" name="ComposerDates"
+       placeholder="(dd/mm/yyyy) - (dd/mm/yyyy)"/>
+      <span id="email-invalid" style="display:none">
+        Must be a valid email address</span>
+    </fieldset>
+
+    <fieldset class="pure-group">
+      <label for="ComposerWebsite"> Where can we learn more about them? </label>
+      <input id="ComposerWebsite" name="ComposerWebsite" placeholder="composerWebsite.com" />
+    </fieldset>
+
+    <fieldset class="pure-group">
+      <label for="Comment">Anything you want to add? </label>
+      <textarea id="Comment" name="Comment" placeholder="...." rows="3"> </textarea>
+    </fieldset>
+
+    <button class="button-success pure-button button-xlarge">
+      <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+
+  </form>
+
+  <!-- Customise the Thankyou Message People See when they submit the form: -->
+  <div style="display:none;" id="thankyou_message">
+    <h2><em>Thanks</em> for contacting us!
+      We will get back to you soon!</h2>
+  </div>
+
+  <!-- Submit the Form to Google Using "AJAX" -->
+  <script data-cfasync="false" type="text/javascript"
+  src="https://cdn.rawgit.com/dwyl/learn-to-send-email-via-google-script-html-no-server/master/form-submission-handler.js"></script>
+
+
+</body>
+
+</html>

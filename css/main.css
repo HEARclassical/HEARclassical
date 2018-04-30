@@ -7,7 +7,8 @@ body {
 main {
 	position: relative;
 	width: 100vw;
-	height: 100vh
+	height: 100vh;
+	z-index: 2;
 }
 
 .scroll-overlay {
@@ -34,22 +35,27 @@ main {
 	border-radius: 2vw;
 }
 
+/* for a gradient floor */
 .background-overlay {
-	background-color: white;
+	background: linear-gradient(to top, rgba(30,0,255,0), rgba(30,0,255,.2));
 	opacity: 1.0;
-	z-index: 500;
+	z-index: 1;
 	width: 100vw;
 	height: 100vh;
 	position: fixed;
-
+	pointer-events: none;
 }
 
 #main-content {
-	background: url('/assets/images/background.jpg') no-repeat;
+	background: url('/assets/images/background.jpg');
 	background-attachment: fixed;
 	 /* account for 1st slide height and extra 50% to center */
 	/*background-position: center calc(100vh + 50%) !important;*/
 	background-position: center 30%;
 	background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+	background-repeat: no-repeat;
 	overflow: hidden;
 }

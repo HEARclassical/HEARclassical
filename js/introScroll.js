@@ -27,6 +27,7 @@
 		
 		//seems to be a problem with chrome setting the inherited header background in the right place; this seems to hack it right;
 		$('.header-wrapper').fadeOut(0);
+		$('.header-blur').fadeOut(0);
 
 		$('#fullpage').fullpage({
 			sectionSelector: '.vertical-section',
@@ -50,7 +51,7 @@
 
 
 				if (!comingFromSlide && !comingFromIntro) {
-					$('#home-anchor > .header-button').css({'color': 'lightgray', 'text-decoration': 'underline lightgray'});
+					$('#home-anchor > .header-button').css({'color': 'lightgray', 'text-decoration-line': 'underline', 'text-decoration-color': 'lightgray'});
 				}
 
 				//console.log(anchorLink)
@@ -80,15 +81,15 @@
 				//indicate in the nav header that we are on the new slide.
 				var id = '#' + slideAnchor + '-anchor';
 
-				$('.site-header .header-button').css({'color': 'white', 'text-decoration': 'inherit'});
-				$(id + ' > .header-button').css({'color': 'lightgray', 'text-decoration': 'underline lightgray'});
+				$('.site-header .header-button').css({'color': 'white', 'text-decoration-line': 'inherit', 'text-decoration-color': 'white'});
+				$(id + ' > .header-button').css({'color': 'lightgray', 'text-decoration-line': 'underline', 'text-decoration-color': 'lightgray'});
 			},
 			onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){
 				console.log(slideIndex, nextSlideIndex);
 
 				
 				//reset location indication in the nav header.
-				$('.site-header .header-button').css({'color': 'white', 'text-decoration': 'inherit'});
+				$('.site-header .header-button').css({'color': 'white', 'text-decoration-line': 'inherit', 'text-decoration-color': 'white'});
 
 
 				$('.horizontal-section').each(function(n){
@@ -123,7 +124,8 @@
 
 	function introWillAppear() {
 		//$('.header-wrapper').fadeOut(100);
-		$('.header-wrapper').stop().fadeOut(500);;
+		$('.header-wrapper').stop().fadeOut(500);
+		$('.header-blur').stop().fadeOut(500);
 	}
 
 	function introDidAppear() {
@@ -180,7 +182,9 @@
 
 	function showHeader() {		
 		//$('.header-wrapper').fadeIn(100);
-		$('.header-wrapper').delay(100).fadeIn(2000);
+		$('.header-wrapper').fadeIn(2000);
+		$('.header-blur').fadeIn(2000);
+
 	}
 
 	//Mousing over H in HEAR or History below transitions both H and History to gray, etc...
