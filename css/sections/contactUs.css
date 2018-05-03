@@ -21,7 +21,7 @@
 
 
 .contact-us-container .email-address {
-	text-size: 15px;
+	font-size: 15px;
 	font-family: monospace;
 	margin-left: 30px;
 }
@@ -31,7 +31,7 @@
 }
 
 .contact-us-container .staff {
-	text-size: 14px;
+	font-size: 14px;
 	font-variant: small-caps;
 	margin-top: 5vh;
 }
@@ -50,20 +50,25 @@
 	/*line-height: 30%;*/
 }
 
+.contact-us-container .form-links a {
+	font-weight: bold;
+	font-size: 16px;
+}
 
 
-a.email-address:link{
+
+a.email-address:link, a.form-link:link{
   color:blue;
 }
-a.email-address:visited{
+a.email-address:visited, a.form-link:visited{
   color:blue;
 }
-a.email-address:hover{
+a.email-address:hover, a.form-link:hover{
   color:orange;
 }
-a.email-address:focus{
+a.email-address:focus, a.form-link:focus{
   color:orange;
 }
-a.email-address:active{
+a.email-address:active, a.form-link:active{
   color:darkorange;
 }

@@ -73,6 +73,8 @@
 
 		<div class="vertical-section" id="main-content" data-anchor="main">
 			
+
+
 			<!-- background-overlay places a linear gradient over the background image of main-content -->
 			<div class="background-overlay">
 			</div>
@@ -186,6 +188,16 @@
 			<!-- same size as header-wrapper, placed directly below to inherit background and blur it -->
 			<div class="header-blur">
 			</div>
+			
+			<div class = "scroll-fade"></div>
+
+			<div id = "form-overlay" >
+				<div id="form-close-button" aria-label="close" role="button"></div>
+				<div id="form-container">
+					<iframe id="form-iframe" name="form-iframe"> </iframe>
+				</div>
+			</div>
+
 
 			<main role="main">
 
@@ -303,11 +315,11 @@
 							<div class="contact-us-container">
 								<div class="form-links">
 									<h1> Interested in being an ambassador for HEAR classical? </h1>
-									<p> We care about your story and connecting you to other individuals who use music for social justice. <a href=""> Click here </a> if you are interested in being an ambassador featured on our website.
+									<p> We care about your story and connecting you to other individuals who use music for social justice. <a class="form-link" href="forms/composerForm.html" target="form-iframe"> Click here </a> if you are interested in being an ambassador featured on our website.
 									</p>
 
 									<h1> Add a composer to the Map: </h1>
-									<p> <a href = ""> Click here </a> if you would like to add a composer's name to the map. </p>
+									<p> <a class="form-link" href = "forms/composerForm.html" target="form-iframe"> Click here </a> if you would like to add a composer's name to the map. </p>
 									
 									<h1> Comments/Suggestions for us? </h1>
 									<p> You can fill out the form below or write to one us directly </p>
@@ -336,6 +348,7 @@
 
 
 </body>
+<script src="js/formPopup.js"></script>
 <script src="js/logoAnimation.js"></script>
 <script type="text/javascript" src="js/introScroll.js"></script>
 <!--<script type="text/javascript" src="js/worldMap.js"></script> -->

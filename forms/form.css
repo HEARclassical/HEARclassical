@@ -1,0 +1,95 @@
+
+/*************
+Form elements
+**************/
+
+
+
+label {
+	text-align: center;
+	display: block;
+	font-size: 4vmin;
+	margin-bottom: 2vmin;
+}
+
+input {
+	width: inherit;
+	border: .5px solid rgba(0,0,0,0.3);
+	border-radius: 3px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+}
+
+input:focus, textarea:focus {
+	color: white;
+	background: linear-gradient(to bottom right, darkblue, lightblue);
+
+	/*background: gradient(linear, left top, left 25, from(#FFFFFF), 
+           color-stop(4%,#c6d1da), to(#5E768D));*/
+}
+
+input:focus::placeholder, textarea:focus::placeholder {
+	color: lightgray;
+}
+
+textarea {
+	border: .5px solid rgba(0,0,0,0.3);
+	border-radius: 3px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	display: block;
+	resize: none;
+}
+
+
+fieldset {
+	border: none;
+	display: block;
+}
+
+h1 {
+	text-align: center;
+	font-size: 8vmin!important;
+	margin-top: 4%;
+}
+
+#thankyou_message {
+	top: 25%;
+	position: relative;
+
+}
+
+#thankyou_message h2 {
+	text-align: center;
+	font-size: 7vw!important;
+	margin-right: 10%;
+	margin-left: 10%;
+	line-height: 110%!important;
+}
+
+
+
+#thankyou_message h3 {
+	text-align: center;
+	font-size:4vw!important;
+	margin-right: 10%;
+	margin-left: 10%;
+	line-height: 110%!important;
+}
+
+button.form-submit-button {
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	display: block;
+	background: darkblue;
+	color: white;
+	font-size: 14px;
+	border-radius: 3px;
+	padding: 5px 15px 5px 15px;
+}
+

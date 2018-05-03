@@ -1,5 +1,6 @@
 	var scrollingSpeed = 700;
 	var IDX;
+	var nxtIDX;
 	var isRendered = false;
 	var loadedMap = false;
 
@@ -9,6 +10,8 @@
 
 	var comingFromSlide = false;
 	var comingFromIntro = false;
+
+	var slideTransitioningCounter = 0;
 
 	//scroll up to intro when logo is tapped;
 	$('.logo .logo-head').click(function(){ //clicking on the logo will scroll back up to the intro
@@ -44,15 +47,18 @@
 				console.log(anchorLink, index);
 				
 				IDX = index;
+
+				
+				if (!comingFromSlide && !comingFromIntro) {
+					$('#home-anchor > .header-button').css({'color': 'lightgray', 'text-decoration-line': 'underline', 'text-decoration-color': 'lightgray'});
+				}
+				
 				if (isRendered) {
 					afterSectionLoad(IDX);
 				}
 
 
 
-				if (!comingFromSlide && !comingFromIntro) {
-					$('#home-anchor > .header-button').css({'color': 'lightgray', 'text-decoration-line': 'underline', 'text-decoration-color': 'lightgray'});
-				}
 
 				//console.log(anchorLink)
 			},
@@ -69,14 +75,26 @@
 
 				var comingFromSlide = true;
 
-				console.log(anchorLink, index, slideAnchor, slideIndex);
+				slideTransitioningCounter = Math.max(slideTransitioningCounter - 1, 0);
+
 				if (slideAnchor == "educational-videos" && !loadedMap) {
 					$.getScript('js/worldMap.js', function(data, textStatus, jqxhr){
 						console.log(textStatus);
 					});
 					loadedMap = true;
 				}
-				$('.horizontal-section').css({'visibility': 'visible'})
+
+				//when we settle on a slide, make all the other slides invisible so that any resize looks a bit nicer 
+				if (slideTransitioningCounter == 0 && nxtIDX == slideIndex) {
+					IDX = nxtIDX;
+					$('.horizontal-section').each(function(n){
+						if (n != slideIndex) {
+							$(this).css({'visibility': 'hidden'})
+						}
+							
+					});
+				}
+				console.log(slideTransitioningCounter);
 
 				//indicate in the nav header that we are on the new slide.
 				var id = '#' + slideAnchor + '-anchor';
@@ -85,20 +103,36 @@
 				$(id + ' > .header-button').css({'color': 'lightgray', 'text-decoration-line': 'underline', 'text-decoration-color': 'lightgray'});
 			},
 			onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){
-				console.log(slideIndex, nextSlideIndex);
 
 				
 				//reset location indication in the nav header.
 				$('.site-header .header-button').css({'color': 'white', 'text-decoration-line': 'inherit', 'text-decoration-color': 'white'});
 
+				/*make slides between current and destination invisible */
+				console.log('left')
+				$('.horizontal-section').each(function(n){
+					if (n == slideIndex || n==nextSlideIndex) {
+						$(this).css({'visibility': 'visible'})
+					} else {
+						$(this).css({'visibility': 'hidden'})
+					}
+				});
 
+				nxtIDX = nextSlideIndex;
+
+				/*
 				$('.horizontal-section').each(function(n){
 					var isBetween = ( (Math.min(nextSlideIndex, slideIndex) < n) && (n < Math.max(nextSlideIndex, slideIndex)))
 					if (isBetween) {
 						$(this).css({'visibility': 'hidden'})
+					} else {
+						$(this).css({'visibility': 'visible'})
 					}
-						
 				});
+
+				*/
+				slideTransitioningCounter += 1;
+				
 			}
 
 		});

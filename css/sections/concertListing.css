@@ -15,13 +15,14 @@
 
 
 .concert-date {
-	background-color: #dfdfdf;
+	background-color: #8488c787;
 	top: 40%;
 	width: 70px;
 	height: 70px;
 	text-align: center;
 	cursor: default;
 	user-select: none;
+	border-radius: .25em;
 }
 
 p.month {
