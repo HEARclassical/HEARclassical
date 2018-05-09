@@ -67,7 +67,7 @@ queue()
 
 function ready(error, world, cctn) {
   if (error) throw error;
-
+  console.log(world, error, cctn)
   var countries = topojson.feature(world, world.objects.countries).features,
       neighbors = topojson.neighbors(world.objects.countries.geometries);
  COUNTRIES = countries;
@@ -148,10 +148,13 @@ function ready(error, world, cctn) {
 
 
   function zoomed() {
+    /*
       svg.attr("transform",
           "translate(" + zoom.translate() + ")" +
           "scale(" + zoom.scale() + ")"
       );
+      */
+      svg.attr("style", "will-change: transform; transform: translate(" + zoom.translate()[0] + "px, " + zoom.translate()[1] + "px) scale(" + zoom.scale() + ")")
   }
 
   function interpolateZoom (translate, scale) {
@@ -170,6 +173,7 @@ function ready(error, world, cctn) {
 
   //adapted from https://bl.ocks.org/mbostock/2206590
   function clickZoom(d) {
+
     var x, y, scale;
 
     if (d && centered !== d) {
@@ -193,9 +197,16 @@ function ready(error, world, cctn) {
     var i;
 
 
-    interpolateZoom([resizedWidth - scale*x, resizedHeight - scale*y], scale)
+    //interpolateZoom([resizedWidth - scale*x, resizedHeight - scale*y], scale)
 
-
+    /*
+    svg.transition()
+      .duration(1500)
+      .attr("transform", "translate(" + (resizedWidth -x*scale) + "," + (resizedHeight - y*scale) +  ")scale(" + scale + ")");
+    */
+    svg.transition()
+      .duration(1500)
+      .attr("style", "transform: translate(" + (resizedWidth -x*scale) + "px," + (resizedHeight - y*scale) +  "px) scale(" + scale + ")");
     
 /*
 
@@ -213,11 +224,7 @@ function ready(error, world, cctn) {
       .attr("transform", "translate(" + resizedWidth + "," + resizedHeight + ")scale(" + scale + ")translate(" + -x + "," + -y + ")")
     */
 
-/*
-    svg.transition()
-      .duration(1500)
-      .attr("transform", "translate(" + (resizedWidth -x*scale) + "," + (resizedHeight - y*scale) +  ")scale(" + scale + ")");
-    */
+
 
     //svg.transition().duration(i.duration).attrTween("transform", function() { return function(t) {console.log(i(t)); return transform(i(t)); }; });
     /*
@@ -312,11 +319,13 @@ $(window).resize(function(){
   var heightTranslate = (-newScale*initialHeight+newHeight)/2,
       widthTranslate = (newScale*initialWidth - effectiveWidth)/2 - (effectiveWidth - newWidth)/2,
       translate=[widthTranslate, heightTranslate];
-  
+  /* 
   g.attr("transform", [
     "translate(" + translate + ")",
      "scale(" + newScale + ")"
   ].join(" "));
+*/
+  g.attr("style", "transform: translate(" + translate[0] + "px, " + translate[1] + "px) scale(" + newScale + ")");
 
   //keep track of transform so that we can apply transform to mouse
   rescaleTransform.translate = translate;

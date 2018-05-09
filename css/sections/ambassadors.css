@@ -1,0 +1,10 @@
+
+.ambassadors-container {
+	position: relative;
+	display: flex;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	margin-right: 10vw;
+	padding-left: 30px;
+
+}

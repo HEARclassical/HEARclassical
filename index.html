@@ -150,38 +150,81 @@
 					</div>
 					<div class="header-buttons">
 						<div>
-							<a id="home-anchor" href="#main/home">	
-								<p class="header-button">Home</p>
-							</a>
+							<div class="header-button">
+								<a id="home-anchor" href="#main/home">	
+									<p class="header-button-text">Home</p>
+								</a>
+							</div>
 						</div>
 
 						<div>
-							<a id= "about-us-anchor" href="#main/about-us">	
-								<p class="header-button">About Us</p>
-							</a>
-						</div>
-						<div>
-							<a id = "educational-videos-anchor" href="#main/educational-videos">	
-								<p class="header-button">Educational Videos</p>
-							</a>
-						</div>
-						<div>
-							<a id = "concert-listings-anchor" href="#main/concert-listings">	
-								<p class="header-button">Concert Schedule</p>
-							</a>
+							<div class="header-button">
+								<p class="header-button-text">About Us</p>
+
+								<!--
+								<a id= "about-us-anchor" href="#main/about-us">	
+									<p class="header-button-text">About Us</p>
+								</a>
+								-->
+							</div>
+							<ul id="about-us-subheader" class="sub-header">
+								<li>
+									<a id="mission-anchor" href="#main/mission">	
+										<p class="header-button-text">The Mission</p>
+									</a>
+								</li>
+								<li>
+									<a id="contact-us-anchor" href="#main/contact-us">	
+										<p class="header-button-text">Get in Touch</p>
+									</a>
+								</li>
+								<li>
+									<a id="support-us-anchor" href="#main/support-us">
+										<p class="header-button-text">Donate</p>
+									</a>
+								</li>
+							</ul>
 						</div>
 
 						<div>
-							<a id = "contact-us-anchor" href="#main/contact-us">	
-								<p class="header-button">Contact Us</p>
-							</a>
+							<div class="header-button">
+								<a id = "ambassadors-anchor" href="#main/ambassadors">	
+									<p class="header-button-text">Ambassadors</p>
+								</a>
+							</div>
+						</div>
+
+						<div>
+							<div class="header-button">
+								<a id = "educational-videos-anchor" href="#main/educational-videos">	
+									<p class="header-button-text">Resources</p>
+								</a>
+							</div>
+						</div>
+						<div>
+							<div class="header-button">
+								<a id = "concert-schedule-anchor" href="#main/concert-schedule">	
+									<p class="header-button-text">Concert Schedule</p>
+								</a>
+							</div>
+							<ul id="concert-schedule-subheader" class="sub-header">
+								<li>
+									<a id="concert-schedule-upcoming-anchor" href="#main/concert-schedule-upcoming">	
+										<p class="header-button-text">Upcoming Concerts</p>
+									</a>
+								</li>
+								<li>
+									<a id="concert-schedule-past-anchor" href="#main/concert-schedule-past">	
+										<p class="header-button-text">Past Concerts</p>
+									</a>
+								</li>
+							</ul>
+
 						</div>
 					</div>
+					
 
-					<div class="search" role="search">
-						<form id ="search-form" class="search-form" action="/">
-						</form>
-					</div>
+
 				</header>
 			</div>
 
@@ -220,7 +263,7 @@
 					</div>	
 				</div>
 
-				<div class="horizontal-section" data-anchor="about-us">
+				<div class="horizontal-section" data-anchor="mission">
 					<div class="scroll-overlay">
 						<div class="horizontal-overlay">
 							<div id="about-us-container">
@@ -233,18 +276,116 @@
 						</div>
 					</div>
 				</div>
+				<div class="horizontal-section" data-anchor="contact-us">
+
+					<div class="scroll-overlay">
+						<div class="horizontal-overlay">
+							<div class="contact-us-container">
+								<div class="form-links">
+									<h1> Interested in being an ambassador for HEAR classical? </h1>
+									<p> We care about your story and connecting you to other individuals who use music for social justice. <a class="form-link" href="forms/composerForm.html" target="form-iframe"> Click here </a> if you are interested in being an ambassador featured on our website.
+									</p>
+
+									<h1> Add a composer to the Map: </h1>
+									<p> <a class="form-link" href = "forms/composerForm.html" target="form-iframe"> Click here </a> if you would like to add a composer's name to the map. </p>
+									
+									<h1> Comments/Suggestions for us? </h1>
+									<p> You can fill out the form below or write to one us directly </p>
+								</div>
+								<div class = "staff-info">
+									<h2> Administrative Staff </h2>
+									<p class="staff"> Felice Doynov, Founder and Director </p>
+									<a data-name="felice.doynov" data-domain="hearclassical" data-tld="org" href="#" class="email-address" onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false"></a>
+									
+									<p class="staff"> Jonathan Salamon, Program Manager </p>
+									<a data-name="jonathan.salamon" data-domain="hearclassical" data-tld="org" href="#" class="email-address" onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false"></a>
+									
+									<p class="staff"> Adam Caplan-Bricker, Design and Technology </p>
+									<a data-name="adam.caplan.bricker" data-domain="hearclassical" data-tld="org" href="#" class="email-address" onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false"></a>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="horizontal-section" data-anchor="support-us">
+					<div class="scroll-overlay">
+						<div class="horizontal-overlay">
+							<div class="donate-container">
+								<p> We'll put a paypal link here as soon as we have one </p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="horizontal-section" data-anchor="ambassadors">
+					<div class="scroll-overlay">
+						<div class="horizontal-overlay">
+							<div class="ambassadors-container">
+								<div id="Steven-Nichols-Banks" class="ambassador">
+									<div class="ambassador-photo">
+										<img src= >
+									</div>
+									<div class="ambassador-info">
+										<h2 class="ambassador-name">
+											Steven Nichols Banks
+										</h2>
+										<div class="ambassador-about">
+											<p>
+												Steven Nichols Banks is a classical saxophonist, chamber musician, jazz and commercial saxophonist, music educator, advocate for diversity and inclusion in classical music, and composer. Steven serves as Assistant Professor of Saxophone and Jazz Studies at the Baldwin Wallace Conservatory of Music. He is the baritone saxophonist of the award-winning Kenari Quartet, and has recently started performing in the wind section of The Cleveland Orchestra. Steven is an advocate for diversity and inclusion in classical music education and performance. In March 2017, Steven gave a talk at the TEDxNorthwesternU 2017 conference with ideas about how to create change in institutionalized prejudices against women and people of color.
+											</p>
+											<p>
+												Steven has a Master of Music degree from the Northwestern University Bienen School of Music in Saxophone Performance, Bachelor of Arts degree in Saxophone Performance with a minor in Jazz Studies from the Indiana University Jacobs School of Music, and a high school diploma from the University of North Carolina School of the Arts. 
+											</p>
+										</div>
+										<a class="ambassador-website" target="_blank" href="http://www.steven-banks.com"> 
+											<p>steven-banks.com</p>
+										</a>
+									</div>
+								</div>
+
+								<div id="Arield-Horowitz" class="ambassador">
+									<div class="ambassador-photo">
+									</div>
+									<div class="ambassador-info">
+										<h2 class="ambassador-name">
+											Ariel Horowitz
+										</h2>
+										<div class="ambassador-about">
+											<p>
+												Ariel Horowitz is a violinist, music educator, and social justice advocate currently pursuing her masters at the Yale School of Music. Ariel is the founder of The Heartbeat Project, a student-run program that provides music and math education for students living on the Navajo Reservation. The annual summer workshop combines the fundamentals of music and math for Navajo (Diné) K-12 students while cultivating a safe space for students to thrive and gain confidence in themselves. The Heartbeat Project strives to create an atmosphere of cultural exchange in which the impact of American colonialism on indigenous peoples is acknowledged, and the teaching artists respectfully engage with Diné music, cultures, and customs.
+											</p>
+										</div>
+										<a class="ambassador-website" target="_blank" href="arielhorowitz.com"> 
+											<p>arielhorowitz.com</p>
+										</a>
+									</div>
+								</div>
+		
+
+							</div>
+						</div>
+					</div>
+				</div>
+			
+
 				<div class="horizontal-section" data-anchor="educational-videos">
+					
 					<div class="educational-videos-container">
 						<div class="map-container">
 
 						</div>
 					</div>
+					
 				</div>
-				<div class="horizontal-section" data-anchor="concert-listings">
+				<div class="horizontal-section" data-anchor="concert-schedule-upcoming">
 
 					<div class="scroll-overlay">
 						<div class="horizontal-overlay">
-							<div id = "concerts-container">
+							<div class = "concerts-container">
 								<div id="hear-through-time" class="concert-container">
 
 									<div class="concert-date-container">
@@ -308,40 +449,76 @@
 						</div>
 					</div>
 				</div>
-				<div class="horizontal-section" data-anchor="contact-us">
+
+				<div class="horizontal-section" data-anchor="concert-schedule-past">
 
 					<div class="scroll-overlay">
 						<div class="horizontal-overlay">
-							<div class="contact-us-container">
-								<div class="form-links">
-									<h1> Interested in being an ambassador for HEAR classical? </h1>
-									<p> We care about your story and connecting you to other individuals who use music for social justice. <a class="form-link" href="forms/composerForm.html" target="form-iframe"> Click here </a> if you are interested in being an ambassador featured on our website.
+							<div class = "concerts-container">
+								<div id="hear-through-time" class="concert-container">
+
+									<div class="concert-date-container">
+										<div class="concert-date">
+											<p class="month">
+												Apr
+											</p>
+											<p class="day">
+												28
+											</p>
+										</div>
+									</div>	
+									<div class="concert-description-container">
+
+									<h class="concert-title">
+										Hear Through Time 
+									</h>
+									<p class="concert-full-date">
+										Saturday, April 28, 2018
+									</p>
+									<p class="concert-time">
+										3:00 PM - 5:00 PM
 									</p>
 
-									<h1> Add a composer to the Map: </h1>
-									<p> <a class="form-link" href = "forms/composerForm.html" target="form-iframe"> Click here </a> if you would like to add a composer's name to the map. </p>
-									
-									<h1> Comments/Suggestions for us? </h1>
-									<p> You can fill out the form below or write to one us directly </p>
-								</div>
-								<div class = "staff-info">
-									<h2> Administrative Staff </h2>
-									<p class="staff"> Felice Doynov, Founder and Director </p>
-									<a data-name="felice.doynov" data-domain="hearclassical" data-tld="org" href="#" class="email-address" onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false"></a>
-									
-									<p class="staff"> Jonathan Salamon, Program Manager </p>
-									<a data-name="jonathan.salamon" data-domain="hearclassical" data-tld="org" href="#" class="email-address" onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false"></a>
-									
-									<p class="staff"> Adam Caplan-Bricker, Design and Technology </p>
-									<a data-name="adam.caplan.bricker" data-domain="hearclassical" data-tld="org" href="#" class="email-address" onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false"></a>
-								</div>
+									<p class="concert-description">
+										The Yale Launch of HEAR will take place on Saturday, April 28th, at 3:00 pm.  The concert will present repertoire by composers throughout the ages who are female composers and/or people of color.
+									</p>
+									</div>
+								</div>	
 
+								<div id="hear-at-the-un" class="concert-container">
 
+									<div class="concert-date-container">
+										<div class="concert-date">
+											<p class = "month">
+												May
+											</p>
+											<p class="day">
+												25
+											</p>
+										</div>
+									</div>	
+									<div class="concert-description-container">
+
+										<h class="concert-title">
+											Hear at the U.N.
+										</h>
+										<p class="concert-full-date">
+											Friday, May 25, 2018
+										</p>
+										<p class="concert-time">
+											7:00 PM - 9:30 PM
+										</p>
+
+										<p class="concert-description">
+											The Yale Launch of HEAR will take place on Friday, May 25th, at 7:00 pm.  The concert will present repertoire by composers throughout the ages who are female composers and/or people of color.
+										</p>
+									</div>
+								</div>	
 							</div>
 						</div>
 					</div>
-
 				</div>
+
 			</main>
 		</div>
 	</div>

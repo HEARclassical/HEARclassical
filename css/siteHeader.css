@@ -12,7 +12,9 @@
     -moz-box-align: center;
     -ms-flex-align: center;
     flex-wrap: nowrap;
-    margin-top: 15px;
+    /*margin-top: 15px;*/
+    margin-top: 0px;
+    height: 100px;
 
     /*background: white;*/
     /*visibility: hidden;
@@ -49,7 +51,7 @@
 	flex: 1;
 }
 
-.header-button{
+.header-button-text{
 	text-align:center;
 	opacity: 0.8;
 }
@@ -108,7 +110,7 @@
 }
 */
 
-p.header-button {
+p.header-button-text {
 	font-family: Tahoma, sans;
 	font-size: 15px;
 	font-weight: normal;
@@ -116,6 +118,25 @@ p.header-button {
 	font-variant: all-small-caps;
 }
 
-.site-header .header-button:hover{
+.site-header .header-button-text:hover{
 	text-decoration-line: underline!important;
+}
+
+
+.site-header .header-button {
+  cursor: pointer;
+}
+
+/***********************
+SUB-HEADERS
+***********************/
+
+.sub-header {
+  display: none;
+  width: 100%;
+  padding: 0;
+}
+
+.sub-header > li {
+  list-style-type: none;
 }

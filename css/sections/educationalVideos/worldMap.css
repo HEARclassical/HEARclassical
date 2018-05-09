@@ -2,8 +2,8 @@
 .stroke {
   fill: none;
   stroke: #000;
-  stroke-width: 0px;
 }
+
 
 /*
 .fill {
@@ -36,8 +36,8 @@ svg {
 }
 
 .map-container {
-    left: 30px;
-    top: 30px;
+    /*left: 30px;
+    top: 30px;*/
     height: 100%;
     width: 100vw;
 }
