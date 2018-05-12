@@ -73,7 +73,7 @@ $(window).bind("load",function() {
 			
 			if (!comingFromSlide && !comingFromIntro) {
 				$('#home-anchor > .header-button-text').css({'color': 'lightgray', 'text-decoration-line': 'underline', 'text-decoration-color': 'lightgray'});
-				console.log('first')
+				
 			}
 			
 			if (isRendered) {

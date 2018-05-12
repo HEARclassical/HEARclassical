@@ -14,17 +14,17 @@ main {
 .scroll-overlay {
 	position: relative;
 	overflow-y: scroll;
-	padding: 0vmin 20vw 0vmin 20vw;
+	padding: 0vmin 15vw 0vmin 15vw;
 	width: 100vw;
 	/*height accounts for scroll overlay cutting off at bottom of header*/
-	height: calc(100vh - 100px);
-	top: 100px;
+	height: calc(100vh - 50px);
+	top: 50px;
 }
 
 .horizontal-overlay {
 	/*margin-left: 20vw;*/
 	margin-top: 5vh;
-	width: 60vw;
+	width: 70vw;
 	background-color: rgb(240, 248, 255, 0.85);
 	height: auto;
 	margin-top: 50px;

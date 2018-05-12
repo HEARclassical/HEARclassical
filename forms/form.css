@@ -82,10 +82,6 @@ h1 {
 }
 
 button.form-submit-button {
-	left: 0;
-	right: 0;
-	margin: 0 auto;
-	display: block;
 	background: darkblue;
 	color: white;
 	font-size: 14px;
@@ -93,3 +89,47 @@ button.form-submit-button {
 	padding: 5px 15px 5px 15px;
 }
 
+fieldset {
+	background: radial-gradient(rgba(147, 200, 255, 1.0) 20%, rgba(240, 248, 255, 0.0) 70%);
+	border-radius: 10vmin;
+	padding: 20px;
+	height: 15vmin;
+}
+
+
+.comment-form {
+	text-align: center;
+}
+
+.comment-form .form-title {
+	margin-top: 30px;
+}
+
+#form-email, #form-name {
+	display: inline-block;
+	position: relative;
+	margin: 5vmin 5vmin 5vmin 5vmin;
+}
+
+#form-comment {
+	margin-left: 20vw;
+	margin-right: 20vw;
+	margin-top: 5vmin;
+	margin-bottom: 5vmin;
+}
+
+.composer-form fieldset {
+	margin-left: 20vw;
+	margin-right: 20vw;
+}
+
+.form-button-wrap {
+	display: block;
+	top: 5vmin;
+	position: relative;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	margin-bottom: 5vmin;
+	text-align: center;
+}

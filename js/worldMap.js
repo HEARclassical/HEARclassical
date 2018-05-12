@@ -91,7 +91,7 @@ function ready(error, world, cctn) {
         tooltip.transition().duration(200).style("opacity",0.0)
       })
       .on("click", clickZoom);
-
+  
   
   g.insert("path")
     .datum(topojson.mesh(world, world.objects.countries, function(a, b) { return a !== b; }))
@@ -111,11 +111,11 @@ function ready(error, world, cctn) {
     }
 
     tooltip.html(countryName);
+    
 
-
-
-
-
+    
+    
+    
     //below implementation ideal since coordinates are intrinsic, but cross-browser buggy (??just FF??) and complicated by transforms
     /*    
     var mouse = d3.mouse(g.node())

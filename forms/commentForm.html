@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title> Share Your Thoughts</title>
+  <link rel="stylesheet" href="form.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+
+<body>
+	<form id="gform" class="comment-form" method="POST" action="https://script.google.com/macros/s/AKfycbyLlqpdiP7J0sUiURLKAmYRyep444Kct9HRz1o4VD-fd0faLd8/exec">
+  
+  <h1 class='form-title'> Share Your Thoughts</h1>
+	<fieldset id = "form-name" class="pure-group">
+      <label for="Name">Who are you?</label>
+      <input id="Name" name="Name" placeholder="Anonymous" />
+    </fieldset>
+
+    <fieldset id = "form-email" class="pure-group">
+      <label for="ComposerCountry"> Email </label>
+      <input id="Email" name="Email"
+      placeholder="contact.me@here.com" />
+    </fieldset>
+
+
+    <fieldset id = "form-comment" class="pure-group">
+      <label for="Comment">Comments | Questions </label>
+      <textarea id="Comment" name="Comment" placeholder="Anything you want to tell us" rows="3"></textarea>
+    </fieldset>
+	<div class="form-button-wrap">
+    	<button class="form-submit-button"> Submit </button>
+	</div>
+  </form>
+
+  <!-- Customise the Thankyou Message People See when they submit the form: -->
+  <div style="display:none;" id="thankyou_message">
+    <h2>Message received.</h2>
+    <h3> Thanks for getting in touch with us! </h3>
+  </div>
+
+  <!-- Submit the Form to Google Using "AJAX" -->
+  <script data-cfasync="false" type="text/javascript"
+  src="https://cdn.rawgit.com/dwyl/learn-to-send-email-via-google-script-html-no-server/master/form-submission-handler.js"></script>
+
+
+</body>
+
+</html>

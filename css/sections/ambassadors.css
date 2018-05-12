@@ -1,10 +1,173 @@
 
 .ambassadors-container {
 	position: relative;
-	display: flex;
-	margin-top: 20px;
-	margin-bottom: 30px;
-	margin-right: 10vw;
-	padding-left: 30px;
+	margin-top: 50px;
 
 }
+
+
+
+.ambassador {
+	padding-left: 5vw;
+	padding-right: 5vw;
+	display: block;
+}
+
+.ambassador-photo {
+	position: relative;
+	width: 250px;
+	float: left;
+	padding-right: 15px;
+}
+
+.ambassador-photo img {
+	width: inherit;
+	height: auto;
+
+}
+
+.ambassador-info {
+	margin-right: 5vw;
+}
+
+.ambassador-info .ambassador-name{
+	font-size: 25px;
+	text-align: left;
+	line-height: 100%;
+}
+
+.ambassador-info .ambassador-about p {
+	line-height: 24px;
+	font-size: 16px;
+	display: inline;
+}
+
+a.ambassador-website {
+	display: inline;
+}
+a.ambassador-website p{
+	font-size: 16px!important;
+}
+
+a.ambassador-website:link{
+  color:blue;
+}
+a.ambassador-website:visited{
+  color:blue;
+}
+a.ambassador-website:hover{
+  color:orange;
+}
+a.ambassador-website:focus{
+  color:orange;
+}
+a.ambassador-website:active{
+  color:darkorange;
+}
+
+/* links won't trigger website thumbnail previews */
+a.ambassador-link:link{
+  color:blue;
+}
+a.ambassador-link:visited{
+  color:blue;
+}
+a.ambassador-link:hover{
+  color:orange;
+}
+a.ambassador-link:focus{
+  color:orange;
+}
+a.ambassador-link:active{
+  color:darkorange;
+}
+
+@media only screen and (max-width: 750px) {
+	.ambassador {
+	 	display: block;
+	}
+	.ambassador-info {
+		margin-top: 50px;
+		margin-left: 0vw;
+		margin-right: 0vw;
+	}
+	.ambassador-info .ambassador-about {
+		display: block;
+		margin-bottom: 50px;
+	}
+	.ambassador-info .ambassador-name{
+		text-align: center;
+	}
+	.ambassador-photo {
+		float: none;
+		position: relative;
+		width: 60%;
+		margin-left: 20%;
+		padding: none;
+	}
+
+	.ambassador-photo img {
+		width: 100%;
+	}
+
+}
+
+#website-preview{
+	display: none;
+	pointer-events: none;
+	opacity: 0.95;
+	position: absolute;
+	z-index: 100;
+	width: auto;
+	height: auto;
+	transition: height 1s linear, width 1s linear;
+}
+
+#website-preview::before {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	z-index: 150;
+	border: 10px solid transparent;
+	border-bottom-color: gray;
+	margin-top: -20px;
+	opacity: 0.5;
+}
+
+#ambassador-iframe {
+	transform-origin: 0 0;
+	width: 1280px;
+	height: 768px;
+	transform: scale(0.2);
+	border: none;
+}
+
+#website-preview-link-display {
+	opacity: 1.0;
+	position: absolute;
+	width: auto;
+	height: auto;
+	background: lightgray;
+	color: black;
+	z-index: 100;
+	left: 0;
+	top: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+}	
+
+#website-preview-link-display p {
+	white-space: nowrap;
+}	
+/*
+#ariel-horowitz .ambassador-photo {
+	width: 10%;
+	height: 10%;
+}
+
+#ariel-horowitz .ambassador-photo img {
+	width: 5%;
+	height: 5%;
+}
+*/
