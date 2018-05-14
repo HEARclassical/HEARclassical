@@ -223,7 +223,7 @@ function showIntro(){
 		$('.intro-head').animate({"opacity": 1.0});
 
 		$('.intro-sub > span').delay(1000).each(function(n){
-			var delay = Math.ceil(n/2)*600 + Math.floor(n/2)*200
+			var delay = Math.ceil(n/2)*1000 + Math.floor(n/2)*200
 			$(this).delay(delay).animate({"opacity": 1.0}, 200, function(){
 					$(this).css({"pointer-events": "auto"})
 				});
