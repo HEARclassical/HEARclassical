@@ -1,4 +1,5 @@
 
+
 /*************
 Form elements
 **************/
@@ -13,20 +14,50 @@ label {
 }
 
 input {
-	width: inherit;
-	border: .5px solid rgba(0,0,0,0.3);
+	width: 35vmin;
+	height: 10vmin;
+	border: none;
 	border-radius: 3px;
 	left: 0;
 	right: 0;
 	margin: 0 auto;
 	display: block;
 	text-align: center;
+	background: radial-gradient(rgba(255,255,255,1) 50%, rgba(255,255,255,0) 70%);
+	padding-left: 5vmin!important;
+	padding-right: 5vmin!important;
+	font-family: Verdana;
+	font-size: 14px;
+}
+
+textarea {
+	width: 35vmin;
+	height: 30vmin;
+	border: none;
+	border-radius: 3px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+	background: radial-gradient(rgba(255,255,255,1) 50%, rgba(255,255,255,0) 70%);
+	resize: none;
+	vertical-align: middle;
+	padding: 8vmin!important;
+	font-family: Verdana;
+	font-size: 14px;
 }
 
 input:focus, textarea:focus {
 	color: white;
-	background: linear-gradient(to bottom right, darkblue, lightblue);
-
+	padding: 0;
+	background: radial-gradient(darkblue 30%, rgba(255,255,255,0) 70%);
+	background-color: none;
+	border: none;
+	outline: none;
+	outline-style:none;
+	box-shadow:none;
+	border-color:transparent;
 	/*background: gradient(linear, left top, left 25, from(#FFFFFF), 
            color-stop(4%,#c6d1da), to(#5E768D));*/
 }
@@ -35,15 +66,6 @@ input:focus::placeholder, textarea:focus::placeholder {
 	color: lightgray;
 }
 
-textarea {
-	border: .5px solid rgba(0,0,0,0.3);
-	border-radius: 3px;
-	left: 0;
-	right: 0;
-	margin: 0 auto;
-	display: block;
-	resize: none;
-}
 
 
 fieldset {
@@ -87,6 +109,15 @@ button.form-submit-button {
 	font-size: 14px;
 	border-radius: 3px;
 	padding: 5px 15px 5px 15px;
+	border-style: none;
+}
+
+button.form-submit-button:focus {
+	outline: solid lightblue 1px
+}
+button.form-submit-button:active {
+	opacity: .8;
+	outline: solid white 3px;
 }
 
 fieldset {
@@ -104,10 +135,14 @@ fieldset {
 .comment-form .form-title {
 	margin-top: 30px;
 }
+#form-description {
+	height: 40vmin;
+}
 
 #form-email, #form-name {
 	display: inline-block;
 	position: relative;
+	width: 40vmin;
 	margin: 5vmin 5vmin 5vmin 5vmin;
 }
 
@@ -116,6 +151,7 @@ fieldset {
 	margin-right: 20vw;
 	margin-top: 5vmin;
 	margin-bottom: 5vmin;
+	height: 40vmin;
 }
 
 .composer-form fieldset {
@@ -130,6 +166,6 @@ fieldset {
 	margin: 0 auto;
 	left: 0;
 	right: 0;
-	margin-bottom: 5vmin;
+	margin-bottom: 100px;
 	text-align: center;
 }

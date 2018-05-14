@@ -1,0 +1,60 @@
+
+
+
+<!DOCTYPE HTML PUBLIC>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title> Tell Us About a Composer</title>
+  <link rel="stylesheet" href="form.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+
+<body>
+	<form id="gform" class="composer-form" method="POST" action="https://script.google.com/macros/s/AKfycbyluvPX7ttojxNJNCrfRamFEruJLJUrqaP0O9V54Kljm7-IBjtI/exec">
+  
+  <h1> Teach us about a Composer </h1>
+	<fieldset class="pure-group">
+      <label for="AmbassadorName">What's your name?</label>
+      <input id="AmbassadorName" name="AmbassadorName" required placeholder="Your Name" />
+    </fieldset>
+
+    <fieldset class="pure-group">
+      <label for="AmbassadorEmail">Where can we reach you? </label>
+      <input id="AmbassadorEmail" name="AmbassadorEmail"
+      required placeholder="your@email.com" />
+    </fieldset>
+
+    <fieldset class="pure-group" id="form-description">
+      <label for="AmbassadorDescription"> Describe your current project/initiative in one paragraph</label>
+      <textarea id="AmbassadorDescription" name="AmbassadorDescription" required placeholder="" rows="3"></textarea>
+    </fieldset>
+
+    <fieldset class="pure-group">
+      <label for="AmbassadorWebsite"> Where can we learn more about you? </label>
+      <input id="AmbassadorWebsite" name="AmbassadorWebsite" placeholder="Your website / article about you" />
+    </fieldset>
+
+
+
+    <div class="form-button-wrap">
+      <button class="form-submit-button"> Submit </button>
+    </div>
+
+  </form>
+
+  <!-- Customise the Thankyou Message People See when they submit the form: -->
+  <div style="display:none;" id="thankyou_message">
+    <h2>We're excited to learn more about you!</h2>
+    <h3> Expect to hear from us very soon.</h3>
+  </div>
+
+  <!-- Submit the Form to Google Using "AJAX" -->
+  <script data-cfasync="false" type="text/javascript"
+  src="https://cdn.rawgit.com/dwyl/learn-to-send-email-via-google-script-html-no-server/master/form-submission-handler.js"></script>
+
+
+</body>
+
+</html>

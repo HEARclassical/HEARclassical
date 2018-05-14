@@ -112,7 +112,7 @@ a.ambassador-link:active{
 
 }
 
-#website-preview{
+#website-preview {
 	display: none;
 	pointer-events: none;
 	opacity: 0.95;
@@ -120,7 +120,6 @@ a.ambassador-link:active{
 	z-index: 100;
 	width: auto;
 	height: auto;
-	transition: height 1s linear, width 1s linear;
 }
 
 #website-preview::before {
