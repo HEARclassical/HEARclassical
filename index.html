@@ -25,6 +25,8 @@
 		<link rel="stylesheet" href="css/sections/contactUs.css" />
 		<link rel="stylesheet" href="css/sections/donate.css" />
 
+		<!-- Audio Player Style -->
+		<link rel="stylesheet" href="css/audio.css" />
 
 
 
@@ -49,9 +51,6 @@
 
 <!-- jplayer.js audioplayer -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/amplitudejs@3.2.3/dist/amplitude.js"></script>
-<script type="text/javascript" src="js/amplitudeInit.js"></script>
-
-
 
 <body class="home">
 
@@ -259,7 +258,54 @@
 				</div>
 				<iframe id="ambassador-iframe" name="ambassador-iframe"> </iframe>
 			</div>
+			<div id="audioplayer-overlay">
+				<span id="audioplayer-close-button"></span>
+				
+				<div id="audioplayer">
+					<div class="audio-image">
+						<img class="cover_art_url" amplitude-song-info="cover_art_url" amplitude-main-song-info="true" > 
+					</div>
+					<div class="bottom-container">
 
+						<div class="control-container">
+
+	 						<div class="meta-container">
+							 	<div amplitude-song-info="name" amplitude-main-song-info="true" class="song-name">
+							 		
+							 	</div> 
+
+								<div amplitude-song-info="artist" amplitude-main-song-info="true">
+									
+								</div>
+							</div>
+
+							<div amplitude-main-play-pause="true" id="play-pause" class="amplitude-play-pause amplitude-paused">
+								
+							</div>
+							
+						</div>
+
+
+						<div class="time-container">
+							<span class="current-time">
+								<span class="current-minutes"></span>:<span class="current-seconds"></span>
+							</span>
+
+							<progress id="song-played-progress" value="0">
+							
+							</progress>  
+							<span class="duration">
+								<span class="duration-minutes">
+								
+								</span>:<span class="duration-seconds">
+								
+								</span>
+							</span>
+						</div> 
+					</div>
+
+				</div>
+			</div>
 			<main role="main">
 
 				<div class="horizontal-section" data-anchor="home">
@@ -613,6 +659,8 @@
 <script src="js/logoAnimation.js"></script>
 <script type="text/javascript" src="js/introScroll.js"></script>
 <script tpye="text/javascript" src="js/websitePreviews.js"></script>
+<script type="text/javascript" src="js/amplitudeInit.js"></script>
+
 <!--<script type="text/javascript" src="js/worldMap.js"></script> -->
 
 </html>
