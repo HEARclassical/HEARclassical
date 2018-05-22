@@ -12,6 +12,7 @@ Amplitude.init({
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             }
         ],
+    "volume": 75,
     "callbacks": {
     	"time_update": function() {
 
@@ -113,6 +114,7 @@ document.getElementById('song-played-progress').addEventListener('mousedown', fu
 });
 
 var mouseMoveUpdate = function(e) {
+    e.preventDefault();
 	var that = document.getElementById('song-played-progress');
 	var offset = that.getBoundingClientRect();
     var x = e.pageX - offset.left;
@@ -136,10 +138,52 @@ var mouseUpUpdate = function(e) {
 
 }
 
-function secToMinSec(seconds) {
-	return {"minutes": Math.floor(seconds / 60), "seconds": seconds % 60}
+function showAudioplayer() {
+    document.getElementById('audioplayer-overlay').setAttribute('style', 'max-height: 1000')
 }
 
-function minSecToSec(minsec) {
-	return 60*minsec.minutes + minsec.seconds;
+function hideAudioplayer() {
+    document.getElementById('audioplayer-overlay').setAttribute('style', 'max-height: 0')
+}
+
+document.getElementById('audioplayer-close-button').onclick = function(){
+    hideAudioplayer()
+};
+
+document.querySelector('.volume-container').addEventListener('mouseenter', function(e){
+    document.querySelector('.volume-control-wrapper').setAttribute('style', 'display: block');
+    document.querySelector('.volume-container').addEventListener('mouseleave', hideVolume)
+
+});
+
+function hideVolume(e) {
+    document.querySelector('.volume-container').removeEventListener('mouseleave', hideVolume);
+    document.querySelector('.volume-control-wrapper').setAttribute('style', 'display: none');
+}
+
+
+//fires whenever the slider is adjusted, so we can see when to change
+document.querySelector('.amplitude-volume-slider').oninput = function() {
+    console.log(this.value);
+    var volCL = document.querySelector('.volume-image').classList;
+    if (this.value < 2) {
+        if (!volCL.contains("no-volume")) {
+            volCL.replace("low-volume", "no-volume");
+            volCL.replace("high-volume", "no-volume");
+        }
+    }
+
+    else if (this.value < 50) {
+        if (!volCL.contains("low-volume")) {
+            volCL.replace("no-volume", "low-volume");
+            volCL.replace("high-volume", "low-volume");
+        }
+    } else {
+       if (!volCL.contains("high-volume")) {
+            volCL.replace("no-volume", "high-volume");
+            volCL.replace("low-volume", "high-volume");
+        } 
+    }
+
+
 }
