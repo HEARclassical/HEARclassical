@@ -145,7 +145,7 @@
 
 #audioplayer .volume-container{
 	position: absolute;
-	left: 600px;
+	left: 750px;
 	width: 50px;
 	height: 50px;
 	top: 15px;
@@ -296,21 +296,23 @@ input[type=range]::-ms-track {
 }
 
 #audioplayer .amplitude-prev {
-	background: url('https://hearclassical.github.io/HEARclassical/assets/images/audioplayer/previous-track.png');
+	background: url('https://hearclassical.github.io/HEARclassical/assets/images/audioplayer/previous-track.png') no-repeat;
 	transform: scale(0.4);
 	position: absolute;
 	height: 50px;
 	width: 50px;
 	left: 150px;
 	cursor: pointer;
+	background-size: cover;
 }
 
 #audioplayer .amplitude-next {
-	background: url('https://hearclassical.github.io/HEARclassical/assets/images/audioplayer/next-track.png');
+	background: url('https://hearclassical.github.io/HEARclassical/assets/images/audioplayer/next-track.png') no-repeat;
 	transform: scale(0.4);
 	position: absolute;
 	height: 50px;
 	width: 50px;
 	left: 250px;
 	cursor: pointer;
+	background-size: cover;
 }
