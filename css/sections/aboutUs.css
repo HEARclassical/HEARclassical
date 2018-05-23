@@ -1,6 +1,11 @@
+#about-us-container {
 
-.temp-text {
-	margin-left: 2vw;
-	padding-left: 30px;
-	height: 100%;
+}
+
+#about-us-container p {
+	padding-top: 50px;
+	padding-left: 5vw;
+	padding-right: 5vw;
+	font-size: 16px;
+	line-height: 24px;
 }

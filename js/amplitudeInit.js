@@ -93,64 +93,64 @@ Amplitude.init({
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//12
-                "name": "",
-                "artist": "HEAR Classical",
+                "name": "Sonata No. 1",
+                "artist": "Élisabeth Jacquet de La Guerre",
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1worqt4gyCf67NdrPu3KvNFGE4zRJNgHP",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//13
-                "name": "Inaugural Concert",
-                "artist": "HEAR Classical",
+                "name": "Comments — Giaccobe Cervetto",
+                "artist": "Alishan Gezgin",
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018", 
                 "url": "https://drive.google.com/uc?export=download&id=1NlOeGBqazG2ZNjkpN3HXV7s9w8q0oPq-",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//14
-                "name": "Inaugural Concert",
-                "artist": "HEAR Classical",
+                "name": "Sonata Op. 3 No. 2",
+                "artist": "Giaccobe Cervetto",
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=11OaQiLGTxnpidXITmQmrv5Yd4v3WAytM",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//15
-                "name": "Inaugural Concert",
-                "artist": "HEAR Classical",
+                "name": "Comments — Beach, Viardot, Boulanger",
+                "artist": "Fjóla Evans",
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1-3gT3Wk2bRXcyqlFQjwksn2XXwp5H9a4",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//16
-                "name": "Inaugural Concert",
-                "artist": "HEAR Classical",
+                "name": "Invocation, Op. 55",
+                "artist": "Amy Beach",
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018", 
                 "url": "https://drive.google.com/uc?export=download&id=1x8u8hRr79JqlH3Jvn07HMAiNigVFGWo8",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//17
-                "name": "Inaugural Concert",
-                "artist": "HEAR Classical",
+                "name": "Romance",
+                "artist": "Pauline Viardot",
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1-TCZ1vnLcCy3qcYI2GZAu-LKRAdXmr_G",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//18
-                "name": "Inaugural Concert",
-                "artist": "HEAR Classical",
+                "name": "Nocturne",
+                "artist": "Lili Boulanger",
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1ETa9gKRGkMekvNJ3w97mrgEwKzo06Rjx",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//19
-                "name": "Inaugural Concert",
-                "artist": "HEAR Classical",
+                "name": "Closing Remarks",
+                "artist": "Felice Doynov",
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018", 
                 "url": "https://drive.google.com/uc?export=download&id=10IhyEzPPyLwT4JQwxD531jTIQV-j6d6x",

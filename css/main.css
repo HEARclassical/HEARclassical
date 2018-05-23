@@ -36,11 +36,23 @@ main {
 }
 
 /* for a gradient floor */
-.background-overlay {
+.background-overlay-blue {
 	background: linear-gradient(to top, rgba(30,0,255,0), rgba(30,0,255,.2));
 	overflow: hidden;
 	opacity: 1.0;
 	z-index: 900;
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	pointer-events: none;
+	/*will-change: transform;*/
+}
+
+.background-overlay-black {
+	background: linear-gradient(to bottom, rgba(0,0,0,.2), rgba(0,0,0,.1) 50%);
+	overflow: hidden;
+	opacity: 1.0;
+	z-index: 901;
 	width: 100vw;
 	height: 100vh;
 	position: absolute;

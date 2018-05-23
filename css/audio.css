@@ -87,7 +87,7 @@
 	width: auto;
 	max-width: 150px;
 	position: absolute;
-	text-align: center;
+	text-align: left;
 	font-family: Verdana, sans;
 }
 #audioplayer .meta-container .song-name {
@@ -334,5 +334,22 @@ input[type=range]::-ms-track {
 	background-size: cover;
 }
 
+#audioplayer .playlist-container {
+	position: absolute;
+	left: 850px;
+	width: 50px;
+	height: 50px;
+	top: 15px;	
+}
+
+#audioplayer .playlist-container .playlist-image {
+	background: url('https://hearclassical.github.io/HEARclassical/assets/images/audioplayer/mute-volume.png') no-repeat;
+	transform: scale(.6);
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+
+}
 
 
