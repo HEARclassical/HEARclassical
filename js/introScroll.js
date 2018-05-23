@@ -53,7 +53,7 @@ $(window).bind("load",function() {
 	//seems to be a problem with chrome setting the inherited header background in the right place; this seems to hack it right;
 	$('.header-wrapper').fadeOut(0);
 	$('.header-blur').fadeOut(0);
-
+	$('#open-audio').fadeOut(0);
 	$('#fullpage').fullpage({
 		sectionSelector: '.vertical-section',
 		slideSelector: '.horizontal-section',
@@ -183,6 +183,8 @@ function introWillAppear() {
 	//$('.header-wrapper').fadeOut(100);
 	$('.header-wrapper').stop().fadeOut(500);
 	$('.header-blur').stop().fadeOut(500);
+	$('#open-audio').fadeOut(500);
+	$('.audioplayer-overlay').fadeOut(500);
 }
 
 function introDidAppear() {
@@ -198,6 +200,8 @@ function mainWillAppear() {
 function mainDidAppear() {
 	showHeader();
 	hideIntro();
+	$('#open-audio').fadeIn(500);
+	$('.audioplayer-overlay').fadeIn(500);
 }
 
 

@@ -1,3 +1,20 @@
+/*button at bottom of screen to open the audio */
+
+#open-audio {
+	width: auto;
+	background: rgba(0,0,0,0.9);
+	color: white;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	text-align: right;
+	padding: 5px;
+	font-family: Verdana, sans;
+	cursor: pointer;
+	z-index: 1000;
+	display: none;
+}
+
 #audioplayer-overlay {
 	position: absolute;
 	bottom: 0;
@@ -6,7 +23,7 @@
 	width: 100%;
 	background: rgba(255,255,255,0.95);
 	display: inline;
-	max-height: 200px;
+	max-height: 0px;
 	transition: all 1s linear;
 }
 
@@ -316,3 +333,6 @@ input[type=range]::-ms-track {
 	cursor: pointer;
 	background-size: cover;
 }
+
+
+

@@ -61,7 +61,7 @@ main {
 */
 
 #main-content {
-	background: url('http://hearclassical.github.io/HEARclassical/assets/images/faces-background.jpg');
+	background: url('http://hearclassical.github.io/HEARclassical/assets/images/8faces-background.jpg');
 	background-attachment: fixed;
 	 /* account for 1st slide height and extra 50% to center */
 	/*background-position: center calc(100vh + 50%) !important;*/

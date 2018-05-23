@@ -258,6 +258,10 @@
 				</div>
 				<iframe id="ambassador-iframe" name="ambassador-iframe"> </iframe>
 			</div>
+			<div id="open-audio">
+				<span>HEAR audioplayer</span>	
+			</div>
+
 			<div id="audioplayer-overlay">
 				<span id="audioplayer-close-button"></span>
 				
@@ -281,7 +285,7 @@
 							<div class="amplitude-prev" amplitude-playlist="inaugural"></div>
 							<div amplitude-main-play-pause="true" id="play-pause" class="amplitude-play-pause amplitude-paused" amplitude-playlist="inaugural">								
 							</div>
-							<div class="amplitude-prev" amplitude-playlist="inaugural"></div>
+							<div class="amplitude-next" amplitude-playlist="inaugural"></div>
 
 							
 						</div>
@@ -289,16 +293,16 @@
 
 						<div class="time-container">
 							<span class="current-time">
-								<span class="current-minutes"></span>:<span class="current-seconds"></span>
+								<span class="current-minutes">-</span>:<span class="current-seconds">--</span>
 							</span>
 
 							<input type="range" id="song-played-progress" min="0" max="1" step=".0005" value="0">
 							
 							<span class="duration">
 								<span class="duration-minutes">
-								
+								-
 								</span>:<span class="duration-seconds">
-								
+								--
 								</span>
 							</span>
 						</div> 

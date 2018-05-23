@@ -6,143 +6,160 @@ Amplitude.init({
 	"songs": [
             {//1
                 "name": "Opening Remarks Pt. 1",
-                "artist": "HEAR Classical",
-                "album": "April 28, 2018",
-               // "url": "https://hearclassical.github.io/HEARclassical/assets/audio/aNoteAboutWitches.mp3",
+                "artist": "Felice Doynov",
+                "album": "HEAR Through Time",
+                "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1hLq1viMmVJHetV0LyNQpvft8YYLQyYJ9",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//2
                 "name": "Opening Remarks Pt. 2",
-                "artist": "HEAR Classical",
-                "album": "April 28, 2018",
+                "artist": "Brenda Vongova",
+                "album": "HEAR Through Time",
+                "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1oI60LmmEG9hTHC98yNEABLBRdWMjO62I",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//3
-                "name": "Inaugural Concert",
-                "artist": "HEAR Classical",
-                "album": "April 28, 2018",
+                "name": "Comments — Joseph Boulogne",
+                "artist": "Eli Greenhoe",
+                "album": "HEAR Through Time",
+                "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1IiN91ADD-nmIZBfwHLVp4Rljv7vwXuTg",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//4
-                "name": "Inaugural Concert",
-                "artist": "HEAR Classical",
-                "album": "April 28, 2018",
+                "name": "String Quartet No. 5",
+                "artist": "Joseph Boulogne",
+                "album": "HEAR Through Time",
+                "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1rmv0aoAKBC2F3n_C2bVu56JxtWtOZq_b",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//5
-                "name": "Inaugural Concert",
-                "artist": "HEAR Classical",
-                "album": "April 28, 2018",
+                "name": "Comments — William Grant Still",
+                "artist": "Tanner Porter",
+                "album": "HEAR Through Time",
+                "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1SwBWIgkm5y9V9E2Xs2AqkaHueDzeLDLW",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//6
-                "name": "Inaugural Concert",
-                "artist": "HEAR Classical",
-                "album": "April 28, 2018",
+                "name": "Bayou Home",
+                "artist": "William Grant Still",
+                "album": "HEAR Through Time",
+                "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1LdqsBiSkdLt_Kga8JEFHEUU545-EAHYI",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//7
-                "name": "Inaugural Concert",
-                "artist": "HEAR Classical",
-                "album": "April 28, 2018",
+                "name": "Sonata for Bassoon and Piano",
+                "artist": "Ulysses Kay",
+                "album": "HEAR Through Time",
+                "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1l4fKCzLbjzN2Q08wyKKTCmI-6DWvz9C9",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
-            //need to get links from here down
             {//8
-                "name": "Inaugural Concert",
-                "artist": "HEAR Classical",
-                "album": "April 28, 2018",
+                "name": "Comments — Ulysses Kay",
+                "artist": "Tanner Porter",
+                "album": "HEAR Through Time",
+                "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1gn6bf9wiYpLgsOfQ2KEBZLYKxbTrSErn",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//9
-                "name": "Inaugural Concert",
-                "artist": "HEAR Classical",
-                "album": "April 28, 2018", 
+                "name": "Comments — Yuko Uebayashi",
+                "artist": "Anteo Fabris",
+                "album": "HEAR Through Time",
+                "date": "April 28, 2018", 
                 "url": "https://drive.google.com/uc?export=download&id=1cgr0Yf9Xlx9Ax3ZVoAuFm9L-NHef5qi-",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//10
-                "name": "Inaugural Concert",
-                "artist": "HEAR Classical",
-                "album": "April 28, 2018",
+                "name": "Town Light",
+                "artist": "Yuko Uebayashi",
+                "album": "HEAR Through Time",
+                "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1MqdMfw3ddppY_UsnIhrhfqgWLI6Ypl83",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//11
-                "name": "Inaugural Concert",
-                "artist": "HEAR Classical",
-                "album": "April 28, 2018",
+                "name": "Comments — Élisabeth Jacquet de La Guerre",
+                "artist": "Eli Greenhoe",
+                "album": "HEAR Through Time",
+                "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1hTkHHGVQGEJVkInAdeMo-C5JF-ts27EQ",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//12
-                "name": "Inaugural Concert",
+                "name": "",
                 "artist": "HEAR Classical",
-                "album": "April 28, 2018",
+                "album": "HEAR Through Time",
+                "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1worqt4gyCf67NdrPu3KvNFGE4zRJNgHP",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//13
                 "name": "Inaugural Concert",
                 "artist": "HEAR Classical",
-                "album": "April 28, 2018", 
+                "album": "HEAR Through Time",
+                "date": "April 28, 2018", 
                 "url": "https://drive.google.com/uc?export=download&id=1NlOeGBqazG2ZNjkpN3HXV7s9w8q0oPq-",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//14
                 "name": "Inaugural Concert",
                 "artist": "HEAR Classical",
-                "album": "April 28, 2018",
+                "album": "HEAR Through Time",
+                "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=11OaQiLGTxnpidXITmQmrv5Yd4v3WAytM",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//15
                 "name": "Inaugural Concert",
                 "artist": "HEAR Classical",
-                "album": "April 28, 2018",
+                "album": "HEAR Through Time",
+                "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1-3gT3Wk2bRXcyqlFQjwksn2XXwp5H9a4",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//16
                 "name": "Inaugural Concert",
                 "artist": "HEAR Classical",
-                "album": "April 28, 2018", 
+                "album": "HEAR Through Time",
+                "date": "April 28, 2018", 
                 "url": "https://drive.google.com/uc?export=download&id=1x8u8hRr79JqlH3Jvn07HMAiNigVFGWo8",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//17
                 "name": "Inaugural Concert",
                 "artist": "HEAR Classical",
-                "album": "April 28, 2018",
+                "album": "HEAR Through Time",
+                "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1-TCZ1vnLcCy3qcYI2GZAu-LKRAdXmr_G",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//18
                 "name": "Inaugural Concert",
                 "artist": "HEAR Classical",
-                "album": "April 28, 2018",
+                "album": "HEAR Through Time",
+                "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1ETa9gKRGkMekvNJ3w97mrgEwKzo06Rjx",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//19
                 "name": "Inaugural Concert",
                 "artist": "HEAR Classical",
-                "album": "April 28, 2018", 
+                "album": "HEAR Through Time",
+                "date": "April 28, 2018", 
                 "url": "https://drive.google.com/uc?export=download&id=10IhyEzPPyLwT4JQwxD531jTIQV-j6d6x",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
 
         ],
     "playlists": {
-        "inaugural": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+        "inaugural": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
     },
     "volume": 75,
     "callbacks": {
@@ -233,7 +250,6 @@ document.getElementById('song-played-progress').addEventListener('mousedown', fu
 
 	SEEKING = true;
 
-
 	document.addEventListener('mouseup', mouseUpUpdate);
 });
 
@@ -279,16 +295,21 @@ var mouseUpUpdate = function(e) {
     document.removeEventListener('mouseup', mouseUpUpdate);
 }
 
+/* FOR SHOWING AND HIDING THE AUDIO PLAYER */
 function showAudioplayer() {
-    document.getElementById('audioplayer-overlay').setAttribute('style', 'max-height: 1000')
-}
+    document.getElementById('audioplayer-overlay').setAttribute('style', 'max-height: 80px')
+};
 
 function hideAudioplayer() {
-    document.getElementById('audioplayer-overlay').setAttribute('style', 'max-height: 0')
-}
+    document.getElementById('audioplayer-overlay').setAttribute('style', 'max-height: 0px')
+};
 
 document.getElementById('audioplayer-close-button').onclick = function(){
     hideAudioplayer()
+};
+
+document.getElementById('open-audio').onclick = function() {
+    showAudioplayer();
 };
 
 document.querySelector('.volume-container').addEventListener('mouseenter', function(e){
@@ -327,3 +348,5 @@ document.querySelector('.amplitude-volume-slider').oninput = function() {
 
 
 }
+
+
