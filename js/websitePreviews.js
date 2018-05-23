@@ -25,7 +25,7 @@ $('.ambassador-website').hover(
 
 			if (!noEmbed) {
 				$('#ambassador-iframe').attr('src', link)
-				boundLink = link
+				boundLink = link;
 				$('#ambassador-iframe').bind('load',function(){
 
 

@@ -42,36 +42,47 @@
 	width: 200px;
 	height: 100%;
 	left: 50px;
-	top: 20px;
+	top: 15px;
 }
 
 #audioplayer .time-container {
-	left: 250px;
+	left: 400px;
 	position: absolute;
 	width: 400px;
 	top: 30px;
+	font-family: Verdana, sans;
+	font-size: 11px;
 }
 
-#audioplayer progress {
-	top: 30px;
+#audioplayer .time-container input[type='range'] {
 	width: 70%;
+	-webkit-appearance: none;
+	background: lightgray;
+	height: 6px;
+	border-radius: .5em;
 	cursor: pointer;
 }
 
 
 #audioplayer .meta-container {
-	font-size: 12px;
+	font-size: 11px;
 	top: 10px;
-	width: 100px;
+	width: auto;
+	max-width: 150px;
 	position: absolute;
+	text-align: center;
+	font-family: Verdana, sans;
 }
-
+#audioplayer .meta-container .song-name {
+	color: rgba(0,0,0,0.8);
+	font-size: 12px!important;
+}
 
 #play-pause {
 	position: absolute;
 	height: 50px;
 	width: 50px;
-	left: 100px;
+	left: 200px;
 	cursor: pointer;
 }
 
@@ -150,8 +161,8 @@
 
 
 	position: absolute;
-	top: -130px;
-	height: 120px;
+	top: -110px;
+	height: 100px;
 	width: 50px;
 	padding-bottom: 20px;	
 	display: none;
@@ -159,6 +170,7 @@
 
 #audioplayer .volume-container .volume-control {
 	width: 40px;
+	height:100px;
 	left: 5px;
 	padding-top: 10px;
 	padding-bottom: 5px;
@@ -177,29 +189,128 @@
     border-top-color: white;
     left: 10px;
     position: absolute;
+    top: 110px;
     z-index: 100;
     width: 0;
     height: 0;
+    pointer-events: none;
 }
 
-#audioplayer .volume-container .volume-control input{
-	width: 40px;
-	height: 100px;
-	-webkit-appearance: slider-vertical;
-	left: 0;
-	right: 0;
-	margin: 0 auto;
+#audioplayer .volume-container .volume-control input[type='range']{
+	width: 100px;
+	height: 8px;
+	margin-left: -30px;
+	margin-top: 43px;
+
+	-webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  	transform: rotate(270deg);
+	border-radius: .5em;
+    background: -webkit-linear-gradient(to right, lightblue, darkblue);
+    background: -o-linear-gradient(to right, lightblue, darkblue);
+    background: linear-gradient(to right, lightblue, darkblue); /* Otherwise white in Chrome */
 }
 
 #audioplayer .no-volume {
-	background: url('https://hearclassical.github.io/HEARclassical/assets/images/audioplayer/mute-volume.png');
+	background: url('https://hearclassical.github.io/HEARclassical/assets/images/audioplayer/mute-volume.png') no-repeat;
+	transform: scale(.6);
+	background-size: cover;
+
+
 }
 
 #audioplayer .low-volume {
-	background: url('https://hearclassical.github.io/HEARclassical/assets/images/audioplayer/low-volume.png');
+	background: url('https://hearclassical.github.io/HEARclassical/assets/images/audioplayer/low-volume.png') no-repeat;
+	transform: scale(.6);
+	background-size: cover;
+
 }
 
-#audioplayer.volume-image.high-volume {
-	background: url('https://hearclassical.github.io/HEARclassical/assets/images/audioplayer/high-volume.png');
+#audioplayer .high-volume {
+	background: url('https://hearclassical.github.io/HEARclassical/assets/images/audioplayer/high-volume.png') no-repeat;
+	transform: scale(.6);
+	background-size: cover;
 }
 
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: .5px solid gray;
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  background: lightgray;
+  cursor: pointer;
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+
+
+.amplitude-volume-slider input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+.time-container input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  opacity: 0;
+  transition: opacity 0.5s linear;
+}
+
+.time-container input[type=range]:hover::-webkit-slider-thumb {
+  opacity: 1;
+}
+
+input[type=range]:focus {
+  outline: blue; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+  
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
+
+#audioplayer .amplitude-prev {
+	background: url('https://hearclassical.github.io/HEARclassical/assets/images/audioplayer/previous-track.png');
+	transform: scale(0.4);
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	left: 150px;
+	cursor: pointer;
+}
+
+#audioplayer .amplitude-next {
+	background: url('https://hearclassical.github.io/HEARclassical/assets/images/audioplayer/next-track.png');
+	transform: scale(0.4);
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	left: 250px;
+	cursor: pointer;
+}
