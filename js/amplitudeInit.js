@@ -10,6 +10,7 @@ Amplitude.init({
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1hLq1viMmVJHetV0LyNQpvft8YYLQyYJ9",
+                "duration": "2:18",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//2
@@ -18,6 +19,7 @@ Amplitude.init({
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1oI60LmmEG9hTHC98yNEABLBRdWMjO62I",
+                "duration": "2:17",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//3
@@ -26,6 +28,7 @@ Amplitude.init({
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1IiN91ADD-nmIZBfwHLVp4Rljv7vwXuTg",
+                "duration": "1:43",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//4
@@ -34,6 +37,7 @@ Amplitude.init({
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1rmv0aoAKBC2F3n_C2bVu56JxtWtOZq_b",
+                "duration": "11:22",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//5
@@ -42,6 +46,7 @@ Amplitude.init({
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1SwBWIgkm5y9V9E2Xs2AqkaHueDzeLDLW",
+                "duration": "1:16",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//6
@@ -50,6 +55,7 @@ Amplitude.init({
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1LdqsBiSkdLt_Kga8JEFHEUU545-EAHYI",
+                "duration": "4:01",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//7
@@ -58,6 +64,7 @@ Amplitude.init({
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1l4fKCzLbjzN2Q08wyKKTCmI-6DWvz9C9",
+                "duration": "5:10",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//8
@@ -65,6 +72,7 @@ Amplitude.init({
                 "artist": "Tanner Porter",
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
+                "duration": "1:19",
                 "url": "https://drive.google.com/uc?export=download&id=1gn6bf9wiYpLgsOfQ2KEBZLYKxbTrSErn",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
@@ -74,6 +82,7 @@ Amplitude.init({
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018", 
                 "url": "https://drive.google.com/uc?export=download&id=1cgr0Yf9Xlx9Ax3ZVoAuFm9L-NHef5qi-",
+                "duration": "3:41",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//10
@@ -82,6 +91,7 @@ Amplitude.init({
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1MqdMfw3ddppY_UsnIhrhfqgWLI6Ypl83",
+                "duration": "6:26",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//11
@@ -90,6 +100,7 @@ Amplitude.init({
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1hTkHHGVQGEJVkInAdeMo-C5JF-ts27EQ",
+                "duration": "1:29",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//12
@@ -98,6 +109,7 @@ Amplitude.init({
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1worqt4gyCf67NdrPu3KvNFGE4zRJNgHP",
+                "duration": "15:57",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//13
@@ -106,6 +118,7 @@ Amplitude.init({
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018", 
                 "url": "https://drive.google.com/uc?export=download&id=1NlOeGBqazG2ZNjkpN3HXV7s9w8q0oPq-",
+                "duration": "1:29",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//14
@@ -114,6 +127,7 @@ Amplitude.init({
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=11OaQiLGTxnpidXITmQmrv5Yd4v3WAytM",
+                "duration": "10:08",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//15
@@ -122,6 +136,7 @@ Amplitude.init({
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1-3gT3Wk2bRXcyqlFQjwksn2XXwp5H9a4",
+                "duration": "3:02",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//16
@@ -130,6 +145,7 @@ Amplitude.init({
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018", 
                 "url": "https://drive.google.com/uc?export=download&id=1x8u8hRr79JqlH3Jvn07HMAiNigVFGWo8",
+                "duration": "5:01",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//17
@@ -138,6 +154,7 @@ Amplitude.init({
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1-TCZ1vnLcCy3qcYI2GZAu-LKRAdXmr_G",
+                "duration": "3:10",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//18
@@ -146,6 +163,7 @@ Amplitude.init({
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1ETa9gKRGkMekvNJ3w97mrgEwKzo06Rjx",
+                "duration": "4:21",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
             {//19
@@ -154,6 +172,7 @@ Amplitude.init({
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018", 
                 "url": "https://drive.google.com/uc?export=download&id=10IhyEzPPyLwT4JQwxD531jTIQV-j6d6x",
+                "duration": "0:47",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
 
@@ -179,7 +198,10 @@ Amplitude.init({
 
     		}
     		
-    	}
+    	},
+        "album_change": function() {
+            console.log("an album changed")
+        }
     }
 
 })
@@ -323,6 +345,17 @@ function hideVolume(e) {
     document.querySelector('.volume-control-wrapper').setAttribute('style', 'display: none');
 }
 
+document.querySelector('.playlist-container').addEventListener('mouseenter', function(e){
+    document.querySelector('.playlist-wrapper').setAttribute('style', 'display: block');
+    document.querySelector('.playlist-container').addEventListener('mouseleave', hidePlaylist)
+
+});
+
+function hidePlaylist(e) {
+    document.querySelector('.playlist-container').removeEventListener('mouseleave', hidePlaylist);
+    document.querySelector('.playlist-wrapper').setAttribute('style', 'display: none');
+}
+
 
 //fires whenever the slider is adjusted, so we can see when to change
 document.querySelector('.amplitude-volume-slider').oninput = function() {
@@ -350,3 +383,56 @@ document.querySelector('.amplitude-volume-slider').oninput = function() {
 }
 
 
+
+//populate the playlist select with a playlist 
+
+function createSongContainer(song) {
+    var songContainer = document.createElement('div');
+    songContainer.className = "song-container";
+
+    var nameContainer = document.createElement('div');
+    nameContainer.className = "song-name-container";
+
+    var songName = document.createElement('div');
+    songName.className = "song-name";
+    songName.innerHTML = song.name;
+
+
+    var artist = document.createElement('div');
+    artist.className = "song-artist";
+    artist.innerHTML = song.artist;
+
+    var duration = document.createElement('div');
+    duration.className = "song-duration";
+    duration.innerHTML = song.duration;
+
+    nameContainer.appendChild(songName);
+    nameContainer.appendChild(artist);
+
+    songContainer.appendChild(nameContainer);
+    songContainer.appendChild(duration);
+
+    return songContainer;
+}
+
+function generatePlaylistSelect(playlistName) {
+    var i = 0;
+    while (true) {
+        var song = Amplitude.getSongAtPlaylistIndex(playlistName, i);
+        if (!song) {break;}
+        var songContainer = createSongContainer(song)
+        document.querySelector('.songs-container').appendChild(songContainer);
+        console.log(song);
+        songContainer.onclick = playSong.bind(null,song);
+
+        i += 1;
+    }
+
+}
+
+function playSong(song) {
+    console.log(song);
+    Amplitude.playNow(song);
+}
+
+generatePlaylistSelect('inaugural');

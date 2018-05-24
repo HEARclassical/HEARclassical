@@ -37,9 +37,10 @@
 #audioplayer .audio-image {
 	height: 90%;
 	width: auto;
-	position: absolute;
+	position: relative;
 	margin-left: 10px;
 	padding: 10px;
+	float: left;
 }
 
 #audioplayer .audio-image img {
@@ -48,10 +49,10 @@
 }
 
 #audioplayer .bottom-container {
-	position: absolute;
+	position: relative;
 	width: 500px;
 	height: 100%;
-	left: 50px;
+	left: 40px;
 }
 
 #audioplayer .control-container {
@@ -78,6 +79,7 @@
 	height: 6px;
 	border-radius: .5em;
 	cursor: pointer;
+	margin-top: 7px;
 }
 
 
@@ -310,11 +312,12 @@ input[type=range]::-ms-track {
   background: transparent; 
   border-color: transparent;
   color: transparent;
+
 }
 
 #audioplayer .amplitude-prev {
 	background: url('https://hearclassical.github.io/HEARclassical/assets/images/audioplayer/previous-track.png') no-repeat;
-	transform: scale(0.4);
+	transform: scale(0.5);
 	position: absolute;
 	height: 50px;
 	width: 50px;
@@ -325,7 +328,7 @@ input[type=range]::-ms-track {
 
 #audioplayer .amplitude-next {
 	background: url('https://hearclassical.github.io/HEARclassical/assets/images/audioplayer/next-track.png') no-repeat;
-	transform: scale(0.4);
+	transform: scale(0.5);
 	position: absolute;
 	height: 50px;
 	width: 50px;
@@ -343,7 +346,7 @@ input[type=range]::-ms-track {
 }
 
 #audioplayer .playlist-container .playlist-image {
-	background: url('https://hearclassical.github.io/HEARclassical/assets/images/audioplayer/mute-volume.png') no-repeat;
+	background: url('https://hearclassical.github.io/HEARclassical/assets/images/audioplayer/playlist.png') no-repeat;
 	transform: scale(.6);
 	background-size: cover;
 	width: 100%;
@@ -352,4 +355,87 @@ input[type=range]::-ms-track {
 
 }
 
+#audioplayer .playlist-container .playlist-wrapper {
+    position: absolute;
+    top: -350px;
+    height: 350px;
+    width: 400px;
+    right: 0px;
+    padding-bottom: 20px;
+    display: none;
+}
 
+#audioplayer .playlist-container .playlist-wrapper .playlist-song-select {
+	position: absolute;
+	width: 380px;
+	height:340px;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	position: absolute;
+	background: white;
+	-webkit-filter: drop-shadow(0px 2px 2px rgba(130,130,130,1));
+    filter        : drop-shadow(0px 2px 2px rgba(130,130,130,1));
+    -ms-filter    : "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=2, Color='#444')";
+    filter        : "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=2, Color='#444')";
+}
+
+#audioplayer .playlist-container .playlist-wrapper .playlist-song-select::after{
+    content: '';
+    border: 10px solid transparent;
+    border-top-color: white;
+    position: absolute;
+    top: 350px;
+    z-index: 100;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    right: 0px;
+}
+
+
+/* formatting for dynamically generated songs in container */
+
+.songs-container {
+	height: 100%;
+	overflow-y: scroll;
+
+}
+.song-container {
+	padding: 5px 10px;
+	height: 40px;
+	font-family: Verdana, sans;
+	font-size: 13px;
+
+
+}
+
+.song-container:hover {
+	background: rgba(31,26, 120, 0.75);
+	color: white;
+	cursor: pointer;
+}
+
+.song-container:hover .song-name {
+	color: rgba(200,200,200, 0.8)!important;
+}
+
+.song-container .song-name-container {
+	float: left;
+	margin-left: 20px;
+}
+
+.song-container .song-name {
+	font-size: 13px;
+	color: rgba(100,100,100,0.8);
+}
+
+.song-container .song-artist {
+	font-size: 11px!important;
+}
+
+.song-container .song-duration {
+	text-align: right;
+    right: 0px;
+    position: relative;
+    top: 10px;
+}
