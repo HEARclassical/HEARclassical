@@ -330,9 +330,13 @@ document.getElementById('audioplayer-close-button').onclick = function(){
     hideAudioplayer()
 };
 
-document.getElementById('open-audio').onclick = function() {
-    showAudioplayer();
-};
+var audioLinks = document.getElementsByClassName('audioplayer-link');
+for (var i = 0; i < audioLinks.length; i++){
+
+    audioLinks[i].onclick = function() {
+        showAudioplayer();
+    };
+}
 
 document.querySelector('.volume-container').addEventListener('mouseenter', function(e){
     document.querySelector('.volume-control-wrapper').setAttribute('style', 'display: block');

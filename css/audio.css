@@ -125,8 +125,8 @@
 	background: rgba(255,255,255,.95);
 	z-index: 1;
 	opacity: 0.5;
-	height: 3vmin;
-	width: 3vmin;
+	height: 20px;
+	width: 20px;
 	transition: opacity 0.2s linear;
 	cursor: pointer;
 }
@@ -148,9 +148,9 @@
 #audioplayer-close-button::before, #audioplayer-close-button::after {
   position: absolute;
   content: ' ';
-  height: 3vmin;
-  left: 1.5vmin;
-  width: .1vmin;
+  height: 20px;
+  left: 10px;
+  width: 1px;
   min-width: .5px;
   background-color: #333;
 }
@@ -438,4 +438,9 @@ input[type=range]::-ms-track {
     right: 0px;
     position: relative;
     top: 10px;
+}
+
+span.audioplayer-link {
+	color: blue;
+	cursor: pointer;
 }

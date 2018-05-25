@@ -1,6 +1,8 @@
 $('.form-links').find('a').click(function(){
 
 	$('#popup-iframe').bind('load',function(){
+		$('#popup-overlay').removeClass('dark');
+
 		$('#popup-overlay').fadeIn(1000);
 
 	})
@@ -16,6 +18,7 @@ $('#popup-close-button').click(function(){
 
 $('.lightbox-link').click(function(){
 	$('#popup-iframe').bind('load',function(){
+		$('#popup-overlay').addClass('dark');
 		$('#popup-overlay').fadeIn(1000);
 
 	})
