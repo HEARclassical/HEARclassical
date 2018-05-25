@@ -15,7 +15,7 @@ label {
 
 input {
 	width: 35vmin;
-	height: 10vmin;
+	height: 5vmin;
 	border: none;
 	border-radius: 3px;
 	left: 0;
@@ -23,16 +23,16 @@ input {
 	margin: 0 auto;
 	display: block;
 	text-align: center;
-	background: radial-gradient(rgba(255,255,255,1) 50%, rgba(255,255,255,0) 70%);
+	/*background: radial-gradient(rgba(255,255,255,1) 50%, rgba(255,255,255,0) 70%);*/
 	padding-left: 5vmin!important;
 	padding-right: 5vmin!important;
 	font-family: Verdana;
-	font-size: 14px;
+	font-size: 2vmin;
 }
 
 textarea {
-	width: 35vmin;
-	height: 30vmin;
+	width: 45vmin;
+	height: 15vmin;
 	border: none;
 	border-radius: 3px;
 	left: 0;
@@ -40,18 +40,19 @@ textarea {
 	margin: 0 auto;
 	display: block;
 	text-align: center;
-	background: radial-gradient(rgba(255,255,255,1) 50%, rgba(255,255,255,0) 70%);
+	/*background: radial-gradient(rgba(255,255,255,1) 50%, rgba(255,255,255,0) 70%);*/
 	resize: none;
 	vertical-align: middle;
-	padding: 8vmin!important;
+	padding: 1vmin!important;
 	font-family: Verdana;
-	font-size: 14px;
+	font-size: calc(2px + 1.5vmin);
 }
 
 input:focus, textarea:focus {
 	color: white;
 	padding: 0;
-	background: radial-gradient(darkblue 30%, rgba(255,255,255,0) 70%);
+	/*background: radial-gradient(darkblue 30%, rgba(255,255,255,0) 100%);*/
+	background: rgba(31,26, 120, 0.75);
 	background-color: none;
 	border: none;
 	outline: none;
@@ -110,6 +111,7 @@ button.form-submit-button {
 	border-radius: 3px;
 	padding: 5px 15px 5px 15px;
 	border-style: none;
+	cursor: pointer;
 }
 
 button.form-submit-button:focus {
@@ -121,14 +123,16 @@ button.form-submit-button:active {
 }
 
 fieldset {
-	background: radial-gradient(rgba(147, 200, 255, 1.0) 20%, rgba(240, 248, 255, 0.0) 70%);
-	border-radius: 10vmin;
+	/*background: radial-gradient(rgba(147, 200, 255, 1.0) 20%, rgba(240, 248, 255, 0.0) 70%);*/
+	background: rgba(200,200,255,0.3);
+	border-radius: 1vmin;
 	padding: 20px;
-	height: 15vmin;
+	margin: 10px 0px;
+	height: auto;
 }
 
 
-.comment-form {
+.ambassador-form, .comment-form {
 	text-align: center;
 }
 
@@ -136,14 +140,29 @@ fieldset {
 	margin-top: 30px;
 }
 #form-description {
-	height: 40vmin;
+	height: auto;
 }
 
-#form-email, #form-name {
+#form-description label {
+	font-size: 3vmin!important;
+}
+
+.comment-form #form-email, .comment-form #form-name {
 	display: inline-block;
 	position: relative;
 	width: 40vmin;
-	margin: 5vmin 5vmin 5vmin 5vmin;
+	margin: 10px 5vmin 0vmin 5vmin;
+}
+
+.ambassador-form #form-email, .ambassador-form #form-name {
+	display: inline-block;
+	position: relative;
+	width: 40vmin;
+	margin: 10px 2.5vmin 0px 2.5vmin;
+}
+
+.ambassador-form #form-email label, .ambassador-form #form-name label {
+	font-size: 3vmin!important;
 }
 
 #form-comment {
@@ -151,10 +170,10 @@ fieldset {
 	margin-right: 20vw;
 	margin-top: 5vmin;
 	margin-bottom: 5vmin;
-	height: 40vmin;
+	height: auto;
 }
 
-.composer-form fieldset {
+.ambassador-form fieldset {
 	margin-left: 20vw;
 	margin-right: 20vw;
 }
@@ -166,6 +185,6 @@ fieldset {
 	margin: 0 auto;
 	left: 0;
 	right: 0;
-	margin-bottom: 100px;
+	margin-bottom: 10px;
 	text-align: center;
 }

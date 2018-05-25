@@ -24,7 +24,41 @@
 	border-radius: .25em;
 }
 
-p.month {
+.concert-date-past {
+	background-color: #8488c787;
+	top: 40%;
+	width: 80px;
+	height: 80px;
+	text-align: center;
+	cursor: default;
+	user-select: none;
+	border-radius: .25em;
+}
+
+.concert-date-past p.month {
+	font-family: Garamond;
+	font-size: 18px;
+	font-variant: all-small-caps;
+	line-height: 0px;
+	padding-top: 20%;
+	
+}
+
+.concert-date-past p.day {
+	font-family: Garamond;
+	font-size: 25px;
+	line-height: 0px;
+}
+
+.concert-date-past p.year {
+	font-family: Garamond;
+	font-size: 19px;
+	line-height: 0px;
+}
+
+
+
+.concert-date p.month {
 	font-family: Garamond;
 	font-size: 23px;
 	font-variant: all-small-caps;
@@ -33,7 +67,7 @@ p.month {
 	
 }
 
-p.day {
+.concert-date p.day {
 	font-family: Garamond;
 	font-size: 28px;
 	line-height: 0px;
@@ -56,4 +90,9 @@ p.day {
 	font-family: "Museo Sans 700", Verdana, sans;
 	font-size: 40px;
 	letter-spacing: 3px;
+}
+
+
+.lightbox-link:hover, .audioplayer-link:hover {
+	color: orange;
 }

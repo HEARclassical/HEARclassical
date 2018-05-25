@@ -1,6 +1,8 @@
 var SEEKING = false;
 var SHOWDURATION = true;
 var DURATION;
+var playPauseButton = document.querySelector('.amplitude-play-pause');
+
 Amplitude.init({
 
 	"songs": [
@@ -335,6 +337,10 @@ for (var i = 0; i < audioLinks.length; i++){
 
     audioLinks[i].onclick = function() {
         showAudioplayer();
+        if (this.classList.contains('play-now')) {
+            Amplitude.playNow(Amplitude.getSongAtPlaylistIndex('inaugural', 0))
+
+        }
     };
 }
 

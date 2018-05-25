@@ -5,22 +5,22 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-	<title> Tell Us About a Composer</title>
+	<title> Tell Us About Yourself</title>
   <link rel="stylesheet" href="form.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 
 <body>
-	<form id="gform" class="composer-form" method="POST" action="https://script.google.com/macros/s/AKfycbyluvPX7ttojxNJNCrfRamFEruJLJUrqaP0O9V54Kljm7-IBjtI/exec">
+	<form id="gform" class="ambassador-form" method="POST" action="https://script.google.com/macros/s/AKfycbyluvPX7ttojxNJNCrfRamFEruJLJUrqaP0O9V54Kljm7-IBjtI/exec">
   
-  <h1> Teach us about a Composer </h1>
-	<fieldset class="pure-group">
+  <h1> Tell us About Yourself </h1>
+	<fieldset class="pure-group" id="form-name">
       <label for="AmbassadorName">What's your name?</label>
       <input id="AmbassadorName" name="AmbassadorName" required placeholder="Your Name" />
     </fieldset>
 
-    <fieldset class="pure-group">
+    <fieldset class="pure-group" id="form-email">
       <label for="AmbassadorEmail">Where can we reach you? </label>
       <input id="AmbassadorEmail" name="AmbassadorEmail"
       required placeholder="your@email.com" />
@@ -33,7 +33,7 @@
 
     <fieldset class="pure-group">
       <label for="AmbassadorWebsite"> Where can we learn more about you? </label>
-      <input id="AmbassadorWebsite" name="AmbassadorWebsite" placeholder="Your website / article about you" />
+      <input id="AmbassadorWebsite" required name="AmbassadorWebsite" placeholder="website / article" />
     </fieldset>
 
 

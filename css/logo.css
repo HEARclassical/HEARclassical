@@ -150,6 +150,7 @@ SCROLL DOWN INDICATOR
   transition: all 0.5s linear;
   transition-property: transform;
   user-select: none;
+  cursor: pointer;
 }
 
 .scroll-indicator:hover {
