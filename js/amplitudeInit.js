@@ -432,7 +432,7 @@ function generatePlaylistSelect(playlistName) {
         if (!song) {break;}
         var songContainer = createSongContainer(song)
         document.querySelector('.songs-container').appendChild(songContainer);
-        console.log(song);
+        //console.log(song);
         songContainer.onclick = playSong.bind(null,song);
 
         i += 1;
@@ -441,7 +441,7 @@ function generatePlaylistSelect(playlistName) {
 }
 
 function playSong(song) {
-    console.log(song);
+    //console.log(song);
     Amplitude.playNow(song);
 }
 

@@ -72,7 +72,7 @@ $(window).bind("load",function() {
 
 			
 			if (!comingFromSlide && !comingFromIntro) {
-				$('#home-anchor > .header-button-text').css({'color': 'lightgray', 'text-decoration-line': 'underline', 'text-decoration-color': 'lightgray'});
+				$('#home-anchor > .header-button-text').css({'color': 'lightgray', 'text-decoration-line': 'underline', 'text-decoration': 'underline', 'text-decoration-color': 'lightgray'});
 				
 			}
 			
@@ -122,14 +122,14 @@ $(window).bind("load",function() {
 			//indicate in the nav header that we are on the new slide.
 			var id = '#' + slideAnchor + '-anchor';
 
-			$('.site-header .header-button-text').css({'color': 'white', 'text-decoration-line': 'inherit', 'text-decoration-color': 'white'});
-			$(id + ' > .header-button-text').css({'color': 'lightgray', 'text-decoration-line': 'underline', 'text-decoration-color': 'lightgray'});
+			$('.site-header .header-button-text').css({'color': 'white', 'text-decoration-line': 'inherit', 'text-decoration': 'inherit', 'text-decoration-color': 'white'});
+			$(id + ' > .header-button-text').css({'color': 'lightgray', 'text-decoration-line': 'underline', 'text-decoration': 'underline', 'text-decoration-color': 'lightgray'});
 		},
 		onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){
 
 			
 			//reset location indication in the nav header.
-			$('.site-header .header-button-text').css({'color': 'white', 'text-decoration-line': 'inherit', 'text-decoration-color': 'white'});
+			$('.site-header .header-button-text').css({'color': 'white', 'text-decoration-line': 'inherit', 'text-decoration': 'inherit', 'text-decoration-color': 'white'});
 
 			/*make slides between current and destination invisible */
 			console.log('left')

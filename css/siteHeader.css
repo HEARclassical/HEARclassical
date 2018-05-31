@@ -120,6 +120,7 @@ p.header-button-text {
 
 .site-header .header-button-text:hover{
 	text-decoration-line: underline!important;
+  text-decoration: underline!important;
 }
 
 
