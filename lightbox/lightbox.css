@@ -28,7 +28,7 @@
 }
 
 /* Modal Content */
-.modal-content {
+#modal-content {
   position: relative;
   /*background-color: #fefefe;*/
   margin: auto;
@@ -37,14 +37,14 @@
   max-width: 1200px;
 }
 
-.modal-content-left, .modal-content-right {
+#modal-content-left, #modal-content-right {
   position: relative;
   height: 100%;
   width: 10%;
   float: left;
 }
 
-.modal-content-middle {
+#modal-content-middle {
   position: relative;
   height: 100%;
   
@@ -60,7 +60,7 @@
 }
 
 .main-picture {
-  height: calc(90% - 10px);
+  height: calc(90% - 20px);
   position: relative;
 
 }
@@ -68,12 +68,13 @@
 .modal-padding-bottom {
   height: 10%;
   width: 100%;
+  margin-bottom: 10px;
 }
 
 
 
 
-.mySlides img {
+.lightbox-slide img {
   max-height: 100%;
   max-width: 100%;
   left: 0;
@@ -84,7 +85,7 @@
   position: absolute;
 }
 
-.mySlides {
+.lightbox-slide {
   display: none;
   width: auto;
   height: 100%;
@@ -92,12 +93,7 @@
 }
 
 
-.cursor {
-  cursor: pointer;
-  width: 80%;
-  margin-left: 10%;
-  margin-top: 10%;
-}
+
 
 /* Next & previous buttons */
 .prev,
@@ -146,12 +142,18 @@
   color: white;
 }
 
-.demo {
+
+
+.lightbox-preview-slide {
+  cursor: pointer;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 10%;
   opacity: 0.6;
 }
 
 .active,
-.demo:hover {
+.lightbox-preview-slide:hover {
   opacity: 1;
 }
 
@@ -165,44 +167,49 @@ img.hover-shadow {
 
 
 
-.preview-pictures {
+#preview-pictures {
   height: fit-content;
-  max-height: 30%;
-  position: relative;
+  position: absolute;
+  bottom: 0;
   white-space: nowrap;
   overflow-x: scroll;
   overflow-y: hidden;
-  scroll-behavior: contain;
-  display: none;
+  max-height: 0;
+  transition: max-height 1s linear;
+  background: rgba(0,0,0,.9);
+  margin-bottom: 20px;
 }
 
-.preview-pictures:hover::-webkit-scrollbar {
+
+#preview-pictures:hover::-webkit-scrollbar {
    background-color: transparent;
    border-color: transparent;
 }
 
-.preview-pictures:hover::-webkit-scrollbar-track {
+
+#preview-pictures:hover::-webkit-scrollbar-track {
   background-color: rgba(0,0,0,.8);
    border-color: darkgray;
 }
 
-.preview-pictures:hover::-webkit-scrollbar-thumb {
+#preview-pictures:hover::-webkit-scrollbar-thumb {
    background-color: rgba(30,30,30,.8);
    border-color: gray;
 }
 
-.preview-pictures::-webkit-scrollbar {
+#preview-pictures::-webkit-scrollbar {
   height:12px;
   top: 0;
 }
-.preview-pictures::-webkit-scrollbar-track {
+
+#preview-pictures::-webkit-scrollbar-track {
   background-color: transparent;
   height: 10px;
   border-radius: 4px;
   border: 1px solid;
   border-color: transparent;
 }
-.preview-pictures::-webkit-scrollbar-thumb {
+#preview-pictures::-webkit-scrollbar-thumb {
   background-color: transparent;
   height: 10px;
   border-radius: 4px;
@@ -210,20 +217,20 @@ img.hover-shadow {
   border-color: transparent;
 }
 
-.preview-pictures::-webkit-scrollbar-button {
+#preview-pictures::-webkit-scrollbar-button {
     width: 0;
     height: 0;
     display: none;
 }
-.preview-pictures::-webkit-scrollbar-corner {
+#preview-pictures::-webkit-scrollbar-corner {
     background-color: transparent;
 }
 
-.preview-pictures::-webkit-scrollbar-thumb:hover {
+#preview-pictures::-webkit-scrollbar-thumb:hover {
   background-color:rgba(100,100,100,.8)!important;
 
 }
-.preview-pictures::-webkit-scrollbar-thumb:active {
+#preview-pictures::-webkit-scrollbar-thumb:active {
   background-color: rgba(50,50,50,.8)!important;
 }
 
@@ -239,7 +246,7 @@ img.hover-shadow {
 .slide-number-container {
   position: absolute;
   margin-top: 0%;
-  margin-left: 0%;
+  margin-left: 10%;
 }
 
 .caption-container {
@@ -265,15 +272,23 @@ img.hover-shadow {
  
 }
 
-.preview-toggle {
+#preview-toggle {
   background: url("https://hearclassical.github.io/HEARclassical/assets/images/list-of-thumbnails-white.png") no-repeat;
   background-size: cover;
-  transform: rotate(270deg);
+  transform: scale(.8) rotate(270deg);
   position: absolute;
-  margin-right: 50px;
-  margin-top: 0;
+  right: -5%;
+  bottom: 10px;
+  width: 50px;
+  height: 50px;
+  opacity: 0.7;
+  transition: opacity 0.2s linear, transform 0.5s ease-in-out;
+  cursor: pointer;
 }
 
+#preview-toggle:hover {
+  opacity: 1.0;
+}
 
 
 @media only screen and (max-width: 650px) {

@@ -1,8 +1,7 @@
 $('.form-links').find('a').click(function(){
-
+	resetPopup();
 	$('#popup-iframe').bind('load',function(){
 		$('#popup-overlay').removeClass('dark');
-
 		$('#popup-overlay').fadeIn(1000);
 
 	})
@@ -17,6 +16,7 @@ $('#popup-close-button').click(function(){
 });
 
 $('.lightbox-link').click(function(){
+	resetPopup();
 	$('#popup-iframe').bind('load',function(){
 		$('#popup-overlay').addClass('dark');
 		$('#popup-overlay').fadeIn(1000);
@@ -24,3 +24,17 @@ $('.lightbox-link').click(function(){
 	})
 
 })
+
+
+function resetPopup() {
+	var iframe = document.getElementById('popup-iframe');
+	var container = iframe.parentElement;
+	var src = iframe.src;
+	iframe.remove();
+
+	iframe.setAttribute('src', src);
+
+	container.append(iframe);
+
+}
+

@@ -61,6 +61,7 @@ $(window).bind("load",function() {
 		css3: false, //only hope of getting background-attachment: fixed to work cross browser
 		controlArrows: false,
 		anchors: ['HEAR', 'main'],
+		recordHistory: false,
 		scrollingSpeed: scrollingSpeed,
 		animateAnchor: false,
 		lazyLoading: false,
