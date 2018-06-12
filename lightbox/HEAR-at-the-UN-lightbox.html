@@ -55,14 +55,22 @@
 var numSlides = 13; //number of photos from the concert
 var concertName = "HEAR-at-the-UN" //folder name of corresponding concert
 var captions = {
-  1: "Ariel Horowitz, <i>violin</i>, Brenda Vongova, <i>piano</i>",
-  2: "Left to right: Amir Farsi, <i>flute</i>, Vyacheslav Gryaznov, <i>piano</i>, and Felice Doynov, <i>flute</i>, bow after performance of Yuko Uebayashi's <b> Town Light (1997)</b>",
-  3: "Left to right: Ariel Horowitz, <i> violin</i>, Johnna Wu, <i> violin</i>, Adrian Daurov, <i> cello</i>, and Alexandra Simpson, <i> viola</i>,  perform Joseph Boulogne's <b> String Quartet No. 5 in G major</b>",
-  4: "Felice Doynov, founder and director of HEAR Classical, gives opening remarks"
+  1: "Left to right: Amir Farsi, <i>flute</i>, Brenda Vongova, <i>piano</i>, and Felice Doynov, <i>flute</i>, perform Yuko Uebayashi's <b> Town Light (1997)</b>",
+  2: "Left to right: Amir Farsi, <i>flute</i>, Brenda Vongova, <i>piano</i>, and Felice Doynov, <i>flute</i>, perform Yuko Uebayashi's <b> Town Light (1997)</b>",
+  3: "Left to right: Brenda Vongova, President and artistic directory of the UN chamber music society; Jonathan Salamon, co-founder and manager of HEAR Classical; Felice Doynov, founder and artistic director of HEAR Classical",
+  4: "JIJI performs Julius Eastman's <b> Touch Him When </b> for solo guitar",
+  5: "Ariel Horowitz, <i>violin</i>, and Jonathan Salamon, <i>piano</i>, perform Joseph Boulogne's <b>Sonata For Violin and Piano in G Minor </b>",
+  6: "Cornelia Sommer, <i>bassoon</i>, and Luis Ortiz, <i>piano</i>, perform Ulysses Kay's <b>Sonata For Bassoon and Piano</b>",
+  7: "Adrian Daurov, <i>cello</i>, and Brenda Vongova, <i>piano</i>, perform a <b>Nocturne</b> composed by Lili Boulanger",
+  8: "Leo Sussman, <i>flute</i> performs (with Jonathan Salamon, <i>piano</i>) Giaccobe Cervetto's <b>Sonata for Flute and Continuo in D Major</b>",
+  //need updating 9-13
+  9: "Left to right: Ariel Horowitz, <i> violin</i>, Johnna Wu, <i> violin</i>, Adrian Daurov, <i> cello</i>, and Alexandra Simpson, <i> viola</i>,  perform Joseph Boulogne's <b> String Quartet No. 5 in G major</b>",
+  10: "Felice Doynov, founder and director of HEAR Classical, gives opening remarks"
 }
 
 //Everything here and below is done dynamically
 var srcPathBase = "https://hearclassical.github.io/HEARclassical/assets/images/concerts/" + concertName + "/"
+var needsAverage = true;
 
 function makeSlide(n) {
   var slide = document.createElement("div");
@@ -88,11 +96,21 @@ function makePreviewSlide(n) {
   return previewSlide;
 }
 
+
+//add all the slides
 for (var i = 1; i <= numSlides; i++) {
   document.getElementById("modal-content-middle").appendChild(makeSlide(i));
-  document.getElementById("preview-pictures").appendChild(makePreviewSlide(i));
+  var previewSlide = makePreviewSlide(i);
+  document.getElementById("preview-pictures").appendChild(previewSlide);
+
 }
 
+var lightboxPreviewSlides = document.getElementsByClassName("lightbox-preview-slide")
+//resize the images intelligently
+
+console.log(lightboxPreviewSlides);
+
+ 
 var slideIndex = 1;
 var previewShowing = false;
 showSlides(slideIndex);
@@ -126,6 +144,7 @@ function showSlides(n) {
 }
 
 function togglePreview() {
+  averagePreviewHeights();
   var preview = document.getElementById("preview-pictures");
   var previewButton = document.getElementById("preview-toggle");
   if (previewShowing) {
@@ -138,6 +157,30 @@ function togglePreview() {
   } 
   previewShowing = !previewShowing;
 
+}
+
+function averagePreviewHeights() {
+  if (!needsAverage) {
+    return;
+  }
+  var previewSlides = document.getElementsByClassName("lightbox-preview-slide");
+  //console.log(lightboxPreviewSlides);
+  averageHeight = 0;
+  for (var i = 0; i < previewSlides.length; i++) {
+    //console.log(lightboxPreviewSlides[i].height);
+
+    averageHeight += previewSlides[i].height;
+  }
+  averageHeight /= numSlides;
+
+  for (var i = 0; i < previewSlides.length; i++) {
+    //the columns are ideally at 25% of parent width, so we normalize the ideal width up to the average
+    //while maintaing the pictures aspect ratio
+    previewSlides[i].parentElement.style.height = (25 * averageHeight / previewSlides[i].height) + "%";
+    previewSlides[i].parentElement.style.width = (25 * averageHeight / previewSlides[i].height) + "%";
+  }
+
+  needsAverage = false;
 }
 
 </script>

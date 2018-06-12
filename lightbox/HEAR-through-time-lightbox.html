@@ -63,6 +63,7 @@ var captions = {
 
 //Everything here and below is done dynamically
 var srcPathBase = "https://hearclassical.github.io/HEARclassical/assets/images/concerts/" + concertName + "/"
+var needsAverage = true;
 
 function makeSlide(n) {
   var slide = document.createElement("div");
@@ -126,6 +127,7 @@ function showSlides(n) {
 }
 
 function togglePreview() {
+  averagePreviewHeights();
   var preview = document.getElementById("preview-pictures");
   var previewButton = document.getElementById("preview-toggle");
   if (previewShowing) {
@@ -138,6 +140,30 @@ function togglePreview() {
   } 
   previewShowing = !previewShowing;
 
+}
+
+function averagePreviewHeights() {
+  if (!needsAverage) {
+    return;
+  }
+  var previewSlides = document.getElementsByClassName("lightbox-preview-slide");
+  //console.log(lightboxPreviewSlides);
+  averageHeight = 0;
+  for (var i = 0; i < previewSlides.length; i++) {
+    //console.log(lightboxPreviewSlides[i].height);
+
+    averageHeight += previewSlides[i].height;
+  }
+  averageHeight /= numSlides;
+
+  for (var i = 0; i < previewSlides.length; i++) {
+    //the columns are ideally at 25% of parent width, so we normalize the ideal width up to the average
+    //while maintaing the pictures aspect ratio
+    previewSlides[i].parentElement.style.height = (25 * averageHeight / previewSlides[i].height) + "%";
+    previewSlides[i].parentElement.style.width = (25 * averageHeight / previewSlides[i].height) + "%";
+  }
+
+  needsAverage = false;
 }
 
 </script>
