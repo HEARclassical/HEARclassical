@@ -50,7 +50,7 @@
 -->
 
 <!-- jplayer.js audioplayer -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/amplitudejs@3.2.3/dist/amplitude.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/amplitudejs@3.3.0/dist/amplitude.js"></script>
 
 <body class="home">
 
@@ -259,7 +259,9 @@
 				<div id="website-preview-link-display">
 					<p></p>
 				</div>
-				<iframe id="ambassador-iframe" name="ambassador-iframe"> </iframe>
+				<div id="ambassador-preview" name="ambassador-preview">
+					<img>	
+				 </div>
 			</div>
 			<div class="audioplayer-link" id="open-audio">
 				<span>HEAR audioplayer</span>	
@@ -269,26 +271,49 @@
 				<span id="audioplayer-close-button"></span>
 				
 				<div id="audioplayer">
-					<div class="audio-image">
-						<img class="cover_art_url" amplitude-song-info="cover_art_url" amplitude-main-song-info="true" > 
+					<div class="meta-container">
+
+						<div class="audio-image">
+							<img class="cover_art_url" amplitude-song-info="cover_art_url" amplitude-main-song-info="true" > 
+						</div>
+						<div class="meta-song-name-container">
+							<div amplitude-song-info="name" amplitude-main-song-info="true" class="song-name">
+								 		
+							</div> 
+
+							<div amplitude-song-info="artist" amplitude-main-song-info="true">
+									
+							</div>
+						</div>
+						<!-- 
+							 Wrapper creates additional transparent space
+						     to bridge the gap between playlist image (hover trigger)
+						     and playlist select 									 
+						 -->
+						<div class="program-info-wrapper">
+							<div class="program-info-popup">
+								
+								<!--  Dynamically append song containers to the songs container when playlists change -->
+								<div class="program-info-container">
+								</div>
+							</div>
+						</div>
+
 					</div>
+					
 					<div class="bottom-container">
 
 						<div class="control-container">
 
-	 						<div class="meta-container">
-							 	<div amplitude-song-info="name" amplitude-main-song-info="true" class="song-name">
-							 		
-							 	</div> 
+							<div class="amplitude-prev" amplitude-playlist="inaugural">
+								<div> </div>
+							</div>
+							<div amplitude-playlist-main-play-pause="true" id="play-pause" class="amplitude-play-pause amplitude-paused" amplitude-playlist="inaugural">		
+							</div>
 
-								<div amplitude-song-info="artist" amplitude-main-song-info="true">
-									
-								</div>
+							<div class="amplitude-next" amplitude-playlist="inaugural">
+								<div></div>
 							</div>
-							<div class="amplitude-prev" amplitude-playlist="inaugural"></div>
-							<div amplitude-main-play-pause="true" id="play-pause" class="amplitude-play-pause amplitude-paused" amplitude-playlist="inaugural">								
-							</div>
-							<div class="amplitude-next" amplitude-playlist="inaugural"></div>
 
 							
 						</div>
@@ -495,7 +520,7 @@
 										</h2>
 										<div class="ambassador-about">
 											<p>
-												<a class="ambassador-website no-embed" target="_blank" href="https://www.arielhorowitz.com" data-image="ariel-horowitz-preview.jpg"> 
+												<a class="ambassador-website" target="_blank" href="https://www.arielhorowitz.com" data-image="ariel-horowitz-preview.jpg"> 
 													Ariel Horowitz
 												</a> 
 												is a violinist, music educator, and social justice advocate currently pursuing her masters at the Yale School of Music. Ariel is the founder of The Heartbeat Project, a student-run program that provides music and math education for students living on the Navajo Reservation. The annual summer workshop combines the fundamentals of music and math for Navajo (Diné) K-12 students while cultivating a safe space for students to thrive and gain confidence in themselves. The Heartbeat Project strives to create an atmosphere of cultural exchange in which the impact of American colonialism on indigenous peoples is acknowledged, and the teaching artists respectfully engage with Diné music, cultures, and customs.
@@ -640,9 +665,7 @@
 										</h>
 
 										<p class="concert-description">
-											On May 25th HEAR Classical launched in New York at the All Saints Episcopal Church of Manhattan, where we celebrated our partnership with the <a href="http://unchambermusic.org/" target="_blank"> United Nations Chamber Music Society of the United Nations Staff Recreation Council </a>.  
-
-											<a class="lightbox-link" href = "lightbox/HEAR-at-the-UN-lightbox.html" target="popup-iframe"> look through photos from the concert </a> and to explore the program as you <span class="audioplayer-link play-now"> listen to the recording </span>.
+											On May 25th HEAR Classical launched in New York at the All Saints Episcopal Church of Manhattan, where we celebrated our partnership with the <a class="ambassador-website" href="http://unchambermusic.org/" target="_blank" data-image="un-chamber-music-preview.jpg"> United Nations Chamber Music Society of the United Nations Staff Recreation Council</a>.  We welcome you to <a class="lightbox-link" href = "lightbox/HEAR-at-the-UN-lightbox.html" target="popup-iframe"> look through photos from the concert </a> and to explore the program as you <span class="audioplayer-link play-now" amplitude-playlist-link="un-launch"> listen to the recording </span>.
 										</p>
 									</div>
 								</div>	
@@ -669,7 +692,7 @@
 
 									<p class="concert-description">
 										The Yale Launch of HEAR took place on Saturday, April 28th, at 3:00 pm in the Whitney Humanities Center.  The concert featured repertoire from Joseph Boulogne, William Grant Still, Ulysses Kay, Yuko Uebayashi, Élisabeth Jacquet de La Guerre, Giaccobe Cervetto, Amy Beach, Pauline Viardot, and Lili Boulanger.  We welcome you to 
-										<a class="lightbox-link" href = "lightbox/HEAR-through-time-lightbox.html" target="popup-iframe"> look through photos from the concert </a> and to explore the program as you <span class="audioplayer-link play-now"> listen to the recording </span>.
+										<a class="lightbox-link" href = "lightbox/HEAR-through-time-lightbox.html" target="popup-iframe"> look through photos from the concert </a> and to explore the program as you <span class="audioplayer-link play-now" amplitude-playlist-link="inaugural"> listen to the recording </span>.
 									</p>
 									</div>
 								</div>	

@@ -6,7 +6,11 @@ var playPauseButton = document.querySelector('.amplitude-play-pause');
 Amplitude.init({
 
 	"songs": [
-            {//1
+
+            ////////////////
+            //inaugural///
+            ////////////////
+            {//0
                 "name": "Opening Remarks Pt. 1",
                 "artist": "Felice Doynov",
                 "album": "HEAR Through Time",
@@ -15,7 +19,7 @@ Amplitude.init({
                 "duration": "2:18",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
-            {//2
+            {//1
                 "name": "Opening Remarks Pt. 2",
                 "artist": "Brenda Vongova",
                 "album": "HEAR Through Time",
@@ -24,7 +28,7 @@ Amplitude.init({
                 "duration": "2:17",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
-            {//3
+            {//2
                 "name": "Comments — Joseph Boulogne",
                 "artist": "Eli Greenhoe",
                 "album": "HEAR Through Time",
@@ -33,16 +37,31 @@ Amplitude.init({
                 "duration": "1:43",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
-            {//4
+            {//3
                 "name": "String Quartet No. 5",
                 "artist": "Joseph Boulogne",
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1rmv0aoAKBC2F3n_C2bVu56JxtWtOZq_b",
                 "duration": "11:22",
-                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg",
+                "composerDates": {
+                    "birth": 1745,
+                    "death": 1799
+                }, 
+                "fullName": "String Quartet No. 5 in G Major",
+                "movements": [
+                    ["I.", "Allegro Assai"],
+                    ["II.", "Gracioso"]
+                ],
+                "performers": [
+                    ["Ariel Horowitz", "violin"],
+                    ["Johnna Wu", "violin"],
+                    ["Alexandra Simpson", "viola"],
+                    ["Adrian Daurov", "cello"]
+                ]
             },
-            {//5
+            {//4
                 "name": "Comments — William Grant Still",
                 "artist": "Tanner Porter",
                 "album": "HEAR Through Time",
@@ -51,25 +70,42 @@ Amplitude.init({
                 "duration": "1:16",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
-            {//6
+            {//5
                 "name": "Bayou Home",
                 "artist": "William Grant Still",
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1LdqsBiSkdLt_Kga8JEFHEUU545-EAHYI",
                 "duration": "4:01",
-                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg",
+                "arrangedBy": "Alexa Still",
+                "composerDates": {
+                    "birth": 1895,
+                    "death": 1978
+                }, 
+                "performers": [
+                    ["Cornelia Sommer", "bassoon"],
+                    ["Luis Ortiz", "piano"]
+                ]
             },
-            {//7
+            {//6
                 "name": "Sonata for Bassoon and Piano",
                 "artist": "Ulysses Kay",
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1l4fKCzLbjzN2Q08wyKKTCmI-6DWvz9C9",
                 "duration": "5:10",
-                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg",
+                "composerDates": {
+                    "birth": 1917,
+                    "death": 1995
+                }, 
+                "performers": [
+                    ["Cornelia Sommer", "bassoon"],
+                    ["Luis Ortiz", "piano"]
+                ]
             },
-            {//8
+            {//7
                 "name": "Comments — Ulysses Kay",
                 "artist": "Tanner Porter",
                 "album": "HEAR Through Time",
@@ -78,7 +114,7 @@ Amplitude.init({
                 "url": "https://drive.google.com/uc?export=download&id=1gn6bf9wiYpLgsOfQ2KEBZLYKxbTrSErn",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
-            {//9
+            {//8
                 "name": "Comments — Yuko Uebayashi",
                 "artist": "Anteo Fabris",
                 "album": "HEAR Through Time",
@@ -87,16 +123,25 @@ Amplitude.init({
                 "duration": "3:41",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
-            {//10
+            {//9
                 "name": "Town Light",
                 "artist": "Yuko Uebayashi",
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1MqdMfw3ddppY_UsnIhrhfqgWLI6Ypl83",
                 "duration": "6:26",
-                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg",
+                "fullName": "Town Light (1997)",
+                "composerDates": {
+                    "birth": 1975,
+                }, 
+                "performers": [
+                    ["Amir Farsi", "flute"],
+                    ["Felice Doynov", "flute"],
+                    ["Vyacheslav Gryaznov", "piano"]
+                ]
             },
-            {//11
+            {//10
                 "name": "Comments — Élisabeth Jacquet de La Guerre",
                 "artist": "Eli Greenhoe",
                 "album": "HEAR Through Time",
@@ -105,16 +150,34 @@ Amplitude.init({
                 "duration": "1:29",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
-            {//12
+            {//11
                 "name": "Sonata No. 1",
                 "artist": "Élisabeth Jacquet de La Guerre",
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1worqt4gyCf67NdrPu3KvNFGE4zRJNgHP",
                 "duration": "15:57",
-                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg",
+                "fullName": "Sonata No. 1 in D minor for violin and continuo (1707)",
+                "composerDates": {
+                    "birth": 1665,
+                    "death": 1729
+                }, 
+                "movements": [
+                    ["I.", "Adagio"],
+                    ["II.", "Presto"],
+                    ["III.", "Adagio - Presto"],
+                    ["IV.", "Presto"],
+                    ["V.", "Aria"],
+                    ["VI.", "Presto"]
+                ],
+                "performers": [
+                    ["Dhyani Heath", "violin"],
+                    ["Jonathan Salamon", "harpsichord"],
+                    ["Lucas Guedes", "cello"]
+                ]
             },
-            {//13
+            {//12
                 "name": "Comments — Giaccobe Cervetto",
                 "artist": "Alishan Gezgin",
                 "album": "HEAR Through Time",
@@ -123,16 +186,30 @@ Amplitude.init({
                 "duration": "1:29",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
-            {//14
-                "name": "Sonata Op. 3 No. 2",
+            {//13
+                "name": "Sonata for flute and continuo",
                 "artist": "Giaccobe Cervetto",
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=11OaQiLGTxnpidXITmQmrv5Yd4v3WAytM",
                 "duration": "10:08",
-                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg",
+                "fullName": "Sonata in D major for flute and continuo, Op. 3 No. 2",
+                "composerDates": {
+                    "birth": 1680,
+                    "death": 1783
+                }, 
+                "movements": [
+                    ["I.", "Adagio"],
+                    ["II.", "Allegro con spirito"],
+                    ["III.", "Minuetto"]
+                ],
+                "performers": [
+                    ["Leo Sussman", "flute"],
+                    ["Jonathan Salamon", "harpsichord"],
+                ]
             },
-            {//15
+            {//14
                 "name": "Comments — Beach, Viardot, Boulanger",
                 "artist": "Fjóla Evans",
                 "album": "HEAR Through Time",
@@ -141,34 +218,59 @@ Amplitude.init({
                 "duration": "3:02",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
-            {//16
+            {//15
                 "name": "Invocation, Op. 55",
                 "artist": "Amy Beach",
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018", 
                 "url": "https://drive.google.com/uc?export=download&id=1x8u8hRr79JqlH3Jvn07HMAiNigVFGWo8",
                 "duration": "5:01",
-                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg",
+                "composerDates": {
+                    "birth": 1867,
+                    "death": 1944
+                }, 
+                "performers": [
+                    ["Ariel Horowitz", "violin"],
+                    ["Brenda Vongova", "piano"]
+                ]
             },
-            {//17
+            {//16
                 "name": "Romance",
                 "artist": "Pauline Viardot",
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1-TCZ1vnLcCy3qcYI2GZAu-LKRAdXmr_G",
                 "duration": "3:10",
-                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg",
+                "composerDates": {
+                    "birth": 1821,
+                    "death": 1910
+                }, 
+                "performers": [
+                    ["Ariel Horowitz", "violin"],
+                    ["Brenda Vongova", "piano"]
+                ]
+
             },
-            {//18
+            {//17
                 "name": "Nocturne",
                 "artist": "Lili Boulanger",
                 "album": "HEAR Through Time",
                 "date": "April 28, 2018",
                 "url": "https://drive.google.com/uc?export=download&id=1ETa9gKRGkMekvNJ3w97mrgEwKzo06Rjx",
                 "duration": "4:21",
-                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg",
+                "composerDates": {
+                    "birth": 1893,
+                    "death": 1918
+                }, 
+                "performers": [
+                    ["Ariel Horowitz", "violin"],
+                    ["Brenda Vongova", "piano"]
+                ]
             },
-            {//19
+            {//18
                 "name": "Closing Remarks",
                 "artist": "Felice Doynov",
                 "album": "HEAR Through Time",
@@ -177,11 +279,303 @@ Amplitude.init({
                 "duration": "0:47",
                 "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_april28.jpg"
             },
+            //////////////
+            //un-launch///
+            //////////////
+            {//0
+                "name": "Opening Remarks Pt. 1",
+                "artist": "Brenda Vongova",
+                "album": "HEAR at the U.N.",
+                "date": "May 25, 2018",
+                "url": "https://drive.google.com/uc?export=download&id=11kl0Ha0KiafQ74l3PFtgNhQ-H2J9GOCi",
+                "duration": "3:30",
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_may25.png"
+            },
+            {//1
+                "name": "Opening Remarks Pt. 2",
+                "artist": "Alison Rowe",
+                "album": "HEAR at the U.N.",
+                "date": "May 25, 2018",
+                "url": "https://drive.google.com/uc?export=download&id=1YFvbAia6LYk4IA6Hst10gwjrUCPxYilr",
+                "duration": "5:26",
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_may25.png"
+            },  
+            {//2
+                "name": "Opening Remarks Pt. 3",
+                "artist": "Kellie-Chandra Ognimba",
+                "album": "HEAR at the U.N.",
+                "date": "May 25, 2018",
+                "url": "https://drive.google.com/uc?export=download&id=1aXj1B4_nb_AvXeQD74zcMDDVYpb9OHhh",
+                "duration": "6:14",
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_may25.png"
+            },
+            {//3
+                "name": "Opening Remarks Pt. 4",
+                "artist": "Felice Doynov",
+                "album": "HEAR at the U.N.",
+                "date": "May 25, 2018",
+                "url": "https://drive.google.com/uc?export=download&id=16L-pI6MzXPF9-M2tvyZtXfF3i6F0HBoG",
+                "duration": "1:43",
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_may25.png"
+            },
+            {//4
+                "name": "Comments — William Grant Still and Ulysses Kay",
+                "artist": "Jonathan Salamon",
+                "album": "HEAR at the U.N.",
+                "date": "May 25, 2018",
+                "url": "https://drive.google.com/uc?export=download&id=1qT9xVNPebdS1-tP43jM1J5egUJU5OPP3",
+                "duration": "2:03",
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_may25.png"
+            },
+            {//5
+                "name": "Bayou Home",
+                "artist": "William Grant Still",
+                "album": "HEAR at the U.N.",
+                "date": "May 25, 2018",
+                "url": "https://drive.google.com/uc?export=download&id=1stA8WFH-EW8aD4J_x6Cqm1QI40DPLYLE",
+                "duration": "3:41",
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_may25.png",
+                "arrangedBy": "Alexa Still",
+                "composerDates": {
+                    "birth": 1895,
+                    "death": 1978
+                }, 
+                "performers": [
+                    ["Cornelia Sommer", "bassoon"],
+                    ["Luis Ortiz", "piano"]
+                ]
+            },
+            {//6
+                "name": "Sonata for Bassoon and Piano",
+                "artist": "Ulysses Kay",
+                "album": "HEAR at the U.N.",
+                "date": "May 25, 2018",
+                "url": "https://drive.google.com/uc?export=download&id=1V2fXkvNRVpJ5P0XZwxEKDRpudILcx_Qx",
+                "duration": "5:16",
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_may25.png",
+                "composerDates": {
+                    "birth": 1917,
+                    "death": 1995
+                }, 
+                "performers": [
+                    ["Cornelia Sommer", "bassoon"],
+                    ["Luis Ortiz", "piano"]
+                ]
+            },
+            {//7
+                "name": "Comments — Joseph Boulogne",
+                "artist": "Felice Doynov",
+                "album": "HEAR at the U.N.",
+                "date": "May 25, 2018",
+                "url": "https://drive.google.com/uc?export=download&id=1-vLoVnA1haoSk3FzH4i_xCI7rSAWHpQU",
+                "duration": "1:12",
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_may25.png"
+            },
+            {//8
+                "name": "Sonata for Violin and Piano",
+                "artist": "Jonathan Salamon",
+                "album": "HEAR at the U.N.",
+                "date": "May 25, 2018",
+                "url": "https://drive.google.com/uc?export=download&id=1zvsEAlV_28rxfV26cqCIjqKG9Rtr3gha",
+                "duration": "10:18",
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_may25.png",
+                "fullName": "Sonata for Violin and Piano in G minor, Op. 1b No. 3",
+                "composerDates": {
+                    "birth": 1745,
+                    "death": 1799
+                }, 
+                "movements": [
+                    ["I.", "Allegro"],
+                    ["II.", "Rondo Gracioso"]
+                ],
+                "performers": [
+                    ["Ariel Horowitz", "violin"],
+                    ["Jonathan Salamon", "piano"],
+                ]
+            },
+            {//9
+                "name": "Comments — Pauline Viardot",
+                "artist": "Jonathan Salamon",
+                "album": "HEAR at the U.N.",
+                "date": "May 25, 2018",
+                "url": "https://drive.google.com/uc?export=download&id=1Z_HJME8vUi6JAPeN8L0kQvKrw3F90nFt",
+                "duration": "0:40",
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_may25.png"
+            },
+            {//10
+                "name": "Romance",
+                "artist": "Pauline Viardot",
+                "album": "HEAR at the U.N.",
+                "date": "May 25, 2018",
+                "url": "https://drive.google.com/uc?export=download&id=1mafPPM8qLrPoeJRrOR6fzllLSiRpHDzO",
+                "duration": "3:40",
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_may25.png",
+                "composerDates": {
+                    "birth": 1821,
+                    "death": 1910
+                }, 
+                "performers": [
+                    ["Adrian Daurov", "cello"],
+                    ["Brenda Vongova", "piano"],
+                ]
+            },
+            {//11
+                "name": "Comments — Lili Boulanger",
+                "artist": "Jonathan Salamon",
+                "album": "HEAR at the U.N.",
+                "date": "May 25, 2018",
+                "url": "https://drive.google.com/uc?export=download&id=18OZw83rC-uw6YAU5mg7_Y35Pp4K38DTN",
+                "duration": "1:12",
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_may25.png"
+            },
+            {//12
+                "name": "Nocturne",
+                "artist": "Lili Boulanger",
+                "album": "HEAR at the U.N.",
+                "date": "May 25, 2018",
+                "url": "https://drive.google.com/uc?export=download&id=1S9dG9p8-w2efVxHvsZVmL6wT6wvaVwX2",
+                "duration": "3:50",
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_may25.png",
+                "composerDates": {
+                    "birth": 1893,
+                    "death": 1918
+                }, 
+                "performers": [
+                    ["Adrian Daurov", "cello"],
+                    ["Brenda Vongova", "piano"],
+                ]
+            },
+            {//13
+                "name": "Comments — Giaccobe Cervetto",
+                "artist": "Felice Doynov",
+                "album": "HEAR at the U.N.",
+                "date": "May 25, 2018",
+                "url": "https://drive.google.com/uc?export=download&id=1bhA8-ff0ITvCW9p_zsH64bs4tJQWUzel",
+                "duration": "1:05",
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_may25.png"
+            },
+            { //14 
+                "name": "Sonata for flute and continuo",
+                "artist": "Giaccobe Cervetto",
+                "album": "HEAR at the U.N.",
+                "date": "May 25, 2018",
+                "url": "https://drive.google.com/uc?export=download&id=1ulirCdtz-HhH2v8QKUZFt_874AC9OclT",
+                "duration": "10:09",
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_may25.png",
+                "fullName": "Sonata in D major for flute and continuo, Op. 3 No. 2",
+                "composerDates": {
+                    "birth": 1680,
+                    "death": 1783
+                }, 
+                "movements": [
+                    ["I.", "Adagio"],
+                    ["II.", "Allegro con spirito"],
+                    ["III.", "Minuetto"]
+                ],
+                "performers": [
+                    ["Leo Sussman", "flute"],
+                    ["Jonathan Salamon", "harpsichord"],
+                ]
+            },
+            {//15
+                "name": "Comments — Amy Beach",
+                "artist": "Jonathan Salamon",
+                "album": "HEAR at the U.N.",
+                "date": "May 25, 2018",
+                "url": "https://drive.google.com/uc?export=download&id=1-hEImrTTa0BKa5hoobFEB6CyKw7ggPnn",
+                "duration": "1:03",
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_may25.png"
+            },
+            {//16
+                "name": "Invocation, Op. 55",
+                "artist": "Amy Beach",
+                "album": "HEAR at the U.N.",
+                "date": "May 25, 2018", 
+                "url": "https://drive.google.com/uc?export=download&id=1kgAdxSH6Of8GgwSFb1BCTT6thF7ifvL4",
+                "duration": "4:59",
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_may25.png",
+                "composerDates": {
+                    "birth": 1867,
+                    "death": 1944
+                }, 
+                "performers": [
+                    ["Ariel Horowitz", "violin"],
+                    ["Brenda Vongova", "piano"]
+                ]
+            },
+            {//17
+                "name": "Comments — Julius Eastman",
+                "artist": "Felice Doynov",
+                "album": "HEAR at the U.N.",
+                "date": "May 25, 2018",
+                "url": "https://drive.google.com/uc?export=download&id=1wqhGpMICbbET4WGeNTBSkNMzBlbHkSFW",
+                "duration": "1:43",
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_may25.png"
+            },
+            {//18
+                "name": "Touch Him When",
+                "artist": "Julius Eastman",
+                "album": "HEAR at the U.N.",
+                "date": "May 25, 2018", 
+                "url": "https://drive.google.com/uc?export=download&id=1rNE7XO9IxQWomDC5oy0lCO5DzrPKcS5T",
+                "duration": "7:22",
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_may25.png",
+                "composerDates": {
+                    "birth": 1940,
+                    "death": 1990
+                }, 
+                "performers": [
+                    ["JIJI", "guitar"]
+                ]
+            },
+            {//19
+                "name": "Comments — Yuko Uebayashi",
+                "artist": "Jonathan Salamon",
+                "album": "HEAR at the U.N.",
+                "date": "May 25, 2018", 
+                "url": "https://drive.google.com/uc?export=download&id=1g2bljqlVOnqpe3OJQ4UnSoWPf3Ui4eNU",
+                "duration": "1:13",
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_may25.png"
+            },
+            {//20
+                "name": "Town Light",
+                "artist": "Yuko Uebayashi",
+                "album": "HEAR at the U.N.",
+                "date": "May 25, 2018",
+                "url": "https://drive.google.com/uc?export=download&id=1Tz5-DIBnkYQgTQ9Cnuy4HwZ-s_3x6eDP",
+                "duration": "7:12",
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_may25.png",
+                "fullName": "Town Light (1997)",
+                "composerDates": {
+                    "birth": 1975,
+                }, 
+                "performers": [
+                    ["Amir Farsi", "flute"],
+                    ["Felice Doynov", "flute"],
+                    ["Brenda Vongova", "piano"]
+                ]
+            },
+            {//21
+                "name": "Closing Remarks",
+                "artist": "Felice Doynov",
+                "album": "HEAR at the U.N.",
+                "date": "May 25, 2018",
+                "url": "https://drive.google.com/uc?export=download&id=1erbA9CV7atfHXxgyekEO8dowE-pyhXyb",
+                "duration": "1:28",
+                "cover_art_url": "https://hearclassical.github.io/HEARclassical/assets/images/poster_may25.png"
+            }
 
-        ],
+
+
+
+    ],
     "playlists": {
-        "inaugural": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
+        "inaugural": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18],
+        "un-launch": [19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40]
     },
+    "starting_playlist": "inaugural",
+
+ 
     "volume": 75,
     "callbacks": {
     	"time_update": function() {
@@ -196,20 +590,22 @@ Amplitude.init({
     			updateCurrentTime(curTime);
     			updateEndTime(curTime);
 
-
-
     		}
     		
     	},
         "album_change": function() {
             console.log("an album changed")
+        }, 
+        "song_change": function() {
+            console.log('change');
+            makeProgramInfo(Amplitude.getActiveSongMetadata());
         }
     }
 
 })
 
 
-
+//Amplitude.setDebug(true)
 function updateProgress(percentage) {
 	document.getElementById('song-played-progress').value = percentage;
 }
@@ -338,8 +734,12 @@ for (var i = 0; i < audioLinks.length; i++){
     audioLinks[i].onclick = function() {
         showAudioplayer();
         if (this.classList.contains('play-now')) {
-            Amplitude.playNow(Amplitude.getSongAtPlaylistIndex('inaugural', 0))
+            var playlist = this.getAttribute('amplitude-playlist-link');
+            var playButton = document.getElementById('play-pause')
 
+            playButton.setAttribute('amplitude-playlist', playlist)
+            Amplitude.playNow(Amplitude.getSongAtPlaylistIndex(playlist, 0))
+            playButton.classList.replace('amplitude-paused', 'amplitude-playing')
         }
     };
 }
@@ -366,6 +766,19 @@ function hidePlaylist(e) {
     document.querySelector('.playlist-wrapper').setAttribute('style', 'display: none');
 }
 
+document.querySelector('.meta-container').addEventListener('mouseenter', function(e){
+    document.querySelector('.program-info-wrapper').setAttribute('style', 'display: block');
+    document.querySelector('.meta-container').addEventListener('mouseleave', hideProgram)
+
+});
+
+function hideProgram(e) {
+    document.querySelector('.meta-container').removeEventListener('mouseleave', hideProgram);
+    document.querySelector('.program-info-wrapper').setAttribute('style', 'display: none');
+}
+
+
+
 
 //fires whenever the slider is adjusted, so we can see when to change
 document.querySelector('.amplitude-volume-slider').oninput = function() {
@@ -391,6 +804,7 @@ document.querySelector('.amplitude-volume-slider').oninput = function() {
 
 
 }
+
 
 
 
@@ -433,9 +847,24 @@ function generatePlaylistSelect(playlistName) {
         var songContainer = createSongContainer(song)
         document.querySelector('.songs-container').appendChild(songContainer);
         //console.log(song);
-        songContainer.onclick = playSong.bind(null,song);
+        //songContainer.onclick = playSong.bind(songContainer,song);
+        songContainer.onclick = Amplitude.playPlaylistSongAtIndex.bind(null, i, playlistName)
+        songContainer.setAttribute('amplitude-song-index', i);
+        songContainer.setAttribute('amplitude-playlist', playlistName)
 
+        songContainer.classList.add("amplitude-song-container");
+        songContainer.classList.add("amplitude-play-pause");
+        //songContainer.classList.add("amplitude-paused");
+
+        if (i == 0) {
+            //songContainer.classList.add("amplitude-active-song-container");
+        }
+        //songContainer.addEventListener('click', function(){
+         //   console.log("click")
+        //})
+        //songContainer.setAttribute('amplitude-playlist', playlistName);
         i += 1;
+
     }
 
 }
@@ -443,6 +872,108 @@ function generatePlaylistSelect(playlistName) {
 function playSong(song) {
     //console.log(song);
     Amplitude.playNow(song);
+    document.querySelector(".amplitude-active-song-container")[0].classList.remove("amplitude-active-song-container");
+    this.classList.add("amplitude-active-song-container");
+
 }
 
+
+
+
+function formatComposerDates(song) {
+    if (song.composerDates === undefined) {
+        return undefined;
+    }
+    var birth = song.composerDates.birth;
+    if (birth === undefined) {
+        return undefined;
+    }
+    var death = song.composerDates.death;
+    if (death === undefined) {
+        return "(b. " + birth + ")";
+    } 
+
+    return "(" + birth + " - " + death + ")";
+}
+
+function formatMovements(song) {
+    var movements = document.createElement('ol');
+    movements.className = "movements";
+    movements.type = 'I';
+    for (var i = 0; i < song.movements.length; i++) {
+        var movement = document.createElement('li');
+        var movementSpan = document.createElement('span');
+        movementSpan.innerHTML = song.movements[i][1];
+        movement.appendChild(movementSpan);
+        movements.appendChild(movement);
+    }
+    return movements;
+}
+
+function formatPerformers(song) {
+    var performers = document.createElement('ul');
+    performers.className = "performers"
+    for (var i = 0; i < song.performers.length; i++) {
+        var performer = document.createElement('li');
+        var performerSpan = document.createElement('span');
+        performerSpan.innerHTML = song.performers[i][0] + ", <i>" + song.performers[i][1] + "</i>";
+        performer.appendChild(performerSpan);
+        performers.appendChild(performer);
+    }
+    return performers;
+}
+
+function makeProgramInfo(song) {
+    var container = document.createElement('div');
+
+    var leftSide = document.createElement('div');
+    leftSide.className = "left-side"
+    var rightSide = document.createElement('div');
+    rightSide.className = "right-side"
+
+
+    var composer = document.createElement('p');
+    composer.innerHTML = song.artist;
+    leftSide.appendChild(composer);
+
+    var cdates = formatComposerDates(song);
+    if (cdates) {
+        var date = document.createElement('p');
+        date.innerHTML = cdates;
+        leftSide.appendChild(date);
+    }
+
+    if (song.arrangedBy) {
+        var arranger = document.createElement('p');
+        arranger.innerHTML = "Arr. " + song.arrangedBy;
+        leftSide.appendChild(arranger);
+    }
+
+    var title = (song.fullName) ? song.fullName : song.name;
+    var songTitle = document.createElement('p');
+    songTitle.innerHTML = "<b>" + title + "</b>";
+
+    rightSide.appendChild(songTitle);
+
+    if (song.movements) {
+        rightSide.appendChild(formatMovements(song));
+    }
+
+    if (song.performers) {
+        rightSide.appendChild(formatPerformers(song));
+    }
+
+
+    container.appendChild(leftSide);
+    container.appendChild(rightSide);
+
+    //clear 
+    document.querySelector('.program-info-popup').innerHTML = ""
+    document.querySelector('.program-info-popup').appendChild(container);
+}
+
+
+
+
 generatePlaylistSelect('inaugural');
+makeProgramInfo(Amplitude.getActiveSongMetadata())

@@ -64,8 +64,11 @@ var captions = {
   7: "Adrian Daurov, <i>cello</i>, and Brenda Vongova, <i>piano</i>, perform a <b>Nocturne</b> composed by Lili Boulanger",
   8: "Leo Sussman, <i>flute</i> performs (with Jonathan Salamon, <i>piano</i>) Giaccobe Cervetto's <b>Sonata for Flute and Continuo in D Major</b>",
   //need updating 9-13
-  9: "Left to right: Ariel Horowitz, <i> violin</i>, Johnna Wu, <i> violin</i>, Adrian Daurov, <i> cello</i>, and Alexandra Simpson, <i> viola</i>,  perform Joseph Boulogne's <b> String Quartet No. 5 in G major</b>",
-  10: "Felice Doynov, founder and director of HEAR Classical, gives opening remarks"
+  9: "Ariel Horowitz, <i>violin</i>, and Brenda Vongova, <i>piano</i>, perform Amy Beach's <b>Invocation, Op. 55</b>",
+  10: "Ms. Kellie-Chandra Ognimba, Human Rights Officer of the <b> UN Office of the High Commissioner of Human Rights</b>, gives opening remarks",
+  11: "Ms. Alison Rowe, Senior Advisor to the Executive Director of <b>UN Women</b>, gives opening remarks",
+  12: "Ms. Alison Rowe, Senior Advisor to the Executive Director of <b>UN Women</b>, gives opening remarks",
+  13: "Brenda Vongova, President and artistic directory of the UN chamber music society, speaks"
 }
 
 //Everything here and below is done dynamically
@@ -113,13 +116,17 @@ console.log(lightboxPreviewSlides);
  
 var slideIndex = 1;
 var previewShowing = false;
+var scrollAnimator; //will hold a setTimeout
+
 showSlides(slideIndex);
 
 function plusSlides(n) {
+  scrollTo(slideIndex + n)
   showSlides(slideIndex += n);
 }
 
 function currentSlide(n) {
+  scrollTo(n)
   showSlides(slideIndex = n);
 }
 
@@ -182,6 +189,46 @@ function averagePreviewHeights() {
 
   needsAverage = false;
 }
+
+
+function scrollTo(index) {
+    stopScroll()
+    if (index > numSlides) {index = 1}
+    if (index < 1) {index = numSlides}
+    var to = document.getElementsByClassName('column')[index-1].offsetLeft,
+        start = document.getElementById("preview-pictures").scrollLeft,
+        change = to - start,
+        currentTime = 0,
+        increment = 10,
+        duration = 2*Math.abs(change);
+        
+    var animateScroll = function(){        
+        currentTime += increment;
+        var val = Math.easeInOutQuad(currentTime, start, change, duration);
+        document.getElementById("preview-pictures").scrollLeft = val;
+        if(currentTime < duration) {
+            scrollAnimator = setTimeout(animateScroll, increment);
+        }
+    };
+    if (duration > increment) {animateScroll()};
+}
+
+function stopScroll() {
+  clearTimeout(scrollAnimator);
+}
+
+//t = current time
+//b = start value
+//c = change in value
+//d = duration
+Math.easeInOutQuad = function (t, b, c, d) {
+  t /= d/2;
+  if (t < 1) return c/2*t*t + b;
+  t--;
+  return -c/2 * (t*(t-2) - 1) + b;
+};
+
+
 
 </script>
     

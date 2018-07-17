@@ -6,94 +6,36 @@ $('.ambassador-website').mousemove(function(e){
 	$('#website-preview').css({'left': e.pageX, 'top': e.clientY+ 30});
 })
 
-/*$('.ambassador-website').hover(
-	function(e) {	//mouseenter
-		var link = $(this)[0].href;
-		var noEmbed = $(this).hasClass('no-embed');
-		console.log(noEmbed);
-		if ($('#ambassador-iframe').attr('src') != link) {
-			$('#website-preview').fadeIn(200);
-			$('#website-preview-link-display').children('p').html(removePrefix(link));
-			$('#website-preview-link-display').fadeIn(100);
-				var sx = $('#website-preview-link-display').width() / 1280;
-				var sy = $('#website-preview-link-display').height() / 768;
-				$('#ambassador-iframe').css({
-					'transform': 'scaleX(' + sx + ') scaleY(' + sy + ')'
-				})
-
-
-
-			if (!noEmbed) {
-				$('#ambassador-iframe').attr('src', link)
-				boundLink = link;
-				$('#ambassador-iframe').bind('load',function(){
-
-
-					$('#website-preview-link-display').fadeOut(500);
-					$('#ambassador-iframe').fadeIn(500);
-
-					$('#ambassador-iframe').css({
-						'transform': 'scaleX(0.2) scaleY(0.2)',
-						'transition': 'transform 0.5s linear'
-					})
-
-					boundLink = undefined;
-				});
-			}
-		} else {
-			$('#website-preview').fadeIn(200);
-			$('#ambassador-iframe').fadeIn(300);
-		}
-		
-	}, 
-	function(e) {	//mouse leave
-		$('#website-preview').fadeOut(200);
-		$('#ambassador-iframe').fadeOut(300);
-		$('#ambassador-iframe').css({
-			'transition': 'none'
-		})
-
-
-		if (boundLink) {
-			$('#ambassador-iframe').off('load')
-			boundLink = undefined;
-			link = undefined;
-			$('#ambassador-iframe').attr('src', 'about:blank')
-
-		}
-	}
-
-);
-*/
 
 $('.ambassador-website').hover(
 	function(e) {	//mouseenter
 		var imageLink = "https://hearclassical.github.io/HEARclassical/assets/images/website-previews/" + $(this).data().image;
 		var link = $(this)[0].href;
+		var img = $('#ambassador-preview').find('img');
 		//var noEmbed = $(this).hasClass('no-embed');
-		if ($('#ambassador-iframe').attr('src') != imageLink) {
+		if (img.attr('src') != imageLink) {
 			$('#website-preview').fadeIn(200);
 			$('#website-preview-link-display').children('p').html(removePrefix(link));
 			$('#website-preview-link-display').fadeIn(100);
-			var sx = $('#website-preview-link-display').width() / 1366;
-			var sy = $('#website-preview-link-display').height() / 768;
-			$('#ambassador-iframe').css({
+			var sx = $('#website-preview-link-display').width() / 342;
+			var sy = $('#website-preview-link-display').height() / 198;
+			$('#ambassador-preview').css({
 				'transform': 'scaleX(' + sx + ') scaleY(' + sy + ')'
 			})
 
 
 
 			
-			$('#ambassador-iframe').attr('src', imageLink)
+			img.attr('src', imageLink)
 			boundLink = link;
-			$('#ambassador-iframe').bind('load',function(){
+			img.bind('load',function(){
 
 
 				$('#website-preview-link-display').fadeOut(500);
-				$('#ambassador-iframe').fadeIn(500);
+				$('#ambassador-preview').fadeIn(500);
 
-				$('#ambassador-iframe').css({
-					'transform': 'scaleX(0.2) scaleY(0.2)',
+				$('#ambassador-preview').css({
+					'transform': 'scaleX(1.0) scaleY(1.0)',
 					'transition': 'transform 0.5s linear'
 				})
 
@@ -102,23 +44,23 @@ $('.ambassador-website').hover(
 			
 		} else {
 			$('#website-preview').fadeIn(200);
-			$('#ambassador-iframe').fadeIn(300);
+			$('#ambassador-preview').fadeIn(300);
 		}
 		
 	}, 
 	function(e) {	//mouse leave
 		$('#website-preview').fadeOut(200);
-		$('#ambassador-iframe').fadeOut(300);
-		$('#ambassador-iframe').css({
+		$('#ambassador-preview').fadeOut(300);
+		$('#ambassador-preview').css({
 			'transition': 'none'
 		})
 
 
 		if (boundLink) {
-			$('#ambassador-iframe').off('load')
+			img.off('load')
 			boundLink = undefined;
 			link = undefined;
-			$('#ambassador-iframe').attr('src', 'about:blank')
+			img.attr('src', '')
 
 		}
 	}
