@@ -595,15 +595,28 @@ var configuration = {
     	},
         "album_change": function() {
             console.log("an album changed")
+            //console.log(Amplitude.getActiveSongMetadata())
+            //makeProgramInfo(Amplitude.getActiveSongMetadata());
+
         }, 
         "song_change": function() {
             console.log('change');
+            //console.log(Amplitude.getActiveSongMetadata())
             makeProgramInfo(Amplitude.getActiveSongMetadata());
-        }
+        },
+        "playlist_changed": function() {
+            //console.log("playlist changed")
+            //console.log(Amplitude.getActiveSongMetadata())
+            //makeProgramInfo(Amplitude.getActiveSongMetadata());
+        }, 
     }
 
 };
-Amplitude.init(configuration);
+
+var playlistsNameTranslation = {
+    "inaugural": "HEAR Through Time",
+    "un-launch": "HEAR at the UN"
+}
 
 
 var nextButton = document.getElementsByClassName('amplitude-next')[0]
@@ -611,12 +624,19 @@ var playButton = document.getElementsByClassName('amplitude-play-pause')[0]
 var prevButton = document.getElementsByClassName('amplitude-prev')[0]
 
 
-function setCurrentPlaylist(playlist) {
+function updatePlaylist(playlist) {
     nextButton.setAttribute('amplitude-playlist', playlist);
     playButton.setAttribute('amplitude-playlist', playlist);
     prevButton.setAttribute('amplitude-playlist', playlist);
     document.querySelector('.songs-container').innerHTML = ""
     generatePlaylistSongSelect(playlist);
+
+    var songMetas = document.querySelectorAll('[amplitude-song-info]');
+    console.log(songMetas);
+    for (var i = 0; i < songMetas.length; i++) {
+        songMetas[i].setAttribute("amplitude-playlist", playlist);
+    }
+
 }
 
 
@@ -625,14 +645,42 @@ function updateProgress(percentage) {
 	document.getElementById('song-played-progress').value = percentage;
 }
 
+//time is in seconds.  convert to a formatted min:sec string and update audioplayer
 function updateCurrentTime(time) {
-	var s = Math.floor(time % 60);
-	var m = Math.floor(time / 60);
-
-	var seconds = (s < 10) ? '0' + parseInt(s, 10) : '' + parseInt(s, 10);
-	var minutes = (m == 0) ? '0' : '' + m;
+    var [minutes, seconds] = secondsToMinutesSeconds(time);
 	document.querySelector('.current-minutes').innerHTML = minutes;
     document.querySelector('.current-seconds').innerHTML = seconds;
+}
+
+//seconds is a time in seconds, convert to [minutes, seconds], formatted strings
+function secondsToMinutesSeconds(secs) {
+    var s = Math.floor(secs % 60);
+    var m = Math.floor(secs / 60);
+
+    var seconds = (s < 10) ? '0' + parseInt(s, 10) : '' + parseInt(s, 10);
+    var minutes = (m == 0) ? '0' : '' + m;
+
+    return [minutes,seconds]
+}
+
+//minSec is a min:sec formatted string
+function minSecToSeconds(minSec) {
+    var split = minSec.split(":");
+    return 60*parseInt(split[0]) + parseInt(split[1]);
+}
+
+
+
+function getPlaylistDuration(playlistName) {
+    var songIndices = configuration.playlists[playlistName];
+    var totalDuration = 0;
+    for (var i = 0; i < songIndices.length; i++) {
+        var index = songIndices[i];
+        totalDuration += minSecToSeconds(configuration.songs[index].duration)
+    }
+    var [minutes, seconds] = secondsToMinutesSeconds(totalDuration);
+    return minutes + ":" + seconds
+
 }
 
 function updateEndTime(time) {
@@ -753,8 +801,8 @@ function setAudioplayerLinks() {
             showAudioplayer();
             if (this.classList.contains('play-now')) {
                 var playlist = this.getAttribute('amplitude-playlist-link');
-                setCurrentPlaylist(playlist)
-                Amplitude.playNow(Amplitude.getSongAtPlaylistIndex(playlist, 0))
+                updatePlaylist(playlist);
+                playSong(playlist, 0)
                 playButton.classList.replace('amplitude-paused', 'amplitude-playing')
             }
         };
@@ -794,6 +842,16 @@ function hideProgram(e) {
     document.querySelector('.program-info-wrapper').setAttribute('style', 'display: none');
 }
 
+document.querySelector('.playlists-container').addEventListener('mouseenter', function(e){
+    document.querySelector('.playlists-wrapper').setAttribute('style', 'display: block');
+    document.querySelector('.playlists-container').addEventListener('mouseleave', hidePlaylists)
+
+});
+
+function hidePlaylists(e) {
+    document.querySelector('.playlists-container').removeEventListener('mouseleave', hidePlaylists);
+    document.querySelector('.playlists-wrapper').setAttribute('style', 'display: none');
+}
 
 
 
@@ -829,22 +887,22 @@ document.querySelector('.amplitude-volume-slider').oninput = function() {
 
 function createSongContainer(song) {
     var songContainer = document.createElement('div');
-    songContainer.className = "song-container";
+    songContainer.className = "token-container";
 
     var nameContainer = document.createElement('div');
-    nameContainer.className = "song-name-container";
+    nameContainer.className = "token-left-container";
 
     var songName = document.createElement('div');
-    songName.className = "song-name";
+    songName.className = "token-left-top";
     songName.innerHTML = song.name;
 
 
     var artist = document.createElement('div');
-    artist.className = "song-artist";
+    artist.className = "token-left-bottom";
     artist.innerHTML = song.artist;
 
     var duration = document.createElement('div');
-    duration.className = "song-duration";
+    duration.className = "token-right";
     duration.innerHTML = song.duration;
 
     nameContainer.appendChild(songName);
@@ -854,13 +912,15 @@ function createSongContainer(song) {
     songContainer.appendChild(duration);
 
     return songContainer;
+
 }
 
 function generatePlaylistSongSelect(playlistName) {
-    var i = 0;
-    while (true) {
-        var song = Amplitude.getSongAtPlaylistIndex(playlistName, i);
-        if (!song) {break;}
+
+    var songIndices = configuration.playlists[playlistName];
+    for (var i = 0; i < songIndices.length; i++) {
+
+        var song = configuration.songs[songIndices[i]];
         var songContainer = createSongContainer(song)
         document.querySelector('.songs-container').appendChild(songContainer);
         //console.log(song);
@@ -871,47 +931,53 @@ function generatePlaylistSongSelect(playlistName) {
 
         songContainer.classList.add("amplitude-song-container");
         songContainer.classList.add("amplitude-play-pause");
-        //songContainer.classList.add("amplitude-paused");
-
-        if (i == 0) {
-            //songContainer.classList.add("amplitude-active-song-container");
-        }
-        //songContainer.addEventListener('click', function(){
-         //   console.log("click")
-        //})
-        //songContainer.setAttribute('amplitude-playlist', playlistName);
-        i += 1;
 
     }
 
 }
-function createPlaylistToken(playlist, numTracks) {
+function createPlaylistToken(playlist) {
+
+    var numTracks = configuration.playlists[playlist].length;
+    var duration = getPlaylistDuration(playlist);
+
+   
+
     var token = document.createElement('div');
-    token.className = "playlist-token-container";
+    token.className = "token-container";
+
+    var leftContainer = document.createElement('div');
+    leftContainer.className = "token-left-container";
 
     var nameContainer = document.createElement('div');
-    nameContainer.className = "playlist-token-name-container";
-    nameContainer.innerHTML = playlist;
+    nameContainer.className = "token-left-top";
+    nameContainer.innerHTML = playlistsNameTranslation[playlist];
 
     var trackNumber = document.createElement('div');
-    trackNumber.className = "playlist-token-tracks-container";
+    trackNumber.className = "token-left-bottom";
     trackNumber.innerHTML = "tracks: " + numTracks;
 
+    var durationContainer = document.createElement('div');
+    durationContainer.className = "token-right";
+    durationContainer.innerHTML = duration;
 
-    token.appendChild(nameContainer);
-    token.appendChild(trackNumber);
+
+
+
+    leftContainer.appendChild(nameContainer);
+    leftContainer.appendChild(trackNumber);
+
+    token.appendChild(leftContainer);
+    token.appendChild(durationContainer);
 
     return token;
 }
 
 function generatePlaylistSelect(playlists) {
-    for (var key in Object.keys(playlists)) {
+    for (var key in playlists) {
         var playlist = key;
-        var numTracks = playlists[key].length;
-
-        var playlistToken = createPlaylistToken(playlist,numTracks);
+        var playlistToken = createPlaylistToken(playlist);
         document.querySelector('.playlist-select-container').appendChild(playlistToken);
-        playlistToken.className="audioplayer-link play-now";
+        playlistToken.className += " audioplayer-link play-now";
         playlistToken.setAttribute("amplitude-playlist-link", playlist)
 
     }
@@ -921,11 +987,16 @@ function generatePlaylistSelect(playlists) {
 
 }
 
-function playSong(song) {
+function playSong(playlist,track) {
     //console.log(song);
+    var song = Amplitude.getSongAtPlaylistIndex(playlist, 0)
     Amplitude.playNow(song);
-    document.querySelector(".amplitude-active-song-container")[0].classList.remove("amplitude-active-song-container");
-    this.classList.add("amplitude-active-song-container");
+    console.log(song);
+    makeProgramInfo(song);
+    document.querySelector('[amplitude-song-info="name"]').innerHTML = song.name;
+    document.querySelector('[amplitude-song-info="artist"]').innerHTML = song.artist;
+    document.getElementById('play-pause').click()
+
 
 }
 
@@ -981,9 +1052,9 @@ function makeProgramInfo(song) {
     var container = document.createElement('div');
 
     var leftSide = document.createElement('div');
-    leftSide.className = "left-side"
+    leftSide.className = "left-side";
     var rightSide = document.createElement('div');
-    rightSide.className = "right-side"
+    rightSide.className = "right-side";
 
 
     var composer = document.createElement('p');
@@ -1027,7 +1098,13 @@ function makeProgramInfo(song) {
 }
 
 
-
+generatePlaylistSelect(configuration.playlists);
 setAudioplayerLinks()
+updatePlaylist('inaugural');
+
+
+Amplitude.init(configuration);
+makeProgramInfo(Amplitude.getActiveSongMetadata());
 generatePlaylistSongSelect('inaugural');
-makeProgramInfo(Amplitude.getActiveSongMetadata())
+
+

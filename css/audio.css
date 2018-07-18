@@ -473,7 +473,7 @@ input[type=range]::-ms-track {
 
 }
 
-.song-container {
+.token-container {
 	padding: 5px 10px;
 	height: 40px;
 	font-family: Verdana, sans;
@@ -482,32 +482,32 @@ input[type=range]::-ms-track {
 
 }
 
-.song-container:hover {
+.token-container:hover {
 	background: rgba(31,26, 120, 0.75);
 	color: white;
 	cursor: pointer;
 }
 
-.song-container:hover .song-name {
+.token-container:hover .token-left-top {
 	color: rgba(200,200,200, 0.8)!important;
 }
 
-.song-container .song-name-container {
+.token-container .token-left-container {
 	float: left;
 	margin-left: 20px;
 	max-width: 85%;
 }
 
-.song-container .song-name {
+.token-container .token-left-top {
 	font-size: 13px;
 	color: rgba(100,100,100,0.8);
 }
 
-.song-container .song-artist {
+.token-container .song-left-bottom {
 	font-size: 11px!important;
 }
 
-.song-container .song-duration {
+.token-container .token-right {
 	text-align: right;
     right: 0px;
     position: relative;
@@ -584,43 +584,6 @@ input[type=range]::-ms-track {
 }
 
 
-.playlist-token-container {
-	padding: 5px 10px;
-	height: 40px;
-	font-family: Verdana, sans;
-	font-size: 13px;
-
-
-}
-
-.playlist-token-container:hover {
-	background: rgba(31,26, 120, 0.75);
-	color: white;
-	cursor: pointer;
-}
-
-.playlist-token-container:hover .playlist-token-name-container {
-	color: rgba(200,200,200, 0.8)!important;
-}
-
-.playlist-token-container .playlist-token-name-container {
-	float: left;
-	margin-left: 20px;
-	max-width: 85%;
-	font-size: 13px;
-	color: rgba(100,100,100,0.8);
-}
-
-
-
-.playlist-token-container .playlist-token-tracks-container {
-	text-align: right;
-    right: 0px;
-    position: relative;
-    top: 10px;
-}
-
-
 
 /*
 
@@ -653,6 +616,7 @@ span.audioplayer-link {
 .program-info-popup .right-side .movements {
 	list-style-position: inside;
 	padding-left: 10px;
+	font-size: 14px;
 }
 
 .program-info-popup .right-side .movements li {
