@@ -3,7 +3,7 @@ var SHOWDURATION = true;
 var DURATION;
 var playPauseButton = document.querySelector('.amplitude-play-pause');
 
-Amplitude.init({
+var configuration = {
 
 	"songs": [
 
@@ -602,7 +602,22 @@ Amplitude.init({
         }
     }
 
-})
+};
+Amplitude.init(configuration);
+
+
+var nextButton = document.getElementsByClassName('amplitude-next')[0]
+var playButton = document.getElementsByClassName('amplitude-play-pause')[0]
+var prevButton = document.getElementsByClassName('amplitude-prev')[0]
+
+
+function setCurrentPlaylist(playlist) {
+    nextButton.setAttribute('amplitude-playlist', playlist);
+    playButton.setAttribute('amplitude-playlist', playlist);
+    prevButton.setAttribute('amplitude-playlist', playlist);
+    document.querySelector('.songs-container').innerHTML = ""
+    generatePlaylistSongSelect(playlist);
+}
 
 
 //Amplitude.setDebug(true)
@@ -728,20 +743,22 @@ document.getElementById('audioplayer-close-button').onclick = function(){
     hideAudioplayer()
 };
 
-var audioLinks = document.getElementsByClassName('audioplayer-link');
-for (var i = 0; i < audioLinks.length; i++){
 
-    audioLinks[i].onclick = function() {
-        showAudioplayer();
-        if (this.classList.contains('play-now')) {
-            var playlist = this.getAttribute('amplitude-playlist-link');
-            var playButton = document.getElementById('play-pause')
+//set up the links to the audio player
+function setAudioplayerLinks() {
+    var audioLinks = document.getElementsByClassName('audioplayer-link');
+    for (var i = 0; i < audioLinks.length; i++){
 
-            playButton.setAttribute('amplitude-playlist', playlist)
-            Amplitude.playNow(Amplitude.getSongAtPlaylistIndex(playlist, 0))
-            playButton.classList.replace('amplitude-paused', 'amplitude-playing')
-        }
-    };
+        audioLinks[i].onclick = function() {
+            showAudioplayer();
+            if (this.classList.contains('play-now')) {
+                var playlist = this.getAttribute('amplitude-playlist-link');
+                setCurrentPlaylist(playlist)
+                Amplitude.playNow(Amplitude.getSongAtPlaylistIndex(playlist, 0))
+                playButton.classList.replace('amplitude-paused', 'amplitude-playing')
+            }
+        };
+    }
 }
 
 document.querySelector('.volume-container').addEventListener('mouseenter', function(e){
@@ -839,7 +856,7 @@ function createSongContainer(song) {
     return songContainer;
 }
 
-function generatePlaylistSelect(playlistName) {
+function generatePlaylistSongSelect(playlistName) {
     var i = 0;
     while (true) {
         var song = Amplitude.getSongAtPlaylistIndex(playlistName, i);
@@ -868,6 +885,41 @@ function generatePlaylistSelect(playlistName) {
     }
 
 }
+function createPlaylistToken(playlist, numTracks) {
+    var token = document.createElement('div');
+    token.className = "playlist-token-container";
+
+    var nameContainer = document.createElement('div');
+    nameContainer.className = "playlist-token-name-container";
+    nameContainer.innerHTML = playlist;
+
+    var trackNumber = document.createElement('div');
+    trackNumber.className = "playlist-token-tracks-container";
+    trackNumber.innerHTML = "tracks: " + numTracks;
+
+
+    token.appendChild(nameContainer);
+    token.appendChild(trackNumber);
+
+    return token;
+}
+
+function generatePlaylistSelect(playlists) {
+    for (var key in Object.keys(playlists)) {
+        var playlist = key;
+        var numTracks = playlists[key].length;
+
+        var playlistToken = createPlaylistToken(playlist,numTracks);
+        document.querySelector('.playlist-select-container').appendChild(playlistToken);
+        playlistToken.className="audioplayer-link play-now";
+        playlistToken.setAttribute("amplitude-playlist-link", playlist)
+
+    }
+
+    //update the links to establish new playlist connections (could do this one by one more intelligently)
+    setAudioplayerLinks()
+
+}
 
 function playSong(song) {
     //console.log(song);
@@ -878,7 +930,9 @@ function playSong(song) {
 }
 
 
-
+////////////////////////////////////////////////
+//generating program info container on the fly//
+////////////////////////////////////////////////
 
 function formatComposerDates(song) {
     if (song.composerDates === undefined) {
@@ -974,6 +1028,6 @@ function makeProgramInfo(song) {
 
 
 
-
-generatePlaylistSelect('inaugural');
+setAudioplayerLinks()
+generatePlaylistSongSelect('inaugural');
 makeProgramInfo(Amplitude.getActiveSongMetadata())
