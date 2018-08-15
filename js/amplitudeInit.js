@@ -2,6 +2,8 @@ var SEEKING = false;
 var SHOWDURATION = true;
 var DURATION;
 var playPauseButton = document.querySelector('.amplitude-play-pause');
+var INITIALIZED = false;
+
 
 var configuration = {
 
@@ -590,6 +592,9 @@ var configuration = {
     			updateCurrentTime(curTime);
     			updateEndTime(curTime);
 
+                var buffered = Amplitude.getBuffered()
+                console.log('b',buffered)
+
     		}
     		
     	},
@@ -603,6 +608,7 @@ var configuration = {
             console.log('change');
             //console.log(Amplitude.getActiveSongMetadata())
             makeProgramInfo(Amplitude.getActiveSongMetadata());
+            setBufferUpdate();
         },
         "playlist_changed": function() {
             //console.log("playlist changed")
@@ -772,6 +778,24 @@ function updateProgressBackground(value) {
     );
 }
 
+function updateBufferProgressBackground(start, end) {
+   document.getElementById('song-buffer-progress').setAttribute(
+        'style',
+        'background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0) ' + start + '%, rgba(0,0,0,1)' + start + '%,  rgba(0,0,0,1)' + end + '%, rgba(0,0,0,0)' + end + '%, rgba(0,0,0,0))' 
+    );
+
+}
+
+function setBufferUpdate() {
+    Amplitude.audio().addEventListener('progress', function() {
+        var buff = Amplitude.audio().buffered;
+        var start = Number(buff.start(0).toFixed(2));
+        var end =   Number(buff.end(0).toFixed(2));
+
+        updateBufferProgressBackground(start, end);
+    })
+}
+
 var mouseUpUpdate = function(e) {
 	SEEKING = false;
     Amplitude.setSongPlayedPercentage(100 * document.getElementById('song-played-progress').value);
@@ -780,7 +804,12 @@ var mouseUpUpdate = function(e) {
 
 /* FOR SHOWING AND HIDING THE AUDIO PLAYER */
 function showAudioplayer() {
+    if (!INITIALIZED) {
+        INITIALIZED = true
+        initialize() 
+    }
     document.getElementById('audioplayer-overlay').setAttribute('style', 'max-height: 80px')
+    console.log('show it')
 };
 
 function hideAudioplayer() {
@@ -802,7 +831,7 @@ function setAudioplayerLinks() {
             if (this.classList.contains('play-now')) {
                 var playlist = this.getAttribute('amplitude-playlist-link');
                 updatePlaylist(playlist);
-                playSong(playlist, 0)
+                playSong(playlist, 0);
                 playButton.classList.replace('amplitude-paused', 'amplitude-playing')
             }
         };
@@ -961,8 +990,6 @@ function createPlaylistToken(playlist) {
     durationContainer.innerHTML = duration;
 
 
-
-
     leftContainer.appendChild(nameContainer);
     leftContainer.appendChild(trackNumber);
 
@@ -995,10 +1022,14 @@ function playSong(playlist,track) {
     makeProgramInfo(song);
     document.querySelector('[amplitude-song-info="name"]').innerHTML = song.name;
     document.querySelector('[amplitude-song-info="artist"]').innerHTML = song.artist;
-    document.getElementById('play-pause').click()
+    document.getElementById('play-pause').click();
+    setBufferUpdate()
 
 
 }
+
+
+
 
 
 ////////////////////////////////////////////////
@@ -1098,13 +1129,18 @@ function makeProgramInfo(song) {
 }
 
 
-generatePlaylistSelect(configuration.playlists);
+
+
+
+function initialize() {
+    generatePlaylistSelect(configuration.playlists);
+    updatePlaylist('inaugural');
+
+    Amplitude.init(configuration);
+    makeProgramInfo(Amplitude.getActiveSongMetadata());
+    generatePlaylistSongSelect('inaugural');
+}
+
+
 setAudioplayerLinks()
-updatePlaylist('inaugural');
-
-
-Amplitude.init(configuration);
-makeProgramInfo(Amplitude.getActiveSongMetadata());
-generatePlaylistSongSelect('inaugural');
-
 

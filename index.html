@@ -281,7 +281,7 @@
 					<div class="meta-container">
 
 						<div class="audio-image">
-							<img class="cover_art_url" amplitude-song-info="cover_art_url" amplitude-main-song-info="true" > 
+							<img class="cover_art_url" amplitude-song-info="cover_art_url"> 
 						</div>
 						<div class="meta-song-name-container">
 							<div amplitude-song-info="name" class="song-name">
@@ -330,9 +330,11 @@
 							<span class="current-time">
 								<span class="current-minutes">-</span>:<span class="current-seconds">--</span>
 							</span>
-
-							<input type="range" id="song-played-progress" min="0" max="1" step=".0005" value="0">
-							
+							<span id="song-progress">
+								<input type="range" id="song-played-progress" min="0" max="1" step=".0005" value="0">
+								<span id="song-buffer-progress">
+								</span>
+							</span>
 							<span class="duration">
 								<span class="duration-minutes">
 								-
@@ -735,8 +737,8 @@
 <script src="js/popup.js"></script>
 <script src="js/logoAnimation.js"></script>
 <script type="text/javascript" src="js/introScroll.js"></script>
-<script tpye="text/javascript" src="js/websitePreviews.js"></script>
-<script type="text/javascript" src="js/amplitudeInit.js"></script>
+<script type="text/javascript" src="js/websitePreviews.js"></script>
+<script async type="text/javascript" src="js/amplitudeInit.js"></script>
 
 <!--<script type="text/javascript" src="js/worldMap.js"></script> -->
 
