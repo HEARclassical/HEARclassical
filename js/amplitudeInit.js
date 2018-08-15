@@ -789,8 +789,9 @@ function updateBufferProgressBackground(start, end) {
 function setBufferUpdate() {
     Amplitude.audio().addEventListener('progress', function() {
         var buff = Amplitude.audio().buffered;
-        var start = Number(buff.start(0).toFixed(2));
-        var end =   Number(buff.end(0).toFixed(2));
+        var dur = Amplitude.audio().duration;
+        var start = 100*Number( (buff.start(0) / dur).toFixed(4));
+        var end =   100*Number( (buff.end(0) / dur).toFixed(4));
 
         updateBufferProgressBackground(start, end);
     })
