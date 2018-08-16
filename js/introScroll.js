@@ -65,7 +65,7 @@ $(window).bind("load",function() {
 		scrollingSpeed: scrollingSpeed,
 		animateAnchor: false,
 		lazyLoading: false,
-		autoscrolling: false,
+		autoScrolling: false,
 		normalScrollElements: '#main-content', //, .concerts-container, .map-container, .home-container, main, .horizontal-overlay, .scroll-overlay, .horizontal-section, .header-wrapper',
 		afterLoad: function(anchorLink, index) {
 			console.log(anchorLink, index);
